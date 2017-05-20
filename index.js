@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const sqlDbFactory = require("knex");
+const _ = require("lodash");
 
 const sqlDb = sqlDbFactory({
   client: "sqlite3",
   debug: true,
+  useNullAsDefault: true,
   connection: {
     filename: "./petsdb.sqlite"
   }
@@ -34,8 +36,6 @@ function initDb() {
     }
   });
 }
-
-const _ = require("lodash");
 
 let serverPort = process.env.PORT || 5000;
 
@@ -75,7 +75,7 @@ app.post("/pets", function(req, res) {
   let toappend = {
     name: req.body.name,
     tag: req.body.tag,
-    born: req.body.born
+    born: req.body.year
   };
   sqlDb("pets").insert(toappend).then(ids => {
     let id = ids[0];
