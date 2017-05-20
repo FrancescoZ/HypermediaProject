@@ -13,13 +13,17 @@ Team member n.3: Francesco Zanoli, 1042[]()3828, francescozano
 
 ## How do I get set up to test this locally?
 
--   To run this server locally you should have Nodejs
-    (v7.5.0) installed.
+* To run this server locally you should have Nodejs (v7.5.0) installed.
 
--   To install the dependencies:
+* To install the dependencies:
+```
+#!
 
-        `npm install .`
+npm install .
+```
+* To start the server (see property `scripts` in package.json)
+```
+#!
 
--   To start the server (see property `scripts` in package.json)
-
-        `npm start`
+npm start
+```
