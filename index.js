@@ -9,7 +9,7 @@ const sqlDb = sqlDbFactory({
   debug: true,
   useNullAsDefault: true,
   connection: {
-    filename: "./petsdb.sqlite"
+    filename: "./other/petsdb.sqlite"
   }
 });
 
@@ -39,7 +39,7 @@ function initDb() {
 
 let serverPort = process.env.PORT || 5000;
 
-let petsList = require("./petstoredata.json");
+let petsList = require("./other/petstoredata.json");
 
 app.use(express.static(__dirname + "/public"));
 
@@ -92,7 +92,7 @@ app.set("port", serverPort);
 
 initDb();
 
-/* Start the server on port 3000 */
+/* Start the server on port 5000 */
 app.listen(serverPort, function() {
   console.log(`Your app is ready at port ${serverPort}`);
 });
