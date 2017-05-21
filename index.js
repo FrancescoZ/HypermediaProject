@@ -1,45 +1,14 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const sqlDbFactory = require("knex");
+const db = require("./database.js");
 const _ = require("lodash");
 
-const sqlDb = sqlDbFactory({
-  client: "sqlite3",
-  debug: true,
-  useNullAsDefault: true,
-  connection: {
-    filename: "./other/petsdb.sqlite"
-  }
-});
 
-function initDb() {
-  return sqlDb.schema.hasTable("pets").then(exists => {
-    if (!exists) {
-      sqlDb.schema
-        .createTable("pets", table => {
-          table.increments();
-          table.string("name");
-          table.integer("born").unsigned();
-          table.enum("tag", ["cat", "dog"]);
-        })
-        .then(() => {
-          return Promise.all(
-            _.map(petsList, p => {
-              delete p.id;
-              return sqlDb("pets").insert(p);
-            })
-          );
-        });
-    } else {
-      return true;
-    }
-  });
-}
 
 let serverPort = process.env.PORT || 5000;
 
-let petsList = require("./other/petstoredata.json");
+
 
 app.use(express.static(__dirname + "/public"));
 
@@ -90,7 +59,7 @@ app.post("/pets", function(req, res) {
 
 app.set("port", serverPort);
 
-initDb();
+db.init();
 
 /* Start the server on port 5000 */
 app.listen(serverPort, function() {
