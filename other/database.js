@@ -11,7 +11,7 @@ const sqlDb = sqlDbFactory({
   debug: true,
   useNullAsDefault: true,
   connection: {
-    filename: "./other/hospital.sqlite"
+    filename: "./hospital.sqlite"
   }
 });
 
@@ -20,10 +20,10 @@ module.exports = {
   //Private function to load the initial relationships
   loadRelationships : function(){
     //initial data stored in json
-    let doctorServiceList = require("./other/docService.json");
-    let serviceAreaList = require("./other/serviceArea.json");
-    let areaDoctorList = require("./other/areaDoctor.json");
-    let locationAreaList = require("./other/locationArea.json");
+    let doctorServiceList = require("./docService.json");
+    let serviceAreaList = require("./serviceArea.json");
+    let areaDoctorList = require("./areaDoctor.json");
+    let locationAreaList = require("./locationArea.json");
 
     //Doctors's services
     sqlDb.schema.hasTable("doctor_service").then(exists => {
@@ -125,12 +125,12 @@ module.exports = {
   //private funciton to load the inital entities
   loadEntityTables : function() {
     //initial data stored in json
-    let doctorList = require("./other/doc.json");
-    let serviceList = require("./other/service.json");
-    let areaList = require("./other/area.json");
-    let locationList = require("./other/location.json");
-    let faqList = require("./other/faq.json");
-    let newsList = require("./other/news.json");
+    let doctorList = require("./doc.json");
+    let serviceList = require("./service.json");
+    let areaList = require("./area.json");
+    let locationList = require("./location.json");
+    let faqList = require("./faq.json");
+    let newsList = require("./news.json");
 
     //Doctors
     sqlDb.schema.hasTable("doctor").then(exists => {

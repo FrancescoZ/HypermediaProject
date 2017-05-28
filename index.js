@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const db = require("./database.js");
+const db = require("./other/database.js");
 const _ = require("lodash");
 
 
