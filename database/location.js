@@ -5,7 +5,7 @@ module.exports = function(dbConnection, initData){
       let locationList = require(initData + "location.json");
 
       //Locations
-      dbConnection.schema.hasTable("locations").then(exists => {
+      dbConnection.schema.hasTable("location").then(exists => {
         //check the existance
         if (!exists) {
           //if there isn't than create the structure

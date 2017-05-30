@@ -16,6 +16,7 @@ module.exports = function(dbConnection, initData){
               table.text("description");
               table.text("price");
               table.text("promotion");
+              table.integer("celebrity");
             })
             .then(() => {
               //fill the table just created
@@ -58,6 +59,15 @@ module.exports = function(dbConnection, initData){
           }
       });
 
+    },
+    select:function(start,limit,retFunction,errFunction,orderBy=null){
+      let selectService = dbConnection("service");
+      if (orderBy!=null)
+        selectService = selectService.orderBy(orderBy, "asc");
+      //Send select to database
+      selectService.limit(limit).offset(start).then(result => {
+        retFunction(result);
+      });
     }
   };
   return serviceDbModule;

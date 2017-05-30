@@ -1,5 +1,6 @@
 //database module
-
+// il modulo ha lo scopo di astrarre la tecnologia del database usata, in particolare questo modulo viene usato dai vari
+// controller per richiedere le diverse righe
 const initDataFolder = "../other/";
 //sqlLite module
 const sqlDbFactory = require("knex");
@@ -12,10 +13,12 @@ const sqlDb = sqlDbFactory({
   debug: true,
   useNullAsDefault: true,
   connection: {
-    filename: initDataFolder + "hospital.sqlite"
+    filename: './other/' + "hospital.sqlite"
   }
 });
 
+//Submodule to keep the source small and clear, each one correspond to an entity in the Db
+//The connection string is passed and the folder were to find the file fo the initialization
 const doctorDb = require("./database/doctor.js")(sqlDb, initDataFolder);
 const serviceDb = require("./database/service.js")(sqlDb, initDataFolder);
 const areaDb = require("./database/area.js")(sqlDb, initDataFolder);
@@ -34,6 +37,38 @@ module.exports = {
     locationDb.init();
     otherDb.init();
     console.log("Database loaded");
+  },
+  /*
+  * Select a group of objType with the specified parameters
+  * objType: the entity we are looking for
+  * start: the number from were to start
+  * limit: the max number of obj to return
+  * params: a vector with the detail of the query as:
+  *   params[0]: ID
+  *   params[1]:
+  * retFunction: the function to asynchronsly return the results
+  */
+  select : function(objType,retFunction,errFunction=null,start=null,limit=null,orderBy=null,params=null){
+    switch(objType){
+      case "news":
+        otherDb.selectNews(start, limit,  retFunction, errFunction);
+        break;
+      case "faq":
+        otherDb.selectFaqs(start, limit, retFunction, errFunction);
+        break;
+      case "doctor":
+        doctorDb.select(start, limit, retFunction, errFunction, orderBy);
+        break;
+      case "service":
+        serviceDb.select(start, limit, retFunction, errFunction, orderBy);
+        break;
+      case "area":
+        areaDb.select(start, limit, retFunction, errFunction, orderBy);
+        break;
+      default:
+        throw Exception();
+        break;
+    }
   },
   insert : function(){},
   delete : function(){},

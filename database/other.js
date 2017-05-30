@@ -40,8 +40,10 @@ module.exports = function(dbConnection, initData){
             .createTable("news", table => {
               table.increments('id').primary();
               table.string("name");
+              table.time("time");
               table.string("image");
               table.text("text");
+              table.integer("celebrity");
             })
             .then(() => {
               //fill the table just created
@@ -58,6 +60,21 @@ module.exports = function(dbConnection, initData){
           }
       });
 
+    },
+    selectNews : function(start,limit,retFunction,errFunction){
+      let selectNews = dbConnection("news");
+      selectNews = selectNews.orderBy("celebrity", "asc");
+      //Send select to database
+      selectNews.limit(limit).offset(start).then(result => {
+        retFunction(result);
+      });
+    },
+    selectFaqs : function(start,limit,retFunction,errFunction){
+      let selectFaqs = dbConnection("faq");
+      //Send select to database
+      selectFaqs.limit(limit).offset(start).then(result => {
+        retFunction(result);
+      });
     }
   };
   return otherDbModule;

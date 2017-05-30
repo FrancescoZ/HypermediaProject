@@ -14,6 +14,7 @@ module.exports = function(dbConnection, initData){
               table.increments('id').primary();
               table.string("name");
               table.text("info");
+              table.integer("celebrity");
             })
             .then(() => {
               //fill the table just created
@@ -55,6 +56,15 @@ module.exports = function(dbConnection, initData){
           }
       });
 
+    },
+    select:function(start,limit,retFunction,errFunction,orderBy=null){
+      let selectArea = dbConnection("area");
+      if (orderBy!=null)
+        selectArea = selectArea.orderBy(orderBy, "asc");
+      //Send select to database
+      selectArea.limit(limit).offset(start).then(result => {
+        retFunction(result);
+      });
     }
   };
   return areaDbModule
