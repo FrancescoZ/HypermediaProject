@@ -1,4 +1,4 @@
-module.exports = function(dbConnection,initData){
+module.exports = function(dbConnection,initData,_){
   var doctorDbModule={
     init:function(){
       let doctorServiceList = require(initData + "docService.json");

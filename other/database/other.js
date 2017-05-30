@@ -1,4 +1,4 @@
-module.exports = function(dbConnection, initData){
+module.exports = function(dbConnection, initData,_){
   var otherDbModule ={
     init : function(){
       //initial data stored in json

@@ -1,4 +1,4 @@
-module.exports = function(dbConnection, initData){
+module.exports = function(dbConnection, initData,_){
   var areaDbModule = {
     init : function(){
       let areaList = require(initData + "area.json");

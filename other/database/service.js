@@ -1,4 +1,4 @@
-module.exports = function(dbConnection, initData){
+module.exports = function(dbConnection, initData,_){
   var serviceDbModule = {
     init : function(){
       let serviceList = require(initData + "service.json");

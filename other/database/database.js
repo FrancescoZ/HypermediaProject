@@ -20,11 +20,11 @@ const sqlDb = sqlDbFactory({
 
 //Submodule to keep the source small and clear, each one correspond to an entity in the Db
 //The connection string is passed and the folder were to find the file fo the initialization
-const doctorDb = require("./doctor.js")(sqlDb, initDataFolder);
-const serviceDb = require("./service.js")(sqlDb, initDataFolder);
-const areaDb = require("./area.js")(sqlDb, initDataFolder);
-const locationDb = require("./location.js")(sqlDb, initDataFolder);
-const otherDb = require("./other.js")(sqlDb, initDataFolder);
+const doctorDb = require("./doctor.js")(sqlDb, initDataFolder,_);
+const serviceDb = require("./service.js")(sqlDb, initDataFolder,_);
+const areaDb = require("./area.js")(sqlDb, initDataFolder,_);
+const locationDb = require("./location.js")(sqlDb, initDataFolder,_);
+const otherDb = require("./other.js")(sqlDb, initDataFolder,_);
 
 module.exports = {
 

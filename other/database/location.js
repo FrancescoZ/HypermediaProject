@@ -1,4 +1,4 @@
-module.exports = function(dbConnection, initData){
+module.exports = function(dbConnection, initData,_){
   var locationDbModule = {
     init : function(){
       let locationAreaList = require(initData + "locationArea.json");
