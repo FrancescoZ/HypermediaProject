@@ -1,7 +1,8 @@
 //database module
 // il modulo ha lo scopo di astrarre la tecnologia del database usata, in particolare questo modulo viene usato dai vari
 // controller per richiedere le diverse righe
-const initDataFolder = "../other/";
+const initDataFolder = "./init/";
+
 //sqlLite module
 const sqlDbFactory = require("knex");
 //paser from json to sqlDb module
@@ -13,18 +14,17 @@ const sqlDb = sqlDbFactory({
   debug: true,
   useNullAsDefault: true,
   connection: {
-    filename: './other/' + "hospital.sqlite"
+    filename: '../' + "hospital.sqlite"
   }
 });
 
 //Submodule to keep the source small and clear, each one correspond to an entity in the Db
 //The connection string is passed and the folder were to find the file fo the initialization
-const doctorDb = require("./database/doctor.js")(sqlDb, initDataFolder);
-const serviceDb = require("./database/service.js")(sqlDb, initDataFolder);
-const areaDb = require("./database/area.js")(sqlDb, initDataFolder);
-const locationDb = require("./database/location.js")(sqlDb, initDataFolder);
-const otherDb = require("./database/other.js")(sqlDb, initDataFolder);
-
+const doctorDb = require("./doctor.js")(sqlDb, initDataFolder);
+const serviceDb = require("./service.js")(sqlDb, initDataFolder);
+const areaDb = require("./area.js")(sqlDb, initDataFolder);
+const locationDb = require("./location.js")(sqlDb, initDataFolder);
+const otherDb = require("./other.js")(sqlDb, initDataFolder);
 
 module.exports = {
 
