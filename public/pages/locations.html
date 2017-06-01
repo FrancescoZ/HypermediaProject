@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Hospidif</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-  <!-- Bootstrap core CSS -->
-  <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <title>Hospidif</title>
 
-  <!-- Custom styles for this template -->
-  <link href="../assets/css/base.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="../assets/css/location.css" rel="stylesheet">
-
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/base.css" rel="stylesheet">
+    <link href="../assets/css/location.css" rel="stylesheet">
   </head>
-  <!-- NAVBAR
-================================================== -->
+
   <body>
+    <!-- NAVBAR
+================================================== -->
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -42,8 +41,11 @@
               <ul class="nav navbar-nav">
                 <li><a href="#">Services</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctors by <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctors <span class="caret"></span></a>
                   <ul class="dropdown-menu">
+                    <li><a href="#doctors/">Browse all doctors</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Filter by</li>
                     <li><a href="#doctors/areas">Areas</a></li>
                     <li><a href="#doctors/services">Services</a></li>
                     <li><a href="#doctors/locations">Locations</a></li>
@@ -63,26 +65,27 @@
       </div>
     </div>
 
-
-    <!-- Marketing messaging and featurettes
+    <!-- Location panel
 ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div id="locationsPanel" class="container marketing"></div>
+    <div id="locationsPanel" class="container location"></div>
 
+    <!-- FOOTER
+================================================== -->
 
-    <footer id="footer">
+    <footer class="container">
       <p class="pull-right"><a href="#">Back to top</a></p>
       <p>© 2016 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </footer>
 
 
-    <!-- Bootstrap core JavaScript
+    <!-- JavaScript
 ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../assets/js/location.js"></script>
 
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body></html>
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg>
+  </body>
+</html>

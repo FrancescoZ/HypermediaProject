@@ -1,10 +1,8 @@
 function getLocations(){
-/*  fetch('/location')
-    .then(function(response) {
-    return response.json();
-  })
-    .then(function(data) {
-    data.map(function(location){
+  /*fetch('/location')
+    .then(response => response.json())
+    .then(data => {
+    data.map((location) => {
       $('#locationsPanel').append(
         '<div class="row featurette">' +
         '<div class="col-md-7">' +
