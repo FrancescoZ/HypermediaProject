@@ -14,7 +14,7 @@ const sqlDb = sqlDbFactory({
   debug: true,
   useNullAsDefault: true,
   connection: {
-    filename: '../' + "hospital.sqlite"
+    filename: './other/' + "hospital.sqlite"
   }
 });
 

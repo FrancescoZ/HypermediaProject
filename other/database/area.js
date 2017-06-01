@@ -44,7 +44,7 @@ module.exports = function(dbConnection, initData,_){
             .then(() => {
               //fill the table just created
               Promise.all(
-                _.map(serviceAreaList, d => {
+                _.map(areaDoctorList, d => {
                   delete d.id;
                   return dbConnection("area_doctor").insert(d);
                 })
