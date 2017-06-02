@@ -1,23 +1,28 @@
 /* LOCATION CONTENT
 -------------------------------------------------- */
 
-.location {
-  padding-top: 175px;
+.doctor {
+  padding-top: 125px;
   margin-bottom: 20px;
   text-align: left;
 }
 
-.location .col-lg-4 {
+.doctor .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
 }
 
-.location h2 {
-  font-weight: normal;
+.doctor .row .col-md-7 .doctor-buttons {
+  margin-bottom: 20px;
+  text-align: center;
 }
-.location .col-lg-4 p {
-  margin-right: 10px;
-  margin-left: 10px;
+
+.doctor footer {
+    padding-top: 60px;
+}
+
+.doctor .featurette {
+    padding-top: 50px
 }
 
 
