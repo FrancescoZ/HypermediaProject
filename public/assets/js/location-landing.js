@@ -35,14 +35,6 @@ function init() {
   var location = locations["0"]
   document.getElementById("title").innerHTML = location.name;
   document.getElementById("address").innerHTML = location.address;
-  /*fetch(`/services?start=${start}&limit=${count}&sort=${sortby}`)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      clearTable();
-      data.map(addRow);
-    });*/
 }
 
 function clickMap() {
