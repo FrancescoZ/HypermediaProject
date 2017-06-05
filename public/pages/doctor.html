@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-        <title>Hospidif</title>
+    <title>Hospidif</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <link href="../assets/css/base.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/base.css" rel="stylesheet">
 
-      <!-- Custom styles for this template -->
-        <link href="../assets/css/doctor.css" rel="stylesheet">
-  
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/doctor.css" rel="stylesheet">
+
   </head>
 
   <body>
-      <!-- NAVBAR
+    <!-- NAVBAR
 ================================================== -->
     <div class="navbar-wrapper">
       <div class="container">
@@ -67,48 +67,52 @@
 
 
     <!-- Marketing messaging and featurettes
-    ================================================== -->
+================================================== -->
 
-    
+
     <!-- Wrap the rest of the page in another container to center all the content. -->
-      
     <div class="container">
       <button type="button" class="btn btn-xs btn-primary back" id="back-button" onClick="goBack()"></button>
-        <h1 id="name"></h1>
-        <div class="row featurette">
-            <div class="col-md-5">
-              <img class="img doctor-img" alt="doctor image" src="../assets/img/doctor_amato.jpg">
-              <h3>CONTACTS:</h3>
+      <div class="row featurette">
+        <div class="col-md-4">
+          <h1 id="name"></h1>
+          <img class="img doctor-img" alt="doctor image" src="../assets/img/doctor_amato.jpg">
+          <div class="panel panel-default contact">
+            <div class="panel-heading">
+              <h3 class="panel-title">CONTACTS</h3>
+            </div>
+            <div class="panel-body">
               <h4 id="contacts"></h4>
             </div>
-            <div class="col-md-7">
-              
-              <ul class="nav nav-tabs" role="tablist">
-                <li id="button-about" role="presentation"><a onClick="clickAbout()">About</a></li>
-                <li id="button-working-hours" role="presentation"><a onClick="clickWorkingHours()">Working Hours</a></li>
-                <li id="button-related-services" role="presentation"><a onClick="clickRelatedServices()">Related Services</a></li>
-              </ul>
-              
-              <div class="doctor-panel" id="doctor-about">
-                <p id="about"></p>
-              </div>
-                
-              <div class="doctor-panel" id="doctor-working-hours">
-                <p id="working-hours"></p>
-              </div>
-                
-              <div class="doctor-panel" id="doctor-related-services">
-                <h4>Operating Services</h4>
-                <p id="operating-services"></p>
-                <h4>Area Responsible</h4>
-                <p id="area-responsible"></p>
-                <h4>Service Responsible</h4>
-                <p id="service-responsible"></p>
-              </div>
-              
-            </div>
-          
+          </div> 
+        </div>
+        <div class="col-md-8">
+          <ul class="nav nav-tabs" role="tablist">
+            <li id="button-about" role="presentation"><a onClick="clickAbout()">About</a></li>
+            <li id="button-working-hours" role="presentation"><a onClick="clickWorkingHours()">Working Hours</a></li>
+            <li id="button-related-services" role="presentation"><a onClick="clickRelatedServices()">Related Services</a></li>
+          </ul>
+
+          <div class="doctor-panel" id="doctor-about">
+            <p id="about"></p>
           </div>
+
+          <div class="doctor-panel" id="doctor-working-hours">
+            <p id="working-hours"></p>
+          </div>
+
+          <div class="doctor-panel" id="doctor-related-services">
+            <h4>Operating Services</h4>
+            <p id="operating-services"></p>
+            <h4>Area Responsible</h4>
+            <p id="area-responsible"></p>
+            <h4>Service Responsible</h4>
+            <p id="service-responsible"></p>
+          </div>
+
+        </div>
+
+      </div>
 
 
       <!-- FOOTER -->
@@ -120,11 +124,11 @@
 
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
+================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../assets/js/doctor.js"></script>
-  
 
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body></html>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body></html>

@@ -28,13 +28,46 @@ function init() {
   document.getElementById("contacts").innerHTML = "Phone:" + egdoctor.phone + "<br>Email:" + egdoctor.email;
   document.getElementById("about").innerHTML = egdoctor.bio;
   //TODO come strutturare il paragrafo delle working hours
-  document.getElementById("working-hours").innerHTML = egdoctor.how_to;
+  document.getElementById("working-hours").innerHTML = "";
   //TODO come ricavare dal database i servizi relativi al dottore
   document.getElementById("operating-services").innerHTML = "";
   document.getElementById("area-responsible").innerHTML = "";
   document.getElementById("service-responsible").innerHTML = "";
   // TODO il testo da mostrare dipende dalla pagina precedente
   document.getElementById("back-button").innerHTML = "&larr; Return to " + "list"
+  $('#working-hours').append(
+          `<table class="table table-striped">
+            <tbody>
+              <tr>
+                <th>Sunday:</th>
+                <th>07:00 AM - 8:30 AM</th>
+              </tr>
+              <tr>
+                <td>Monday:</td>
+                <td>close</td>
+              </tr>
+              <tr>
+                <th>Tuesday:</th>
+                <th>07:00 AM - 8:30 AM</th>
+              </tr>
+              <tr>
+                <td>Wednesday:</td>
+                <td>close</td>
+              </tr>
+              <tr>
+                <th>Thurday:</th>
+                <th>07:00 AM - 8:30 AM</th>
+              </tr>
+              <tr>
+                <td>Friday:</td>
+                <td>close</td>
+              </tr>
+              <tr>
+                <th>Saturday:</th>
+                <th>07:00 AM - 8:30 AM</th>
+              </tr>
+            </tbody>
+          </table>`)
 }
 
 // TODO la funzione deve riportare nella pagina precedente
