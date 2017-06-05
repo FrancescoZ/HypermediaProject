@@ -14,7 +14,7 @@ const eglocations = [
     "address": "20 Deans Yd, Westminster, London SW1P 3PA, Regno Unito",
     "info": "Morbi urna nulla, congue tempor posuere at, mollis ut est. Sed semper turpis ligula, quis consectetur tortor fringilla vel. Maecenas id neque ullamcorper nunc malesuada porta bibendum ac tortor. Fusce aliquam tincidunt felis. Sed commodo mollis libero a scelerisque. Nulla condimentum blandit nisl, vitae aliquet enim maximus ut. Suspendisse a efficitur orci. Suspendisse nec velit congue, blandit felis in, feugiat eros. Proin a eros sodales, placerat nibh at, aliquam turpis. Phasellus fermentum lobortis purus rhoncus porta. Sed lacus neque, tristique tempus nibh vitae, mollis rutrum nunc. Duis vestibulum augue in purus imperdiet fringilla. Quisque iaculis tortor lacus, viverra convallis erat auctor in. Sed vehicula felis nec turpis aliquam gravida.",
     "how_to": "Quisque non sapien ac metus feugiat consequat placerat et nunc. Vestibulum et diam in sapien egestas porttitor. Integer in ex et diam posuere pretium. Ut lacinia, libero non malesuada elementum, mi lectus consequat sapien, non tincidunt lectus erat sed elit. Sed vitae leo quis sapien aliquam porta. Sed at massa quis urna mattis ultricies. Donec purus massa, bibendum ac neque sed, scelerisque ullamcorper erat.",
-    "lat": 51.5285582,
+    "lat": 30.5285582,
     "long": -0.2416991
   },
   {
@@ -23,8 +23,8 @@ const eglocations = [
     "address": "Westminster, Londra SW1A 1AA, Regno Unito",
     "info": "Morbi urna nulla, congue tempor posuere at, mollis ut est. Sed semper turpis ligula, quis consectetur tortor fringilla vel. Maecenas id neque ullamcorper nunc malesuada porta bibendum ac tortor. Fusce aliquam tincidunt felis. Sed commodo mollis libero a scelerisque. Nulla condimentum blandit nisl, vitae aliquet enim maximus ut. Suspendisse a efficitur orci. Suspendisse nec velit congue, blandit felis in, feugiat eros. Proin a eros sodales, placerat nibh at, aliquam turpis. Phasellus fermentum lobortis purus rhoncus porta. Sed lacus neque, tristique tempus nibh vitae, mollis rutrum nunc. Duis vestibulum augue in purus imperdiet fringilla. Quisque iaculis tortor lacus, viverra convallis erat auctor in. Sed vehicula felis nec turpis aliquam gravida.",
     "how_to": "Quisque non sapien ac metus feugiat consequat placerat et nunc. Vestibulum et diam in sapien egestas porttitor. Integer in ex et diam posuere pretium. Ut lacinia, libero non malesuada elementum, mi lectus consequat sapien, non tincidunt lectus erat sed elit. Sed vitae leo quis sapien aliquam porta. Sed at massa quis urna mattis ultricies. Donec purus massa, bibendum ac neque sed, scelerisque ullamcorper erat.",
-    "lat": 51.5285582,
-    "long": -0.2416991
+    "lat": 10.5285582,
+    "long": -50.2416991
   }
 ]
 
@@ -60,6 +60,38 @@ const egservices = [
     "price": "100€",
     "promotion": "No promotions",
     "celebrity": 4
+  },
+  {
+    "id": 5,
+    "name": "Service 5",
+    "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+    "price": "100€",
+    "promotion": "No promotions",
+    "celebrity": 5
+  },
+  {
+    "id": 6,
+    "name": "Service 6",
+    "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+    "price": "100€",
+    "promotion": "No promotions",
+    "celebrity": 6
+  },
+  {
+    "id": 6,
+    "name": "Service 6",
+    "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+    "price": "100€",
+    "promotion": "No promotions",
+    "celebrity": 6
+  },
+  {
+    "id": 6,
+    "name": "Service 6",
+    "description": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+    "price": "100€",
+    "promotion": "No promotions",
+    "celebrity": 6
   }
 ]
 
@@ -72,8 +104,9 @@ function init(){
     $('#locationsPanel').append(
       `<div class="row">
         <div class="col-md-4">
-          <img class="img-responsive center-block" alt="500x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1YzU5YTQ2ZjQzIHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTVjNTlhNDZmNDMiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEzMzMzMTI5ODgyODEyIiB5PSIyNjEuMjc5OTk5NTQyMjM2MzQiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+          <div class="map" id="map${eglocations[i].id}"></div>
         </div>
+        
         <div class="col-md-8">
           <div class="well">
               <h2>${eglocations[i].name} <br><span class="h4 text-muted">${eglocations[i].address}</span></h2>
@@ -96,14 +129,33 @@ function clickLocation(id) {
   console.log(id)
 }
 
+function initMap() {
+  for (var i in eglocations) {
+    var position = {}
+    position['lat'] = eglocations[i].lat
+    position['lng'] = eglocations[i].long
+    var map = new google.maps.Map(document.getElementById("map" + eglocations[i].id), {
+      zoom: 12,
+      center: position,
+      disableDefaultUI: true,
+      draggable: false,
+      scrollwheel : false
+    })
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
+    })
+  }
+}
+
 function getServicesPanel(id) {
   var html = []
   for (var i in egservices) {
-    html.push(`<a href="">${egservices[i].name}</a><br>`)
-    if(i > 5) {
-      html.push(`<a href="">More...</a><br>`)
+    if(i > 3) {
+      html.push(`<a href="">more...</a><br>`)
       break
     }
+    html.push(`<a href="">${egservices[i].name}</a><br>`)    
   }
   return html.join("")
 }

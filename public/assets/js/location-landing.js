@@ -67,6 +67,20 @@ function init() {
   }
 }
 
+function initMap() {
+    var position = {}
+    position['lat'] = eglocation.lat
+    position['lng'] = eglocation.long
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: position,
+    })
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
+    })
+}
+
 // TODO la funzione deve riportare nella pagina precedente
 function goBack(){
   console.log("back")
@@ -82,7 +96,7 @@ function clickMap() {
   $('#button-info').removeClass("active")
   $('#location-map').show();
   $('#button-map').addClass("active")
-
+  initMap()
   // TODO implementare api google maps
 }
 
