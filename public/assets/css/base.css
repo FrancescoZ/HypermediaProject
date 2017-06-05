@@ -17,6 +17,15 @@ footer {
   position: absolute;
 }
 
+.page-header {
+  margin: -20px 0 20px;
+}
+
+.map {
+  height: 400px;
+  width: 100%;
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   body {
     padding-top: 200px;
