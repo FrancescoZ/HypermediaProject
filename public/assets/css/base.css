@@ -6,6 +6,7 @@ body {
   padding-top: 100px;
   padding-bottom: 40px;
   color: #5a5a5a;
+  overflow-x: hidden;
 }
 
 footer {

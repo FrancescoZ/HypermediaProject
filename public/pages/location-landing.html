@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Team 10422848">
+    <!--    TODO cambiare icona-->
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
     <title>Hospidif</title>
@@ -40,11 +39,11 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#">Services</a></li>
+                <li><a href="#services">Services</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctors <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#doctors/">Browse all doctors</a></li>
+                    <li><a href="#doctors/">All doctors</a></li>
                     <li role="separator" class="divider"></li>
                     <li class="dropdown-header">Filter by</li>
                     <li><a href="#doctors/areas">Areas</a></li>
@@ -69,17 +68,17 @@
     <!-- Location panel
 ================================================== -->
     <div class="container">
+      <button type="button" class="btn btn-xs btn-primary back" id="back-button" onClick="goBack()"></button>
       <div class="jumbotron">
         <div class="row">
           <div class=col-md-9>
-            <h1 id="title">London Westminster</h1>
-            <p id="address">56 Buckingam Gate, Westminester, London, United Kingdom</p>
+            <h1 id="title">Title</h1>
+            <p id="address"></p>
           </div>
           <div class=col-md-3>            
-            <img class="img-circle center-block center-cropped" src="../assets/img/westminster_placeholder.jpg">
+            <img class="img-circle center-block center-cropped" alt="location img" src="../assets/img/westminster_placeholder.jpg">
           </div>
         </div>
-
       </div>
 
       <ul class="nav nav-tabs" role="tablist">
@@ -88,41 +87,19 @@
       </ul>
 
       <div class="location-panel" id="location-info">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante felis, molestie at risus eu, porttitor efficitur eros. Mauris nec tempus felis. Suspendisse ut sapien luctus, sagittis elit in, ultricies dolor. Curabitur id ipsum interdum, laoreet tellus eget, semper elit. Phasellus laoreet porta ex. Ut non nibh suscipit, mattis risus id, aliquam libero. Aenean quis nisl facilisis tortor scelerisque sagittis. Morbi lorem augue, luctus condimentum nunc faucibus, consectetur eleifend lacus. Curabitur cursus purus vel ligula scelerisque sagittis. Aliquam condimentum mattis tellus, et mollis leo placerat eu. Cras iaculis metus ut pulvinar scelerisque. Quisque ac neque hendrerit, bibendum justo in, pretium ex. In hac habitasse platea dictumst. Ut rutrum, felis sed faucibus euismod, nisl nisl interdum orci, ac tempus lacus eros eu nibh. Phasellus convallis ultricies pharetra.</p>
+        <p id="description"></p>
 
         <hr class="content-divider">
 
         <h2>Available services</h2>
-        <div class="row">
-          <div class="col-xs-6 col-lg-4">
-            <h3>Chemotherapy</h3>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
-          </div><!--/.col-xs-6.col-lg-4-->
-          <div class="col-xs-6 col-lg-4">
-            <h3>Radiotherapy</h3>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
-          </div><!--/.col-xs-6.col-lg-4-->
-          <div class="col-xs-6 col-lg-4">
-            <h3>Vascular surgery</h3>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
-          </div><!--/.col-xs-6.col-lg-4-->
-          <div class="col-xs-6 col-lg-4">
-            <h3>Vascular surgery</h3>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
-          </div><!--/.col-xs-6.col-lg-4-->
-
-        </div><!--/row-->
+        <div class="row" id="services-panel"></div>
       </div>
 
-      <div id="location-map" class="location-panel">        
+      <div class="location-panel" id="location-map" >        
         <div class="row">          
           <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2>Directions <span class="text-muted">It'll blow your mind.</span></h2>
+            <p id="how-to"></p>
           </div>
           <div class="col-md-5">
             <img class="img-responsive center-block" alt="500x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1YzU5YTQ2ZjQzIHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTVjNTlhNDZmNDMiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEzMzMzMTI5ODgyODEyIiB5PSIyNjEuMjc5OTk5NTQyMjM2MzQiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
@@ -137,17 +114,14 @@
 
     <footer class="container">
       <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>© 2016 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      <p>© 2017 Hospidif, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact us</a></p>
     </footer>
 
 
     <!-- JavaScript
 ================================================== -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../assets/js/location-landing.js"></script>
-
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg>
   </body>
 </html>
