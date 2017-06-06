@@ -25,7 +25,7 @@ function init() {
   // TODO la location viene chiesta al server
   // TODO inizializzare foto della location
   document.getElementById("name").innerHTML = egdoctor.name;
-  document.getElementById("contacts").innerHTML = "Phone:" + egdoctor.phone + "<br>Email:" + egdoctor.email;
+  document.getElementById("contacts").innerHTML = "&#9742; " + egdoctor.phone + "<br>&#9993 " + egdoctor.email;
   document.getElementById("about").innerHTML = egdoctor.bio;
   //TODO come strutturare il paragrafo delle working hours
   document.getElementById("working-hours").innerHTML = "";

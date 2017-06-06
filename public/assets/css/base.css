@@ -21,6 +21,11 @@ footer {
   position: absolute;
 }
 
+.jumbotron {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
 .page-header {
   margin: -20px 0 20px;
 }

@@ -2,20 +2,23 @@
 -------------------------------------------------- */
 
 .doctor-panel {
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-bottom: 30px;
-  padding-right: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
   border-right: 1px solid #eee;
 }
 
-.doctor-img {
-  width: 250px;
-  height: 300px;
-}
-
 .contact {
   margin-top: 15px;
+}
+
+.center-cropped {
+  border-radius: 10px;
+  width: 175px;
+  height: 175px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }

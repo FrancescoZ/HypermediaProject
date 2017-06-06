@@ -17,9 +17,12 @@
 
     <!-- Custom styles for this template -->
     <link href="../assets/css/base.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/offcanvas.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/doctor.css" rel="stylesheet">
+    <link href="../assets/css/doctor-in-alphabetic-order.css" rel="stylesheet">
 
   </head>
 
@@ -72,65 +75,31 @@
 
     <!-- Wrap the rest of the page in another container to center all the content. -->
     <div class="container">
-      <button type="button" class="btn btn-xs btn-primary back" id="back-button" onClick="goBack()"></button>
-      <div class="jumbotron">
-        <div class="row">
-          <div class=col-md-9>
-            <h1 id="name"></h1>
-            <p id="contacts"></p>
-          </div>
-          <div class=col-md-3>            
-            <img class="img-responsive center-block center-cropped" alt="location img" src="../assets/img/doctor_amato.jpg">
-          </div>
-        </div>
+      
+      <div class="page-header">
+        <h1 id="pageHeader"></h1>
       </div>
-        <div class="container">
-          <ul class="nav nav-tabs" role="tablist">
-            <li id="button-about" role="presentation"><a onClick="clickAbout()">About</a></li>
-            <li id="button-working-hours" role="presentation"><a onClick="clickWorkingHours()">Working Hours</a></li>
-            <li id="button-related-services" role="presentation"><a onClick="clickRelatedServices()">Related Services</a></li>
-          </ul>
-
-          <div class="doctor-panel" id="doctor-about">
-            <p id="about"></p>
+      
+      <div class="row row-offcanvas row-offcanvas-right">
+        
+        <div class="col-xs-12 col-sm-9">
+          
+          <div class="row">
+            <div id="doctorsPanelLeft"></div>
           </div>
-
-          <div class="doctor-panel" id="doctor-working-hours">
-            <p id="working-hours"></p>
-          </div>
-
-          <div class="doctor-panel" id="doctor-related-services">
-            <div class="panel panel-default contact">
-              <div class="panel-heading">
-                <h3 class="panel-title">Operating Services</h3>
-              </div>
-              <div class="panel-body">
-                <p id="operating-services"></p>
-              </div>
-            </div>
-            <div class="panel panel-default contact">
-              <div class="panel-heading">
-                <h3 class="panel-title">Area Responsible</h3>
-              </div>
-              <div class="panel-body">
-                <p id="area-responsible"></p>
-              </div>
-            </div>
-            <div class="panel panel-default contact">
-              <div class="panel-heading">
-                <h3 class="panel-title">Service Responsible</h3>
-              </div>
-              <div class="panel-body">
-                <p id="service-responsible"></p>
-              </div>
-            </div>
-          </div>
-
+          
         </div>
-
+        
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          
+          <div class="list-group">
+            <div id="doctorsPanelRight"></div>
+          </div>
+          
+        </div>
+        
       </div>
-
-
+      
       <!-- FOOTER -->
       <footer class="container">
         <p class="pull-right"><a href="#">Back to top</a></p>
@@ -144,7 +113,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
-    <script src="../assets/js/doctor.js"></script>
+    <script src="../assets/js/doctor-in-alphabetic-order.js"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body></html>
