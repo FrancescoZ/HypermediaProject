@@ -2,16 +2,18 @@
 -------------------------------------------------- */
 
 .doctor-panel {
-  margin-top: 30px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
 .doctor-img {
   width: 250px;
   height: 300px;
-}
-
-.col-md-4 {
-  border-right: 1px solid #eee;
 }
 
 .contact {

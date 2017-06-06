@@ -68,6 +68,14 @@ function init() {
               </tr>
             </tbody>
           </table>`)
+
+  $('#operating-services').append(
+    `<a href="">Vascular surgery</a><br>
+    <a href="">Radiotherapy</a><br>
+    <a href="">Electrocardiography</a><br>`)
+  $('#area-responsible').append(`<a href="">Cardiology</a><br>`)
+  $('#service-responsible').append(`<a href="">Vascular surgery</a><br>`)
+  
 }
 
 // TODO la funzione deve riportare nella pagina precedente
