@@ -2,11 +2,15 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 body {
   padding-top: 100px;
   padding-bottom: 40px;
   color: #5a5a5a;
-  overflow-x: hidden;
 }
 
 footer {
@@ -24,6 +28,13 @@ footer {
 .map {
   height: 400px;
   width: 100%;
+}
+
+.center-cropped {
+  width: 150px;
+  height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

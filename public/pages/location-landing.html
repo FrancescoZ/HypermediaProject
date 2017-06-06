@@ -16,8 +16,6 @@
 
     <!-- Custom styles for this template -->
     <link href="../assets/css/base.css" rel="stylesheet">
-    <link href="../assets/css/location-landing.css" rel="stylesheet">
-
   </head>
 
   <body>
@@ -69,6 +67,7 @@
 ================================================== -->
     <div class="container">
       <button type="button" class="btn btn-xs btn-primary back" id="back-button" onClick="goBack()"></button>
+      
       <div class="jumbotron">
         <div class="row">
           <div class=col-md-9>
@@ -82,23 +81,29 @@
       </div>
 
       <ul class="nav nav-tabs" role="tablist">
-        <li id="button-info" role="presentation"><a onClick="clickInfo()">Information</a></li>
-        <li id="button-map" role="presentation"><a onClick="clickMap()">How to reach the location</a></li>
+        <li id="button-info" role="presentation"><a class="btn" onClick="clickInfo()">Information</a></li>
+        <li id="button-map" role="presentation"><a class="btn" onClick="clickMap()">How to reach the location</a></li>
       </ul>
 
-      <div class="location-panel" id="location-info">
+      <div id="location-info" style="padding-top: 30px">
         <p id="description"></p>
 
-        <hr class="content-divider">
-
-        <h2>Available services</h2>
-        <div class="row" id="services-panel"></div>
+        <br>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">Available services</h2>
+            </div>
+            <div class="panel-body">
+              <div class="row" id="services-panel"></div>
+            </div>
+          </div>        
       </div>
 
-      <div class="location-panel" id="location-map" >        
+      <div id="location-map" style="padding-top: 30px">        
         <div class="row">          
           <div class="col-md-7">
-            <h2>Directions <span class="text-muted">It'll blow your mind.</span></h2>
+            <h2>Directions</h2>
             <p id="how-to"></p>
           </div>
           <div class="col-md-5">
