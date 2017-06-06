@@ -64,16 +64,16 @@ function init() {
   for (var i in egdoctors) {
     if (i == 0) {
       $('#doctors-panel').append(
-      `<div class="col-xs-6 col-md-3" style="text-align:center;"><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="100" width="100"><h4>${egdoctors[i].name}</h4><p><a class="btn btn-primary" onClick="clickDoctor(${egdoctors[i].id})" role="button">View details &raquo;</a></p></div>`)
+      `<div class="col-sm-6 col-md-3" style="text-align:center;"><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="100" width="100"><h4>${egdoctors[i].name}</h4><p><a class="btn btn-primary" onClick="clickDoctor(${egdoctors[i].id})" role="button">View details &raquo;</a></p></div>`)
       continue
     }
     $('#doctors-panel').append(
-      `<div class="col-xs-6 col-md-3" style="text-align:center;"><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="100" width="100"><h4>${egdoctors[i].name}</h4><p><a class="btn btn-info" onClick="clickDoctor(${egdoctors[i].id})" role="button">View details &raquo;</a></p></div>`)
+      `<div class="col-sm-6 col-md-3" style="text-align:center;"><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="100" width="100"><h4>${egdoctors[i].name}</h4><p><a class="btn btn-info" onClick="clickDoctor(${egdoctors[i].id})" role="button">View details &raquo;</a></p></div>`)
   }
 
   for (var i in eglocations) {
     $('#locations-panel').append(
-      `<div class="col-xs-6 col-md-3" style="text-align:center;"><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="100" width="100"><h4>${eglocations[i].name}</h4><p><a class="btn btn-info" onClick="clickLocation(${eglocations[i].id})" role="button">View details &raquo;</a></p></div>`)
+      `<div class="col-sm-6 col-md-3" style="text-align:center;"><img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="100" width="100"><h4>${eglocations[i].name}</h4><p><a class="btn btn-info" onClick="clickLocation(${eglocations[i].id})" role="button">View details &raquo;</a></p></div>`)
   }
 }
 
