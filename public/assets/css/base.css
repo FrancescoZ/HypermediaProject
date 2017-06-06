@@ -21,6 +21,7 @@ footer {
   position: absolute;
 }
 
+<<<<<<< HEAD
 .jumbotron {
   padding-bottom: 30px;
   padding-top: 30px;
@@ -28,6 +29,12 @@ footer {
 
 .page-header {
   margin: -20px 0 20px;
+=======
+.section-header {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;  
+>>>>>>> 57d8a7d446f614d7924355a6b6711484cd28bc0a
 }
 
 .map {
@@ -40,18 +47,6 @@ footer {
   height: 150px;
   background-position: center center;
   background-repeat: no-repeat;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  body {
-    padding-top: 200px;
-  }
-}
-
-@media (max-width: 767px) {
-  body {
-    padding-top: 70px;
-  }
 }
 
 /* CUSTOMIZE THE NAVBAR
@@ -82,6 +77,12 @@ footer {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
+@media (max-width: 767px) {
+  body {
+    padding-top: 70px;
+  }
+}
+
 @media (min-width: 768px) {
   /* Navbar positioning foo */
   .navbar-wrapper {
@@ -94,10 +95,12 @@ footer {
   .navbar-wrapper .navbar {
     padding-right: 0;
     padding-left: 0;
-  }
-
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
     border-radius: 4px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    padding-top: 200px;
   }
 }
