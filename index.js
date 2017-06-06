@@ -25,6 +25,8 @@ app.get("/news", function(req, res) {
   //Send the select to the database
   db.select("news",function(result) {
     res.send(JSON.stringify(result));
+  },function(error){
+    console.log(error);
   },start,limit);
 });
 
