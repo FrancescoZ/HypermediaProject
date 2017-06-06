@@ -1,6 +1,5 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
-/* Padding below the footer and lighter body text */
 
 html {
   overflow-y: scroll;
@@ -21,7 +20,6 @@ footer {
   position: absolute;
 }
 
-<<<<<<< HEAD
 .jumbotron {
   padding-bottom: 30px;
   padding-top: 30px;
@@ -29,12 +27,12 @@ footer {
 
 .page-header {
   margin: -20px 0 20px;
-=======
+}
+
 .section-header {
   margin-top: 100px;
   margin-bottom: 50px;
-  text-align: center;  
->>>>>>> 57d8a7d446f614d7924355a6b6711484cd28bc0a
+  text-align: center;
 }
 
 .map {
@@ -52,7 +50,6 @@ footer {
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -61,7 +58,6 @@ footer {
   z-index: 20;
 }
 
-/* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
@@ -84,7 +80,6 @@ footer {
 }
 
 @media (min-width: 768px) {
-  /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
   }
