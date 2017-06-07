@@ -48,7 +48,7 @@ module.exports = {
   *   params[1]:
   * retFunction: the function to asynchronsly return the results
   */
-  select : function(objType,retFunction,errFunction=null,start=null,limit=null,orderBy=null,params=null){
+  select : function(objType,retFunction,errFunction=null,start=0,limit=1000,orderBy=null,params=null){
     switch(objType){
       case "news":
         otherDb.selectNews(start, limit,  retFunction, errFunction);
