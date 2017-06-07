@@ -57,7 +57,7 @@
 ================================================== -->
     <div class="container">
       <button type="button" class="btn btn-xs btn-primary back" id="back-button" onClick="goBack()"></button>
-      
+
       <div class="jumbotron">
         <div class="row">
           <div class=col-md-9>
@@ -65,7 +65,7 @@
             <p id="address"></p>
           </div>
           <div class=col-md-3>            
-            <img class="img-circle center-block center-img" alt="location img" src="../assets/img/westminster_placeholder.jpg">
+            <img class="img-circle center-block center-img elevate" height="150px" width="150px" alt="location img" src="../assets/img/location.png">
           </div>
         </div>
       </div>
@@ -75,12 +75,12 @@
         <li id="button-map" role="presentation"><a class="btn" onClick="clickMap()">How to reach the location</a></li>
       </ul>
 
-      <div id="location-info" style="padding-top: 30px">
-        <p id="description"></p>
-
-        <br>
-        
-        <div class="panel panel-default">
+      <div class="panel-tab">
+        <div id="location-info">
+          <p id="description"></p>
+          <br>
+          
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h2 class="panel-title">Available services</h2>
             </div>
@@ -88,20 +88,20 @@
               <div class="row" id="services-panel"></div>
             </div>
           </div>        
-      </div>
-
-      <div id="location-map" style="padding-top: 30px">        
-        <div class="row">          
-          <div class="col-md-7">
-            <h2>Directions</h2>
-            <p id="how-to"></p>
-          </div>
-          <div class="col-md-5">
-            <div class="map" id="map"></div>
-          </div>
         </div>
-      </div>     
 
+        <div id="location-map">        
+          <div class="row">          
+            <div class="col-md-7">
+              <h2>Directions</h2>
+              <p id="how-to"></p>
+            </div>
+            <div class="col-md-5">
+              <div class="map" id="map"></div>
+            </div>
+          </div>
+        </div> 
+      </div>
     </div>
 
     <!-- FOOTER

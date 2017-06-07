@@ -63,7 +63,7 @@ function init() {
   // TODO i servizi vengono chiesti al server
   for (var i in egservices) {
     $('#services-panel').append(
-      `<div class="col-sm-6 col-md-4"><h3>${egservices[i].name}</h3><p>${egservices[i].description}</p><p><a class="btn btn-info" onClick="clickService(${egservices[i].id})" role="button">View details &raquo;</a></p></div>`)
+      `<div class="col-sm-6 col-md-4 featurette"><h3>${egservices[i].name}</h3><p>${egservices[i].description}</p><p><a class="btn btn-info" onClick="clickService(${egservices[i].id})" role="button">View details &raquo;</a></p></div>`)
   }
 }
 

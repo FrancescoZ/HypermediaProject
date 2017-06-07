@@ -17,7 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="../assets/css/base.css" rel="stylesheet">														 
   </head>
-  
+
   <body>
     <!-- NAVBAR
 ================================================== -->
@@ -65,7 +65,7 @@
             <p id="area"></p>
           </div>
           <div class=col-md-3>            
-            <img class="center-block center-img" alt="location img" src="../assets/img/health.png">
+            <img class="img-circle center-block center-img elevate" height="150" width="150" alt="location img" src="../assets/img/service.png">
           </div>
         </div>
       </div>
@@ -76,36 +76,39 @@
         <li id="button-book" role="presentation" class="pull-right" onClick="book()"><a class="btn btn-success">Make a reservation</a></li>
       </ul>
 
-      <div id="service-info" style="padding-top: 30px">
-        <p id="description"></p>
-        
-        <br>
+      <div class="panel-tab">
+        <div id="service-info">
+          <p id="description"></p>
+          <br>
 
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Doctors</h2>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">Doctors</h2>
+            </div>
+            <div class="panel-body">
+              <div class="row" id="doctors-panel"></div>
+            </div>
           </div>
-          <div class="panel-body">
-            <div class="row" id="doctors-panel"></div>
-          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">Locations</h2>
+            </div>
+            <div class="panel-body">
+              <div class="row" id="locations-panel"></div>
+            </div>
+          </div> 
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Locations</h2>
-          </div>
-          <div class="panel-body">
-            <div class="row" id="locations-panel"></div>
-          </div>
+
+        <div id="service-prices">        
+          <h2>Prices</h2>
+          <p id="price"></p>
+          <br>
+          <h2>Promotions</h2>
+          <p id="promotion"></p>
         </div> 
       </div>
 
-      <div id="service-prices">        
-        <p class="h3">Prices</p>
-        <p id="price"></p>
-        <br>
-        <p class="h3">Promotions</p>
-        <p id="promotion"></p>
-      </div>     
+
 
     </div>
 

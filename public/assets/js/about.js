@@ -13,14 +13,23 @@ function init() {
   $('#projects-btn').removeClass("active")
 
   for (var i in egabout) {
+    if (i != 0) {
+      $("#about-panel").append(`<br>`)
+    }
     $("#about-panel").append(getParagraph(egabout[i], description))
   }
 
   for (var i in egwhere) {
+    if (i != 0) {
+      $("#where-panel").append(`<br>`)
+    }
     $("#where-panel").append(getParagraph(egwhere[i], description))
   }
 
   for (i = 0; i < 4; i++) {
+    if (i != 0) {
+      $("#projects-panel").append(`<br>`)
+    }
     $("#projects-panel").append(getParagraph(egprojects + ` ${i + 1}`, description))
   }  
 }

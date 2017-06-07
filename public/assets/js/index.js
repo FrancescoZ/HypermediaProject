@@ -121,7 +121,7 @@ function getNews() {
 function getServices() {
   for (var i in egservices) {
     $('#services-panel').append(
-      `<div class="col-sm-6 col-md-4">
+      `<div class="col-sm-6 col-md-4 featurette">
         <h2>${egservices[i].name}</h2>
         <p>${egservices[i].description}</p>
         <p><a class="btn btn-info" href="#" onClick="clickService(${egservices[i].id});return false;" role="button">View details &raquo;</a></p>
@@ -132,8 +132,8 @@ function getServices() {
 function getDoctors() {
   for (var i in egdoctors) {
     $('#doctors-panel').append(
-      `<div class="col-sm-6 col-md-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
+      `<div class="col-sm-6 col-md-4 featurette">
+          <img class="img-circle center-img elevate" src="./assets/img/doctor.png" alt="Generic placeholder image" height="140" width="140">
           <h2>${egdoctors[i].name}</h2>
           <p><a class="btn btn-info" href="#" onClick="clickDoctor(${egdoctors[i].id});return false" role="button">View details &raquo;</a></p>
       </div>`)

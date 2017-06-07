@@ -12,10 +12,6 @@ body {
   color: #5a5a5a;
 }
 
-footer {
-  padding-top: 50px;
-}
-
 .back {
   position: absolute;
 }
@@ -29,10 +25,31 @@ footer {
   margin: -20px 0 20px;
 }
 
+.section, .panel-tab {
+  margin-bottom: 75px;
+}
+
 .section-header {
-  margin-top: 100px;
   margin-bottom: 50px;
   text-align: center;
+}
+
+.panel-tab {
+  padding-top: 30px;
+}
+
+.panel-tab h2 {
+  margin-top: 0;
+}
+
+.featurette {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.featurette p {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .map {
@@ -49,10 +66,13 @@ footer {
 }
 
 .center-img {
-  object-fit: cover;
+  object-fit: scale-down;
   object-position: center;
-  width: 150px;
-  height: 150px;
+  background-color: white;
+}
+
+.elevate {
+  box-shadow: 0 2px 5px #888888;  
 }
 
 /* CUSTOMIZE THE NAVBAR
