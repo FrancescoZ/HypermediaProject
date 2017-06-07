@@ -11,9 +11,11 @@ let serverPort = process.env.PORT || 5000;
 
 
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public/pages"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // /* Register REST entry point */
 //News, get news to show in the home page or in the news list
@@ -25,6 +27,8 @@ app.get("/news", function(req, res) {
   //Send the select to the database
   db.select("news",function(result) {
     res.send(JSON.stringify(result));
+  },function(error){
+    console.log(error);
   },start,limit);
 });
 
