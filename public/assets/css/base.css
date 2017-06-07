@@ -1,6 +1,10 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
-/* Padding below the footer and lighter body text */
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
 body {
   padding-top: 100px;
@@ -12,11 +16,48 @@ footer {
   padding-top: 50px;
 }
 
+.back {
+  position: absolute;
+}
+
+.jumbotron {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.page-header {
+  margin: -20px 0 20px;
+}
+
+.section-header {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.map {
+  height: 400px;
+  width: 100%;
+}
+
+/*deprecated*/
+.center-cropped {
+  width: 150px;
+  height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.center-img {
+  object-fit: cover;
+  object-position: center;
+  width: 150px;
+  height: 150px;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -25,7 +66,6 @@ footer {
   z-index: 20;
 }
 
-/* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
@@ -41,8 +81,13 @@ footer {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
+@media (max-width: 767px) {
+  body {
+    padding-top: 70px;
+  }
+}
+
 @media (min-width: 768px) {
-  /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
   }
@@ -53,10 +98,12 @@ footer {
   .navbar-wrapper .navbar {
     padding-right: 0;
     padding-left: 0;
-  }
-
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
     border-radius: 4px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    padding-top: 200px;
   }
 }

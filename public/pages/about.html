@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="Team 10422848">
+    <!--    TODO cambiare icona-->
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Hospidif</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/base.css" rel="stylesheet">
+
+    <style>
+      .img-header {
+        height: 500px;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .img-header > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 500px;
+      }
+    </style>
+  </head>
+
+  <body style="padding-top: 0;">
+    <!-- NAVBAR
+================================================== -->
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Hospidif</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#areas">Areas</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li class="active"><a href="#about">Who we are</a></li>
+                <li><a href="#guide">How to benefit of our services</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- ABOUT US
+================================================== -->
+
+    <div class="img-header">
+      <img class="center-img" style="" src="../assets/img/team.jpg">
+    </div>
+
+    <div class="container">      
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active" id="about-btn"><a class="btn" href="#" onclick="clickAbout()">About us</a></li>
+        <li role="presentation" id="where-btn"><a class="btn" href="#" onclick="clickWhere()">Where we are</a></li>
+        <li role="presentation" id="projects-btn"><a class="btn" href="#" onclick="clickProjects()">Projects</a></li>
+      </ul>
+
+      <div id="about-panel"></div>
+
+      <div id="where-panel"></div>
+
+      <div id="projects-panel"></div>
+
+    </div>
+
+    <!-- FOOTER
+================================================== -->
+
+    <footer class="container">
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>© 2017 Hospidif, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact us</a></p>
+    </footer>
+
+
+    <!-- JavaScript
+================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/about.js"></script>
+  </body>
+</html>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
@@ -17,7 +17,13 @@
 
     <!-- Custom styles for this template -->
     <link href="../assets/css/base.css" rel="stylesheet">
-    <link href="../assets/css/location.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/offcanvas.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/doctor-in-alphabetic-order.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -40,18 +46,15 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="#">Services</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctors <span class="caret"></span></a>
+                <li class="dropdown active">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctors by <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#doctors/">Browse all doctors</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Filter by</li>
                     <li><a href="#doctors/areas">Areas</a></li>
                     <li><a href="#doctors/services">Services</a></li>
                     <li><a href="#doctors/locations">Locations</a></li>
                   </ul>
                 </li>
-                <li class="active"><a href="#locations">Locations</a></li>
+                <li><a href="#locations">Locations</a></li>
                 <li><a href="#areas">Areas</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -65,27 +68,52 @@
       </div>
     </div>
 
-    <!-- Location panel
+
+    <!-- Marketing messaging and featurettes
 ================================================== -->
 
-    <div id="locationsPanel" class="container location"></div>
 
-    <!-- FOOTER
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container">
+      
+      <div class="page-header">
+        <h1 id="pageHeader"></h1>
+      </div>
+      
+      <div class="row row-offcanvas row-offcanvas-right">
+        
+        <div class="col-xs-12 col-sm-9">
+          
+          <div class="row">
+            <div id="doctorsPanelLeft"></div>
+          </div>
+          
+        </div>
+        
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          
+          <div class="list-group">
+            <div id="doctorsPanelRight"></div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>© 2016 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
 ================================================== -->
-
-    <footer class="container">
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>© 2016 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-    </footer>
-
-
-    <!-- JavaScript
-================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
-    <script src="../assets/js/location.js"></script>
+    <script src="../assets/js/doctor-in-alphabetic-order.js"></script>
 
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg>
-  </body>
-</html>
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body></html>
