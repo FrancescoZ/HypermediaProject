@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="Team 10422848">
+    <!--    TODO cambiare icona-->
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Hospidif</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">  
+
+    <style>
+      .btn-close {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        font-size: xx-large;
+      }
+
+      .form-container {
+        max-width: 700px;
+        padding: 30px;
+        margin: 100px auto;
+      }
+
+      @media (max-width: 767px) {
+        .form-container {
+          margin-top: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #eee;">
+
+    <!-- FORM
+================================================== -->
+    <button type="button" class="close btn-close" aria-label="Close">
+      <span aria-hidden="true">&#10006;</span>
+    </button>
+    <div class="container form-container">
+      <form id="reservation">
+        <h2>Make a reservation</h2>
+        <br>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">Full name</label>
+          <input type="name" id="inputName" class="form-control" placeholder="Full name" name="name" required autofocus>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="mail" required>
+        </div>
+        <div class="form-group">
+          <label for="inputPhone" class="sr-only">Phone</label>
+          <input type="tel" id="inputPhone" class="form-control" placeholder="Phone" name="phone" pattern="[0-9]{6,12}" required>
+        </div>
+        <div class="form-group">
+          <label for="inputNote" class="sr-only">Note</label>
+          <input type="text" id="inputNote" class="form-control" placeholder="Note (optional)" name="note">
+        </div>
+        <div class="form-group">
+          <label for="inputDate" class="sr-only">Date</label>
+          <input type="date" id="inputDate" class="form-control" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="inputService" class="sr-only">Select service</label>
+          <select class="form-control" id="inputService" name="service" required>
+            <option value="" selected hidden>Select service</option>
+          </select>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" onclick="clickSubmit()">Submit</button>
+        <h5 style="text-align: center;">You will receive a confirmation email</h5>
+      </form>
+    </div>
+
+    <!-- JavaScript
+================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/reservation-form.js"></script>
+  </body>
+</html>

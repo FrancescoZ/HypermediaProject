@@ -1,56 +1,24 @@
-/* LOCATION CONTENT
+/* DOCTOR CONTENT
 -------------------------------------------------- */
 
-.doctor {
-  padding-top: 125px;
-  margin-bottom: 20px;
-  text-align: left;
+.doctor-panel {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
-.doctor .col-lg-4 {
-  margin-bottom: 20px;
-  text-align: center;
+.contact {
+  margin-top: 15px;
 }
 
-.doctor .row .col-md-7 .doctor-buttons {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.doctor footer {
-    padding-top: 60px;
-}
-
-.doctor .featurette {
-    padding-top: 50px
-}
-
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 80px 0;
-}
-
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (min-width: 768px) {
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-
-@media (min-width: 992px) {
-  .featurette-heading {
-    margin-top: 120px;
-  }
+.center-cropped {
+  border-radius: 10px;
+  width: 175px;
+  height: 175px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }

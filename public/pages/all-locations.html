@@ -12,14 +12,13 @@
     <title>Hospidif</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./assets/css/base.css" rel="stylesheet">
-    <link href="./assets/css/index.css" rel="stylesheet">
+    <link href="../assets/css/base.css" rel="stylesheet">
   </head>
-  
-  <body style="padding-top: 0;">
+
+  <body>
     <!-- NAVBAR
 ================================================== -->
     <div class="navbar-wrapper">
@@ -40,7 +39,7 @@
               <ul class="nav navbar-nav">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#doctors">Doctors</a></li>
-                <li><a href="#locations">Locations</a></li>
+                <li class="active"><a href="#locations">Locations</a></li>
                 <li><a href="#areas">Areas</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -54,36 +53,14 @@
       </div>
     </div>
 
-    <!-- CAROUSEL
-================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol id="ind-carousel" class="carousel-indicators"></ol>
-      <div id="item-carousel" class="carousel-inner" role="listbox"></div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
-
-
-    <!-- DOCTORS, LOCATIONS, SERVICES
+    <!-- Location panel
 ================================================== -->
 
-    <div class="container content">
-      <div class="section-header" style="margin-top: 0;"><h1><span class="label label-default">Our premium services</span></h1></div>      
-      <div id="services-panel" class="row"></div>
-      
-      <div class="section-header"><h1><span class="label label-default">Our most valuable doctors</span></h1></div>
-      <div id="doctors-panel" class="row"></div>
+    <div class="container">
+      <div class="section-header" style="margin-top: 0;"><h1><span class="label label-default">Our locations</span></h1></div> 
 
-      <div class="section-header"><h1><span class="label label-default">Our most equipped locations</span></h1></div>
-      <div id="locations-panel"></div>   
-      
+      <div id="locationsPanel"></div>   
+
     </div>
 
     <!-- FOOTER
@@ -98,8 +75,8 @@
     <!-- JavaScript
 ================================================== -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="./assets/js/bootstrap.js"></script>
-    <script src="./assets/js/index.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/all-locations.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUq0KP9aQX5Yttk3Tk4pkMyzBlwOjalBw&callback=initMap"></script>
   </body>
 </html>
