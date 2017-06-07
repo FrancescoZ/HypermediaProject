@@ -24,3 +24,13 @@
 .col-sm-3 {
 margin-top: 20px;
 }
+
+p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.list-group {
+  margin-bottom: 0px ;
+}
+

@@ -190,9 +190,11 @@ function init(){
   
   updateDoctorList(egdoctors);
   
+  $('#all-doctors-button').addClass("active")
+  
   for (var i in eglocations) {
     $('#doctorsPanelRight').append(
-      `<a href="#" class="list-group-item" onClick="clickLocationFilter(${eglocations[i].id})">${eglocations[i].name}</a>`)
+      `<a href="#" class="list-group-item" id="location-${eglocations[i].id}-button" onClick="clickLocationFilter(${eglocations[i].id})">${eglocations[i].name}</a>`)
   }
       
 }
@@ -213,6 +215,15 @@ function updateDoctorList(doctors){
   
 }
 
+function clickAllDoctors() {
+  
+  document.getElementById("pageHeader").innerHTML = "All Doctors";
+  updateDoctorList(egdoctors);
+  deactivateAllButton();
+  $('#all-doctors-button').addClass("active")
+  
+}
+
 function clickLocationFilter(id) {
   
   for (var i in eglocations){
@@ -225,6 +236,18 @@ function clickLocationFilter(id) {
   
   document.getElementById("pageHeader").innerHTML = "All Doctors in " + name;
   updateDoctorList(egdoctorsMilano);
+  deactivateAllButton();
+  $('#location-' + id + '-button').addClass("active")
+  
+}
+
+function deactivateAllButton(){
+  
+  $('#all-doctors-button').removeClass("active")
+  
+  for (var i in eglocations){
+    $('#location-' + eglocations[i].id + '-button').removeClass("active")
+  }
   
 }
 
