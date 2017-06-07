@@ -1,6 +1,5 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
-/* Padding below the footer and lighter body text */
 
 html {
   overflow-y: scroll;
@@ -13,15 +12,10 @@ body {
   color: #5a5a5a;
 }
 
-footer {
-  padding-top: 50px;
-}
-
 .back {
   position: absolute;
 }
 
-<<<<<<< HEAD
 .jumbotron {
   padding-bottom: 30px;
   padding-top: 30px;
@@ -29,12 +23,33 @@ footer {
 
 .page-header {
   margin: -20px 0 20px;
-=======
+}
+
+.section, .panel-tab {
+  margin-bottom: 75px;
+}
+
 .section-header {
-  margin-top: 100px;
   margin-bottom: 50px;
-  text-align: center;  
->>>>>>> 57d8a7d446f614d7924355a6b6711484cd28bc0a
+  text-align: center;
+}
+
+.panel-tab {
+  padding-top: 30px;
+}
+
+.panel-tab h2 {
+  margin-top: 0;
+}
+
+.featurette {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.featurette p {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .map {
@@ -42,6 +57,7 @@ footer {
   width: 100%;
 }
 
+/*deprecated*/
 .center-cropped {
   width: 150px;
   height: 150px;
@@ -49,10 +65,19 @@ footer {
   background-repeat: no-repeat;
 }
 
+.center-img {
+  object-fit: scale-down;
+  object-position: center;
+  background-color: white;
+}
+
+.elevate {
+  box-shadow: 0 2px 5px #888888;  
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -61,7 +86,6 @@ footer {
   z-index: 20;
 }
 
-/* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
@@ -84,7 +108,6 @@ footer {
 }
 
 @media (min-width: 768px) {
-  /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
   }
