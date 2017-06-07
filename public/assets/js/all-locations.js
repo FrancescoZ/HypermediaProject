@@ -126,7 +126,7 @@ function init(){
 }
 
 function clickLocation(id) {
-  console.log(id)
+  document.location.href = `/location.html?id=${id}\&back=locations`
 }
 
 function initMap() {

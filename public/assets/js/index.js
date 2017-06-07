@@ -1,5 +1,3 @@
-
-
 const egnews = [
   {
     "id": 1,
