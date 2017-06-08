@@ -7,16 +7,26 @@ const initDataFolder = "./init/";
 const sqlDbFactory = require("knex");
 //paser from json to sqlDb module
 const _ = require("lodash");
+const process = require("process");
 
 //Create the connection with the db
-const sqlDb = sqlDbFactory({
-  client: "sqlite3",
-  debug: true,
-  useNullAsDefault: true,
-  connection: {
-    filename: './other/' + "hospital.sqlite"
-  }
-});
+let sqlDb;
+if (process.env.TEST) {
+  sqlDb = sqlDbFactory({
+    client: "sqlite3",
+    debug: true,
+    useNullAsDefault: true,
+    connection: {
+      filename: './other/' + "hospital.sqlite"
+    }
+  });
+} else {
+  sqlDb = sqlDbFactory({
+      debug: true,
+      client: "pg",
+      connection: process.env.DATABASE_URL,
+      ssl: true
+}); }
 
 //Submodule to keep the source small and clear, each one correspond to an entity in the Db
 //The connection string is passed and the folder were to find the file fo the initialization
@@ -38,32 +48,34 @@ module.exports = {
     otherDb.init();
     console.log("Database loaded");
   },
-  /*
-  * Select a group of objType with the specified parameters
-  * objType: the entity we are looking for
-  * start: the number from were to start
-  * limit: the max number of obj to return
-  * params: a vector with the detail of the query as:
-  *   params[0]: ID
-  *   params[1]:
-  * retFunction: the function to asynchronsly return the results
-  */
-  select : function(objType,retFunction,errFunction=null,start=0,limit=1000,orderBy=null,params=null){
+  /**
+   * Send a select on the right module of the database
+   * @param  {string}   objType             [Table on the database]
+   * @param  {function} retFunction         [return function to send data asynchronsly]
+   * @param  {function} errFunction  [error function to send error asynchronsly]
+   * @param  {obj}    [params=null]       [array of parameter to pass to the database]
+   *                                          start- start value to search for,
+   *                                          limit- limit value to search for,
+   *                                          orderBy- order to return the results,
+   *                                          id- if defined, the id of the row to search for,
+   */
+  select : function(objType,retFunction,errFunction,params=null){
+    let unique= params.id != null;
     switch(objType){
       case "news":
-        otherDb.selectNews(start, limit,  retFunction, errFunction);
+        otherDb.selectNews(params.start, params.limit,  retFunction, errFunction);
         break;
       case "faq":
-        otherDb.selectFaqs(start, limit, retFunction, errFunction);
+        otherDb.selectFaqs(params.start, params.limit, retFunction, errFunction);
         break;
       case "doctor":
-        doctorDb.select(start, limit, retFunction, errFunction, orderBy);
+        doctorDb.select(params.start, params.limit, retFunction, errFunction, orderBy);
         break;
       case "service":
-        serviceDb.select(start, limit, retFunction, errFunction, orderBy);
+        serviceDb.select(params.start, params.limit, retFunction, errFunction, orderBy);
         break;
       case "area":
-        areaDb.select(start, limit, retFunction, errFunction, orderBy);
+        areaDb.select(params.start, params.limit, retFunction, errFunction, orderBy);
         break;
       default:
         throw Exception();
