@@ -18,7 +18,6 @@ module.exports = function(app,_){
    * @return {JSON}           [news from the database]
    */
   app.get("/news", function(req, res) {
-    //TODO Check parameters
     let parameters={
       start:parseInt(_.get(req, "query.start", 0)),
       limit:parseInt(_.get(req, "query.limit", 5)),
@@ -27,9 +26,6 @@ module.exports = function(app,_){
     //Send the select to the database
     newsDb.select(function(result) {
           res.send(JSON.stringify(result));
-        },
-        function(error){
-          console.log(error);
         },parameters);
   });
 
@@ -42,9 +38,6 @@ module.exports = function(app,_){
     //Send the select to the database
     newsDb.select(function(result) {
           res.send(JSON.stringify(result));
-        },
-        function(error){
-          console.log(error);
         },parameters);
   });
 

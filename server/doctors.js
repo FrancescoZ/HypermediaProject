@@ -27,9 +27,6 @@ module.exports = function(app,_){
     doctorDb.select("doctor",
         function(result) {
           res.send(JSON.stringify(result));
-        },
-        function(error){
-          console.log(error);
         },parameters);
   });
 

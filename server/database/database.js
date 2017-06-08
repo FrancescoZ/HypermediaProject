@@ -38,14 +38,13 @@ module.exports = {
    * Send a select on the right module of the database
    * @param  {string}   objType             [Table on the database]
    * @param  {function} retFunction         [return function to send data asynchronsly]
-   * @param  {function} errFunction  [error function to send error asynchronsly]
    * @param  {obj}    [params=null]       [array of parameter to pass to the database]
    *                                          start- start value to search for,
    *                                          limit- limit value to search for,
    *                                          orderBy- order to return the results,
    *                                          id- if defined, the id of the row to search for,
    */
-  select : function(objType,retFunction,errFunction,params=null){
+  select : function(objType,retFunction,params=null){
     let selectQuery;
     switch(objType){
       case "news":

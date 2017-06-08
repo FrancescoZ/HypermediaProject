@@ -28,10 +28,7 @@ module.exports = function(app,_){
     serviceDb.select("services",
         function(result) {
           res.send(JSON.stringify(result));
-        },
-        function(error){
-          console.log(error);
-        },parameters);
+        } ,parameters);
   });
 
   app.get("service/:id",function(req,res){

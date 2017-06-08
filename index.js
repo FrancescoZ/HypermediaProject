@@ -1,12 +1,13 @@
-//TODO Separare in divesi moduli
 //TODO Commentare
 
 
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const methodOverride = require('method-override');
 const _ = require("lodash");
 const process = require("process");
+const util=require("./server/utilities.js");
 
 // /* Register REST entry point */
 const news = require("./server/news.js")(app,_);
@@ -33,8 +34,8 @@ app.use(express.static(__dirname + "/public/pages"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
+app.use(methodOverride());
+app.use(util.errorHandler);
 /*
 app.delete("/pets/:id", function(req, res) {
   let idn = parseInt(req.params.id);

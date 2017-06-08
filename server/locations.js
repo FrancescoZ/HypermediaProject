@@ -26,9 +26,6 @@ module.exports = function(app,_){
     locationDb.select("location",
         function(result) {
           res.send(JSON.stringify(result));
-        },
-        function(error){
-          console.log(error);
         },parameters);
   });
 
