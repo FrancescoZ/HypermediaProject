@@ -51,31 +51,38 @@ const description = "Donec id elit non mi porta gravida at eget metus. Fusce dap
 
 const params = urlParams()
 
-// TODO chiedere al server
-function getLocation() {
-  return findFromJSONArray([params['id']], eglocations)
+function fetchLocation() {
+  var location = findFromJSONArray(params['id'], eglocations)
+  if (location === undefined) {
+    return false
+  } else {
+    initLocation(location)
+    return true
+  }
 }
 
-function getServices() {
-  return egservices
+function fetchServices() {
+  egservices.map((item, index) => {
+    initServices(item, index)
+  })
 }
-
-const sLocation = getLocation()
-const sServices = getServices()
 
 //========================================
 
-function init() {
-  if (sLocation === undefined) {
-    return
-  }
+var position
 
+function init() {
   $('#location-info').show()
   $('#button-info').addClass("active")
   $('#location-map').hide()
   $('#button-map').removeClass("active")
-  $('#name').html(sLocation.name)
-  $('#address').html(sLocation.address)
+  if (fetchLocation())
+    fetchServices()
+}
+
+function initLocation(item) {
+  $('#name').html(item.name)
+  $('#address').html(item.address)
   $('#description').html(info)
   $('#how-to').html(how_to)
 
@@ -84,44 +91,53 @@ function init() {
   } else {
     $('#back-button').html("&larr; Return to " + params['back'])
   }
+  position = {}
+  position['lat'] = item.lat
+  position['lng'] = item.long
+}
 
-  for (var i in sServices) {
-    $('#services-panel').append(
-      `<div class="col-sm-6 col-md-4 featurette"><h3>${sServices[i].name}</h3><p>${description}</p><p><a class="btn btn-info" onClick="clickService(${sServices[i].id})" role="button">View details &raquo;</a></p></div>`)
-  }
+function initServices(item, index) {
+  $('#services-panel').append(
+    `<div class="col-sm-6 col-md-4 featurette">
+      <h3>${item.name}</h3>
+      <p>${description}</p>
+      <p><a class="btn btn-info" onclick="clickService(${item.id})" role="button">View details &raquo;</a></p>
+    </div>`)
 }
 
 function initMap() {
-  var position = {}
-  position['lat'] = sLocation.lat
-  position['lng'] = sLocation.long
-  var map = new google.maps.Map(document.getElementById("map"), {zoom: 12, center: position})
-  var marker = new google.maps.Marker({position: position, map: map})
-}
-
-function goBack() {
-  if (params['back'] == "locations") {
-    document.location.href = `/all-locations.html`
+  if (position === undefined) {
+    return
   }
+  map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 17,
+    center: position
+  })
+  var marker = new google.maps.Marker({
+    position: position,
+    map: map
+  })
 }
 
 function clickInfo() {
-  $('#location-info').show();
+  $('#location-info').show()
   $('#button-info').addClass("active")
-  $('#location-map').hide();
+  $('#location-map').hide()
   $('#button-map').removeClass("active")
 }
 
 function clickMap() {
-  $('#location-info').hide();
+  $('#location-info').hide()
   $('#button-info').removeClass("active")
-  $('#location-map').show();
+  $('#location-map').show()
   $('#button-map').addClass("active")
   initMap()
 }
 
-function clickService(id) {  
-  document.location.href = `/service.html?id=${id}`
+const back_ref = `&back=location`
+
+function clickService(id) {
+  document.location.href = `/service.html?id=${id}` + back_ref
 }
 
-init();
+init()

@@ -215,6 +215,10 @@ function updateDoctorList(doctors){
   
 }
 
+function clickDoctor(id) {
+  document.location.href = `/doctor.html?id=${id}\&back=doctors`
+}
+
 function clickAllDoctors() {
   
   document.getElementById("pageHeader").innerHTML = "All Doctors";

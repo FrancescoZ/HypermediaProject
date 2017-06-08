@@ -10,7 +10,6 @@ function urlParams() {
 }
 
 function findFromJSONArray(id, array) {
-  
   for (var i in array) {
     if (array[i].id == id) {
       return array[i]
@@ -18,6 +17,6 @@ function findFromJSONArray(id, array) {
   }
 }
 
-function notFound() {
-  document.location.href = "/not-found.html"
+function goBack() {
+  window.history.back()
 }
