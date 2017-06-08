@@ -1,6 +1,8 @@
-module.exports = function(dbConnection,initData,_){
-  var doctorDbModule={
-    init:function(){
+const database=require("./database.js");
+
+module.exports = {
+  init:function(){
+    database.init(function(dbConnection,initData,_){
       let doctorServiceList = require(initData + "docService.json");
       let doctorList = require(initData + "doc.json");
       //Doctors
@@ -27,7 +29,6 @@ module.exports = function(dbConnection,initData,_){
               //fill the table just created
               Promise.all(
                 _.map(doctorList, d => {
-                  delete d.id;
                   return dbConnection("doctor").insert(d);
                 })
               );
@@ -37,7 +38,6 @@ module.exports = function(dbConnection,initData,_){
             console.log("Doctors are already loaded");
           }
       });
-
       //Doctors's services
       dbConnection.schema.hasTable("doctor_service").then(exists => {
         //check the existance
@@ -52,7 +52,6 @@ module.exports = function(dbConnection,initData,_){
               //fill the table just created
               Promise.all(
                 _.map(doctorServiceList, d => {
-                  delete d.id;
                   return dbConnection("doctor_service").insert(d);
                 })
               );
@@ -62,17 +61,6 @@ module.exports = function(dbConnection,initData,_){
             console.log("Doctors's services are already loaded");
           }
       });
-    },
-    select:function(start,limit,retFunction,errFunction,orderBy=null){
-      let selectDoctors = dbConnection("doctor");
-      if (orderBy!=null)
-        selectDoctors = selectDoctors.orderBy(orderBy, "asc");
-      //Send select to database
-      selectDoctors.limit(limit).offset(start).then(result => {
-        retFunction(result);
-      });
-    }
-  };
-
-  return doctorDbModule;
+    });
+  },
 }

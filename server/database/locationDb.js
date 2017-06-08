@@ -1,6 +1,8 @@
-module.exports = function(dbConnection, initData,_){
-  var locationDbModule = {
-    init : function(){
+const database=require("./database.js");
+
+module.exports ={
+  init:function(){
+    database.init(function(dbConnection,initData,_){
       let locationAreaList = require(initData + "locationArea.json");
       let locationList = require(initData + "location.json");
 
@@ -23,7 +25,6 @@ module.exports = function(dbConnection, initData,_){
               //fill the table just created
               Promise.all(
                 _.map(locationList, l => {
-                  delete l.id;
                   return dbConnection("location").insert(l);
                 })
               );
@@ -48,7 +49,6 @@ module.exports = function(dbConnection, initData,_){
               //fill the table just created
               Promise.all(
                 _.map(locationAreaList, d => {
-                  delete d.id;
                   return dbConnection("location_area").insert(d);
                 })
               );
@@ -59,7 +59,6 @@ module.exports = function(dbConnection, initData,_){
           }
       });
 
-    }
-  };
-  return locationDbModule;
+    });
+  }
 }
