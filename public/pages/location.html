@@ -1,124 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="author" content="Team 10422848">
-    <!--    TODO cambiare icona-->
-    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hospidif</title>
+  <meta name="author" content="Team 10422848">
+  <!--    TODO cambiare icona-->
+  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+  <title>Hospidif</title>
 
-    <!-- Custom styles for this template -->
-    <link href="../assets/css/base.css" rel="stylesheet">
-  </head>
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
 
-  <body>
-    <!-- NAVBAR
+  <!-- Custom styles for this template -->
+  <link href="../assets/css/base.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR
 ================================================== -->
-    <div class="navbar-wrapper">
-      <div class="container">
+  <div class="navbar-wrapper">
+    <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/index.html">Hospidif</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Doctors</a></li>
-                <li class="active"><a href="#">Locations</a></li>
-                <li><a href="#">Areas</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="/about.html">Who we are</a></li>
-                <li><a href="#">How to benefit of our services</a></li>
-              </ul>
-            </div>
+            <a class="navbar-brand" href="/index.html">Hospidif</a>
           </div>
-        </nav>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Doctors</a></li>
+              <li class="active"><a href="#">Locations</a></li>
+              <li><a href="#">Areas</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="/about.html">Who we are</a></li>
+              <li><a href="#">How to benefit of our services</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
+    </div>
+  </div>
+
+  <!-- Location panel
+================================================== -->
+  <div class="container">
+    <button type="button" class="btn btn-xs btn-primary back" id="back-button" onclick="goBack()"></button>
+
+    <div class="jumbotron">
+      <div class="row">
+        <div class=col-md-9>
+          <h1 id="name"></h1>
+          <p id="address"></p>
+        </div>
+        <div class=col-md-3>
+          <img class="img-circle center-block center-img elevate" height="150px" width="150px" alt="Location" src="../assets/img/location.png">
+        </div>
       </div>
     </div>
 
-    <!-- Location panel
-================================================== -->
-    <div class="container">
-      <button type="button" class="btn btn-xs btn-primary back" id="back-button" onClick="goBack()"></button>
+    <ul class="nav nav-tabs" role="tablist">
+      <li id="button-info" role="presentation"><a class="btn" onclick="clickInfo()">Information</a></li>
+      <li id="button-map" role="presentation"><a class="btn" onclick="clickMap()">How to reach the location</a></li>
+    </ul>
 
-      <div class="jumbotron">
+    <div class="panel-tab">
+      <div id="location-info">
+        <p id="description"></p>
+        <br>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Available services</h2>
+          </div>
+          <div class="panel-body">
+            <div class="row" id="services-panel"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="location-map">
         <div class="row">
-          <div class=col-md-9>
-            <h1 id="name"></h1>
-            <p id="address"></p>
+          <div class="col-md-7">
+            <h2>Directions</h2>
+            <p id="how-to"></p>
           </div>
-          <div class=col-md-3>            
-            <img class="img-circle center-block center-img elevate" height="150px" width="150px" alt="Location" src="../assets/img/location.png">
+          <div class="col-md-5">
+            <div class="map" id="map"></div>
           </div>
         </div>
-      </div>
-
-      <ul class="nav nav-tabs" role="tablist">
-        <li id="button-info" role="presentation"><a class="btn" onClick="clickInfo()">Information</a></li>
-        <li id="button-map" role="presentation"><a class="btn" onClick="clickMap()">How to reach the location</a></li>
-      </ul>
-
-      <div class="panel-tab">
-        <div id="location-info">
-          <p id="description"></p>
-          <br>
-          
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2 class="panel-title">Available services</h2>
-            </div>
-            <div class="panel-body">
-              <div class="row" id="services-panel"></div>
-            </div>
-          </div>        
-        </div>
-
-        <div id="location-map">        
-          <div class="row">          
-            <div class="col-md-7">
-              <h2>Directions</h2>
-              <p id="how-to"></p>
-            </div>
-            <div class="col-md-5">
-              <div class="map" id="map"></div>
-            </div>
-          </div>
-        </div> 
       </div>
     </div>
+  </div>
 
-    <!-- FOOTER
+  <!-- FOOTER
 ================================================== -->
 
-    <footer class="container">
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2017 Hospidif, Inc.</p>
-    </footer>
+  <footer class="container">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2017 Hospidif, Inc.</p>
+  </footer>
 
 
-    <!-- JavaScript
+  <!-- JavaScript
 ================================================== -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="../assets/js/bootstrap.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <script src="../assets/js/location.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUq0KP9aQX5Yttk3Tk4pkMyzBlwOjalBw"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="../assets/js/bootstrap.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUq0KP9aQX5Yttk3Tk4pkMyzBlwOjalBw"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/location.js"></script>
+</body>
+
 </html>
