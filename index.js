@@ -34,22 +34,6 @@ app.use(express.static(__dirname + "/public/pages"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-///////////////////////////////////////// UTILITIES /////////////////////////////////////////////////////
-var convertOrder=function(value){
-  let order=parseInt(value);
-  switch(order){
-    case 1:
-      return "celebrity";
-    case 2:
-      return "name";
-    default:
-      return null;
-  }
-};
-
-
-
-
 
 /*
 app.delete("/pets/:id", function(req, res) {

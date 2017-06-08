@@ -1,7 +1,7 @@
 ///////////////////////////////////////// NEWS /////////////////////////////////////////
 
 const newsDb = require("./database/newsDb.js");
-
+const utilities = require("./utilities.js");
 module.exports = function(app,_){
   var newsModule={
     initNews:function(){
@@ -22,7 +22,7 @@ module.exports = function(app,_){
     let parameters={
       start:parseInt(_.get(req, "query.start", 0)),
       limit:parseInt(_.get(req, "query.limit", 5)),
-      orderBy: convertOrder(_.get(req, "query.orderBy", 0))
+      orderBy: utilities.convertOrder(_.get(req, "query.orderBy", 0))
     };
     //Send the select to the database
     newsDb.select(function(result) {
