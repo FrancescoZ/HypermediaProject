@@ -14,6 +14,39 @@ const egdoctor = {
   "celebrity": 1
 }
 
+const egservices = [
+  {
+    "id": 1,
+    "name": "Vascular surgery"
+  },
+  {
+    "id": 2,
+    "name": "Chemotherapy"
+  },
+  {
+    "id": 3,
+    "name": "Electrocardiography"
+  },
+  {
+    "id": 4,
+    "name": "Radiotherapy"
+  }
+]
+
+const params = urlParams()
+
+// TODO chiedere al server
+function getDoctor() {
+  return egdoctor
+}
+
+function getServices() {
+  return egservices
+}
+
+const sDoctor = getDoctor()
+const sServices = getServices()
+
 function init() {
   $('#doctor-about').show();
   $('#button-about').addClass("active")
@@ -27,14 +60,13 @@ function init() {
   document.getElementById("name").innerHTML = egdoctor.name;
   document.getElementById("contacts").innerHTML = "&#9742; " + egdoctor.phone + "<br>&#9993 " + egdoctor.email;
   document.getElementById("about").innerHTML = egdoctor.bio;
-  //TODO come strutturare il paragrafo delle working hours
-  document.getElementById("working-hours").innerHTML = "";
-  //TODO come ricavare dal database i servizi relativi al dottore
-  document.getElementById("operating-services").innerHTML = "";
-  document.getElementById("area-responsible").innerHTML = "";
-  document.getElementById("service-responsible").innerHTML = "";
-  // TODO il testo da mostrare dipende dalla pagina precedente
-  document.getElementById("back-button").innerHTML = "&larr; Return to " + "list"
+  
+  if (params['back'] === undefined) {
+    $('#back-button').hide()
+  } else {
+    $('#back-button').html("&larr; Return to " + params['back'])
+  }
+  
   $('#working-hours').append(
           `<table class="table table-striped">
             <tbody>
@@ -69,23 +101,21 @@ function init() {
             </tbody>
           </table>`)
 
-  $('#operating-services').append(
-    `<a href="">Vascular surgery</a><br>
-    <a href="">Radiotherapy</a><br>
-    <a href="">Electrocardiography</a><br>`)
+  for (var i in sServices) {
+    $('#operating-services').append(
+    `<a onClick="clickService(${sServices[i].id})" href="">${sServices[i].name}</a><br>`)
+  }
+
   $('#area-responsible').append(`<a href="">Cardiology</a><br>`)
   $('#service-responsible').append(`<a href="">Vascular surgery</a><br>`)
   
 }
 
 // TODO la funzione deve riportare nella pagina precedente
-function goBack(){
-  console.log("back")
-}
-
-function clickService(id) {
-  // TODO il click sul servizio rimanda alla pagina del servizio
-  console.log(id)  
+function goBack() {
+  if (params['back'] == "doctors") {
+    document.location.href = `/all-doctors.html`
+  }
 }
 
 function clickAbout() {
@@ -95,8 +125,6 @@ function clickAbout() {
   $('#button-working-hours').removeClass("active")
   $('#doctor-related-services').hide();
   $('#button-related-services').removeClass("active")
-
-  // TODO implementare api google maps
 }
 
 function clickWorkingHours() {
@@ -115,6 +143,10 @@ function clickRelatedServices() {
   $('#button-working-hours').removeClass("active")
   $('#doctor-related-services').show();
   $('#button-related-services').addClass("active")
+}
+
+function clickService(id) {  
+  document.location.href = `/service.html?id=${id}`
 }
 
 init();
