@@ -18,18 +18,26 @@
     <link href="../assets/css/base.css" rel="stylesheet">
 
     <style>
-      .img-header {
+      .img-header,
+      .img-header > img {
         height: 500px;
         width: 100%;
+      }
+
+      .img-header {        
         margin-bottom: 30px;
       }
 
       .img-header > img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-width: 100%;
-        height: 500px;
+        object-fit: cover;
+        object-position: center;
+      }
+      @media (max-width: 767px) {
+        .img-header,
+        .img-header > img {
+          height: 300px;
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -49,18 +57,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Hospidif</a>
+              <a class="navbar-brand" href="/">Hospidif</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#doctors">Doctors</a></li>
-                <li><a href="#locations">Locations</a></li>
-                <li><a href="#areas">Areas</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li class="active"><a href="#about">Who we are</a></li>
-                <li><a href="#guide">How to benefit of our services</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="/all-locations.html">Locations</a></li>
+                <li><a href="#">Areas</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li class="active"><a href="#">Who we are</a></li>
+                <li><a href="#">How to benefit of our services</a></li>
               </ul>
             </div>
           </div>
@@ -73,14 +81,14 @@
 ================================================== -->
 
     <div class="img-header">
-      <img class="center-img" src="../assets/img/team.jpg">
+      <img src="../assets/img/team.jpg">
     </div>
 
     <div class="container">      
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active" id="about-btn"><a class="btn" href="#" onclick="clickAbout()">About us</a></li>
-        <li role="presentation" id="where-btn"><a class="btn" href="#" onclick="clickWhere()">Where we are</a></li>
-        <li role="presentation" id="projects-btn"><a class="btn" href="#" onclick="clickProjects()">Projects</a></li>
+        <li role="presentation" class="active" id="about-btn"><a class="btn" onclick="clickAbout()">About us</a></li>
+        <li role="presentation" id="where-btn"><a class="btn" onclick="clickWhere()">Where we are</a></li>
+        <li role="presentation" id="projects-btn"><a class="btn" onclick="clickProjects()">Projects</a></li>
       </ul>
 
       <div class="panel-tab">
@@ -95,7 +103,7 @@
 
     <footer class="container">
       <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>© 2017 Hospidif, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact us</a></p>
+      <p>© 2017 Hospidif, Inc.</p>
     </footer>
 
 
