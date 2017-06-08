@@ -1,6 +1,8 @@
-module.exports = function(dbConnection, initData,_){
-  var otherDbModule ={
-    init : function(){
+const database=require("./database.js");
+
+module.exports = {
+  init:function(){
+    database.init(function(dbConnection,initData,_){
       //initial data stored in json
       let faqList = require(initData + "faq.json");
       let newsList = require(initData + "news.json");
@@ -21,7 +23,6 @@ module.exports = function(dbConnection, initData,_){
               //fill the table just created
               Promise.all(
                 _.map(faqList, f => {
-                  delete f.id;
                   return dbConnection("faq").insert(f);
                 })
               );
@@ -49,7 +50,6 @@ module.exports = function(dbConnection, initData,_){
               //fill the table just created
               Promise.all(
                 _.map(newsList, n => {
-                  delete n.id;
                   return dbConnection("news").insert(n);
                 })
               );
@@ -59,23 +59,6 @@ module.exports = function(dbConnection, initData,_){
             console.log("News are already loaded");
           }
       });
-
-    },
-    selectNews : function(start,limit,retFunction,errFunction){
-      let selectNews = dbConnection("news");
-      selectNews = selectNews.orderBy("celebrity", "asc");
-      //Send select to database
-      selectNews.limit(limit).offset(start).then(result => {
-        retFunction(result);
-      });
-    },
-    selectFaqs : function(start,limit,retFunction,errFunction){
-      let selectFaqs = dbConnection("faq");
-      //Send select to database
-      selectFaqs.limit(limit).offset(start).then(result => {
-        retFunction(result);
-      });
-    }
-  };
-  return otherDbModule;
+    });
+  }
 }

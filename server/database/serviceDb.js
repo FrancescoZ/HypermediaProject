@@ -1,6 +1,8 @@
-module.exports = function(dbConnection, initData,_){
-  var serviceDbModule = {
-    init : function(){
+const database=require("./database.js");
+
+module.exports = {
+  init:function(){
+    database.init(function(dbConnection,initData,_){
       let serviceList = require(initData + "service.json");
       let serviceAreaList = require(initData + "serviceArea.json");
 
@@ -22,7 +24,6 @@ module.exports = function(dbConnection, initData,_){
               //fill the table just created
               Promise.all(
                 _.map(serviceList, s => {
-                  delete s.id;
                   return dbConnection("service").insert(s);
                 })
               );
@@ -32,7 +33,6 @@ module.exports = function(dbConnection, initData,_){
             console.log("Services are already loaded");
           }
       });
-
 
       //Services's area
       dbConnection.schema.hasTable("service_area").then(exists => {
@@ -48,7 +48,6 @@ module.exports = function(dbConnection, initData,_){
               //fill the table just created
               Promise.all(
                 _.map(serviceAreaList, d => {
-                  delete d.id;
                   return dbConnection("service_area").insert(d);
                 })
               );
@@ -58,18 +57,6 @@ module.exports = function(dbConnection, initData,_){
             console.log("Service's areas are already loaded");
           }
       });
-
-    },
-    select:function(start,limit,retFunction,errFunction,orderBy=null){
-      let selectService = dbConnection("service");
-      if (orderBy!=null)
-        selectService = selectService.orderBy(orderBy, "asc");
-      //Send select to database
-      selectService.limit(limit).offset(start).then(result => {
-        retFunction(result);
-      });
-    }
-  };
-  return serviceDbModule;
-
+    });
+  }
 }

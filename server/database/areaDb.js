@@ -1,6 +1,8 @@
-module.exports = function(dbConnection, initData,_){
-  var areaDbModule = {
-    init : function(){
+const database=require("./database.js");
+
+module.exports ={
+  init:function(){
+    database.init(function(dbConnection,initData,_){
       let areaList = require(initData + "area.json");
       let areaDoctorList = require(initData + "areaDoctor.json");
 
@@ -20,7 +22,6 @@ module.exports = function(dbConnection, initData,_){
               //fill the table just created
               Promise.all(
                 _.map(areaList, a => {
-                  delete a.id;
                   return dbConnection("area").insert(a);
                 })
               );
@@ -45,7 +46,6 @@ module.exports = function(dbConnection, initData,_){
               //fill the table just created
               Promise.all(
                 _.map(areaDoctorList, d => {
-                  delete d.id;
                   return dbConnection("area_doctor").insert(d);
                 })
               );
@@ -55,17 +55,6 @@ module.exports = function(dbConnection, initData,_){
             console.log("Doctor's areas are already loaded");
           }
       });
-
-    },
-    select:function(start,limit,retFunction,errFunction,orderBy=null){
-      let selectArea = dbConnection("area");
-      if (orderBy!=null)
-        selectArea = selectArea.orderBy(orderBy, "asc");
-      //Send select to database
-      selectArea.limit(limit).offset(start).then(result => {
-        retFunction(result);
-      });
-    }
-  };
-  return areaDbModule
+    });
+  }
 }

@@ -1,14 +1,32 @@
+//TODO Separare in divesi moduli
+//TODO Commentare
+
+
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const db = require("./other/database/database.js");
 const _ = require("lodash");
+const process = require("process");
 
+// /* Register REST entry point */
+const news = require("./server/news.js")(app,_);
+const doctors = require("./server/doctors.js")(app,_);
+const locations = require("./server/locations.js")(app,_);
+const services = require("./server/services.js")(app,_);
+const areas = require("./server/areas.js")(app,_);
 
+/**
+ * Call the different submodule, and crete the connection with the database
+ */
+function init() {
+  areas.initAreas();
+  doctors.initDoctors();
+  locations.initLocations();
+  news.initNews();
+  services.initServices();
+};
 
 let serverPort = process.env.PORT || 5000;
-
-
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/public/pages"));
@@ -16,38 +34,23 @@ app.use(express.static(__dirname + "/public/pages"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+///////////////////////////////////////// UTILITIES /////////////////////////////////////////////////////
+var convertOrder=function(value){
+  let order=parseInt(value);
+  switch(order){
+    case 1:
+      return "celebrity";
+    case 2:
+      return "name";
+    default:
+      return null;
+  }
+};
 
-// /* Register REST entry point */
-//News, get news to show in the home page or in the news list
-app.get("/news", function(req, res) {
-  //Take the parameter from the request
-  //for the news we are interested in how many news shows up
-  let start = parseInt(_.get(req, "query.start", 0));
-  let limit = parseInt(_.get(req, "query.limit", 5));
-  //Send the select to the database
-  db.select("news",function(result) {
-    res.send(JSON.stringify(result));
-  },function(error){
-    console.log(error);
-  },start,limit);
-});
 
-app.get('/common', function(req,res){
-  let start = parseInt(_.get(req, "query.start", 0));
-  let limit = parseInt(_.get(req, "query.limit", 5));
-  //Send the select to the database
-  db.select("doctor",function(doctors) {
-    db.select("service",function(services) {
-      db.select("area",function(areas) {
-        res.send({
-          doctors:JSON.stringify(doctors),
-          services:JSON.stringify(services),
-          areas:JSON.stringify(areas)
-        });
-      },null,start,limit,'celebrity');
-    },null,start,limit,'celebrity');
-  },null,start,limit,'celebrity');
-});
+
+
+
 /*
 app.delete("/pets/:id", function(req, res) {
   let idn = parseInt(req.params.id);
@@ -76,7 +79,7 @@ app.post("/pets", function(req, res) {
 
 app.set("port", serverPort);
 
-db.init();
+init();
 
 /* Start the server on port 5000 */
 app.listen(serverPort, function() {
