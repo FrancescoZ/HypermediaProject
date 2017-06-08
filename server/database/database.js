@@ -36,32 +36,29 @@ module.exports = {
   },
   /**
    * Send a select on the right module of the database
-   * @param  {string}   objType             [Table on the database]
+   * @param  {string}   objType             [Table on the database, NB EXACT NAME]
    * @param  {function} retFunction         [return function to send data asynchronsly]
    * @param  {obj}    [params=null]       [array of parameter to pass to the database]
    *                                          start- start value to search for,
    *                                          limit- limit value to search for,
    *                                          orderBy- order to return the results,
    *                                          id- if defined, the id of the row to search for,
+   *                                          idname- if defined, the name of the id to search for
    */
-  select : function(objType,retFunction,params=null){
-    let selectQuery;
-    switch(objType){
-      case "news":
-        selectQuery=sqlDb("news");
-        break;
-      case "faq":
-        break;
-      case "doctor":
-        break;
-      case "service":
-        break;
-      case "area":
-        break;
-      default:
-        throw Exception();
-        break;
-    }
+  select : function(objType,retFunction,params){
+    let start=params.start ? params.start : undefined;
+    let limit=params.limit ? params.start : undefined;
+    let orderBy=params.orderBy ? params.orderBy : undefined;
+    let id=params.id ? params.id : undefined;;
+    let idname=params.idname ? params.idname : undefined;;
+    let selectQuery=sqlDb(objType);
+    selectQuery = typeof limit != "undefined" ? selectQuery.limit(limit) : selectQuery;
+    selectQuery = typeof start != "undefined" ? selectQuery.offset(start) : selectQuery;
+    selectQuery = typeof orderBy != "undefined" ? selectQuery.orderBy(orderBy, "asc") : selectQuery;
+    selectQuery = (typeof idname != "undefined" && typeof id != "undefined") ? selectQuery.where(idname,id) : selectQuery;
+    selectQuery.then(result => {
+      retFunction(result);
+    });
   },
   insert : function(){},
   delete : function(){},

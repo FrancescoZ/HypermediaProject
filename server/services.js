@@ -19,20 +19,22 @@ module.exports = function(app,_){
    * @return {JSON}           [news from the database]
    */
   app.get('/services', function(req,res){
-    let parameters={
-      start:parseInt(_.get(req, "query.start", 0)),
-      limit:parseInt(_.get(req, "query.limit", 5)),
-      orderBy: convertOrder(_.get(req, "query.orderBy", 0))
-    };
+    let start=parseInt(_.get(req, "query.start", 0));
+    let limit=parseInt(_.get(req, "query.limit", 5));
+    let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
     //Send the select to the database
     serviceDb.select("services",
         function(result) {
           res.send(JSON.stringify(result));
-        } ,parameters);
+        },start,limit,orderBy);
   });
 
   app.get("service/:id",function(req,res){
-    let id = parseInt(_.get(req, "query.params.id", 0));
+    let id = parseInt(req.params.id);
+    //Send the select to the database
+    serviceDb.selectById(function(result) {
+          res.send(JSON.stringify(result));
+        },id);
   });
 
   return serviceModule;

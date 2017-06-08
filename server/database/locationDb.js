@@ -60,5 +60,26 @@ module.exports ={
       });
 
     });
+  },
+  ///////////////////////////////////////// SELECT ///////////////////////////
+  select:function(retFunction,start=null,limit=null,order=null){
+    //Check the parameter
+    let param={
+      start:start,
+      limit:limit,
+      orderBy: order
+    };
+    database.select("location",retFunction,param);
+  },
+  selectById:function(retFunction,id){
+    //TODO Check the id
+    let param={
+      start:null,
+      limit:null,
+      orderBy: null,
+      id:id,
+      idname:"id"
+    };
+    database.select("location",retFunction,param);
   }
 }

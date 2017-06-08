@@ -35,7 +35,10 @@ app.use(express.static(__dirname + "/public/pages"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
-app.use(util.errorHandler);
+app.use(function(err, req, res, next) {
+    console.log(err);
+    res.send(500);
+});
 /*
 app.delete("/pets/:id", function(req, res) {
   let idn = parseInt(req.params.id);

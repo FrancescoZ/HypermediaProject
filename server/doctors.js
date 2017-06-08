@@ -14,24 +14,26 @@ module.exports = function(app,_){
    * example of usage:  /doctor?start=0&limit=5&orderBy=1
    * @param {integer}  start [starting point to count the doctor]
    * @param {integer}  limit [number of doctor max to return]
-   * @param {integer} orderBy [order criteria: 0-none 1- celebrity, 2- alphabetic order]
+   * @param {integer} [orderBy] [order criteria: 0-none 1- celebrity, 2- alphabetic order]
    * @return {JSON}           [news from the database]
    */
   app.get('/doctors', function(req,res){
-    let parameters={
-      start:parseInt(_.get(req, "query.start", 0)),
-      limit:parseInt(_.get(req, "query.limit", 5)),
-      orderBy: convertOrder(_.get(req, "query.orderBy", 0))
-    };
+    let start=parseInt(_.get(req, "query.start", 0));
+    let limit=parseInt(_.get(req, "query.limit", 5));
+    let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
     //Send the select to the database
     doctorDb.select("doctor",
         function(result) {
           res.send(JSON.stringify(result));
-        },parameters);
+        },start,limit,orderBy);
   });
 
   app.get("doctor/:id",function(req,res){
-    let id = parseInt(_.get(req, "query.params.id", 0));
+    let id = parseInt(req.params.id);
+    //Send the select to the database
+    doctorDb.selectById(function(result) {
+          res.send(JSON.stringify(result));
+        },id);
   });
 
   return doctorsModule;

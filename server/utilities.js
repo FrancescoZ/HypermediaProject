@@ -7,7 +7,7 @@ module.exports = {
       case 2:
         return "name";
       default:
-        return null;
+        return undefined;
     }
   },
   errorManager:function(err, req, res, next) {
