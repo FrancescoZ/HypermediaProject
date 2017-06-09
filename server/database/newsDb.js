@@ -74,9 +74,6 @@ module.exports = {
   selectById:function(retFunction,id){
     //TODO Check the id
     let param={
-      start:null,
-      limit:null,
-      orderBy: null,
       id:id,
       idname:"id"
     };

@@ -47,13 +47,15 @@ module.exports = {
    *                                          ids- if defined, list for the where clause
    */
   select : function(objType,retFunction,params){
-    let start=params.start ? params.start : undefined;
-    let limit=params.limit ? params.start : undefined;
-    let orderBy=params.orderBy ? params.orderBy : undefined;
-    let id=params.id ? params.id : undefined;;
-    let idname=params.idname ? params.idname : undefined;
-    let ids= params.ids ? params.ids : undefined;
+    let start=params.start!=null ? params.start : undefined;
+    let limit=params.limit!=null ? params.limit : undefined;
+    let orderBy=params.orderBy!=null ? params.orderBy : undefined;
+    let id=params.id!=null ? params.id : undefined;;
+    let idname=params.idname!=null ? params.idname : undefined;
+    let ids= params.ids!=null ? params.ids : undefined;
 
+    console.log(params);
+    console.log(start+' '+limit+' '+orderBy+' '+id+' '+idname+' '+ids);
     let selectQuery=sqlDb(objType);
     selectQuery = typeof limit != "undefined" ? selectQuery.limit(limit) : selectQuery;
     selectQuery = typeof start != "undefined" ? selectQuery.offset(start) : selectQuery;
@@ -62,7 +64,7 @@ module.exports = {
                                     selectQuery.where(idname,id) : selectQuery;
     selectQuery = (typeof ids != "undefined" && typeof idname != "undefined") ?
                                     selectQuery.whereIn(idname,ids) : selectQuery;
-                                    
+
     selectQuery.then(result => {
       retFunction(result);
     });
