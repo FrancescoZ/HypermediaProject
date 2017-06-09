@@ -44,18 +44,25 @@ module.exports = {
    *                                          orderBy- order to return the results,
    *                                          id- if defined, the id of the row to search for,
    *                                          idname- if defined, the name of the id to search for
+   *                                          ids- if defined, list for the where clause
    */
   select : function(objType,retFunction,params){
     let start=params.start ? params.start : undefined;
     let limit=params.limit ? params.start : undefined;
     let orderBy=params.orderBy ? params.orderBy : undefined;
     let id=params.id ? params.id : undefined;;
-    let idname=params.idname ? params.idname : undefined;;
+    let idname=params.idname ? params.idname : undefined;
+    let ids= params.ids ? params.ids : undefined;
+
     let selectQuery=sqlDb(objType);
     selectQuery = typeof limit != "undefined" ? selectQuery.limit(limit) : selectQuery;
     selectQuery = typeof start != "undefined" ? selectQuery.offset(start) : selectQuery;
     selectQuery = typeof orderBy != "undefined" ? selectQuery.orderBy(orderBy, "asc") : selectQuery;
-    selectQuery = (typeof idname != "undefined" && typeof id != "undefined") ? selectQuery.where(idname,id) : selectQuery;
+    selectQuery = (typeof idname != "undefined" && typeof id != "undefined") ?
+                                    selectQuery.where(idname,id) : selectQuery;
+    selectQuery = (typeof ids != "undefined" && typeof idname != "undefined") ?
+                                    selectQuery.whereIn(idname,ids) : selectQuery;
+                                    
     selectQuery.then(result => {
       retFunction(result);
     });

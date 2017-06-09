@@ -83,5 +83,43 @@ module.exports = {
       idname:"id"
     };
     database.select("doctors",retFunction,param);
+  },
+  selectByLocation:function(retFunction,idLoc){
+    //TODO Check the id
+    let param={
+      start:null,
+      limit:null,
+      orderBy: null,
+      id:idLoc,
+      idname:"id_location"
+    };
+    database.select("location_area",function(locResult){
+      var idareas=[];
+      locResult.foreach(function(idarea){
+        idareas.append(idarea.id_area);
+      });
+      let param={
+        start:null,
+        limit:null,
+        orderBy: null,
+        ids:idareas,
+        idname:"id_area"
+      };
+      database.select("area_doctor",function(areaResult){
+        var iddoctors=[];
+        areaResult.foreach(function(idDoctor){
+          iddoctors.append(idDoctor.id_doctor);
+        });
+        let param={
+          start:null,
+          limit:null,
+          orderBy: null,
+          ids:iddoctors,
+          idname:"id"
+        };
+        database.select("doctor",retFunction,param);
+      },param);
+    },param);
   }
+
 }

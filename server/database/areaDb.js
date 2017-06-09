@@ -77,5 +77,27 @@ module.exports ={
       idname:"id"
     };
     database.select("area",retFunction,param);
+  },
+  selectByDoctor:function(retFunction,idDoc){
+    //TODO Check the id
+    let param={
+      start:null,
+      limit:null,
+      orderBy: null,
+      id:idDoc,
+      idname:"id_doctor"
+    };
+    database.select("area_doctor",function(areaIds){
+      var areas=[];
+      areaIds.foreach(funtion(el){areas.append(el.id_area);});
+      let param={
+        start:null,
+        limit:null,
+        orderBy: null,
+        ids:areas,
+        idname:"id"
+      };
+      database.select("area",retFunction,param);
+    },param);
   }
 }
