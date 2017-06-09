@@ -89,7 +89,7 @@ module.exports ={
     };
     database.select("area_doctor",function(areaIds){
       var areas=[];
-      areaIds.foreach(funtion(el){areas.append(el.id_area);});
+      areaIds.foreach(function(el){areas.append(el.id_area);});
       let param={
         start:null,
         limit:null,
