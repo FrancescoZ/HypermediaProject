@@ -94,9 +94,9 @@ function fetchLocations() {
 //========================================
 
 function init() {
-  $('#service-info').show();
+  $('#service-info').show()
   $('#button-info').addClass("active")
-  $('#service-prices').hide();
+  $('#service-prices').hide()
   $('#button-prices').removeClass("active")
 
   if (fetchService()) {
@@ -106,11 +106,11 @@ function init() {
 }
 
 function initService(item) {
-  $('#name').html(item.name);
-  $('#area').html(`<a href="#">${item.area}</a>`);
-  $('#description').html(description + `<br><br>Responsible doctor: <b>${item.responsible}</b>`);
-  $('#price').html(price);
-  $('#promotion').html(promotion);
+  $('#name').html(item.name)
+  $('#area').html(`<a href="#">${item.area}</a>`)
+  $('#description').html(description + `<br><br>Responsible doctor: <b>${item.responsible}</b>`)
+  $('#price').html(price)
+  $('#promotion').html(promotion)
 
   if (params['back'] === undefined) {
     $('#back-button').hide()
@@ -139,7 +139,7 @@ function initDoctors(item, index) {
 
 function initLocations(item, index) {
   $('#locations-panel').append(
-      `<div class="col-sm-6 col-md-3 featurette" style="text-align:center;">
+    `<div class="col-sm-6 col-md-3 featurette" style="text-align:center;">
         <img class="img-circle center-img elevate" src="../assets/img/location.png" alt="Generic placeholder image" height="110" width="110">
         <h4>${item.name}</h4>
         <p><a class="btn btn-info" onclick="clickLocation(${item.id})" role="button">View details &raquo;</a></p>
@@ -147,16 +147,16 @@ function initLocations(item, index) {
 }
 
 function clickInfo() {
-  $('#service-info').show();
+  $('#service-info').show()
   $('#button-info').addClass("active")
-  $('#service-prices').hide();
+  $('#service-prices').hide()
   $('#button-prices').removeClass("active")
 }
 
 function clickPrices() {
-  $('#service-info').hide();
+  $('#service-info').hide()
   $('#button-info').removeClass("active")
-  $('#service-prices').show();
+  $('#service-prices').show()
   $('#button-prices').addClass("active")
 }
 
@@ -173,7 +173,5 @@ function clickLocation(id) {
 function clickBook() {
   document.location.href = `/reservation-form.html`
 }
-
-
 
 init();
