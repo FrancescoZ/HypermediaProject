@@ -68,13 +68,13 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
     <div class="container">
       
-      <div class="page-header">
-        <h1 id="pageHeader"></h1>
-      </div>
-      
       <div class="row row-offcanvas row-offcanvas-right">
         
         <div class="col-xs-12 col-sm-9">
+          
+        <div class="section-header">
+          <h1><span id="sectionHeader" class="label label-default"></span></h1>
+        </div>
           
           <div class="row">
             <div id="doctorsPanelLeft"></div>
@@ -85,7 +85,7 @@
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
           
           <div class="list-group">
-            `<a href="#" class="list-group-item" id="all-doctors-button" onClick="clickAllDoctors()">All Doctors</a>`
+            `<div><a href="#" class="list-group-item" id="all-doctors-button" onClick="clickAllDoctors()">All Doctors</a></div>
           </div>
           
           <p>Select a location to filter the doctors:</p>

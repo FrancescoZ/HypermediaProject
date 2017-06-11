@@ -4,7 +4,7 @@ const egdoctor = {
   "name": "Appiah Leslie A.",
   "phone": "123-564789",
   "email": "leslie.appiah@hospidif.com",
-  "bio": "Morbi urna nulla, congue tempor posuere at, mollis ut est. Sed semper turpis ligula, quis consectetur tortor fringilla vel. Maecenas id neque ullamcorper nunc malesuada porta bibendum ac tortor. Fusce aliquam tincidunt felis. Sed commodo mollis libero a scelerisque. Nulla condimentum blandit nisl, vitae aliquet enim maximus ut. Suspendisse a efficitur orci. Suspendisse nec velit congue, blandit felis in, feugiat eros. Proin a eros sodales, placerat nibh at, aliquam turpis. Phasellus fermentum lobortis purus rhoncus porta. Sed lacus neque, tristique tempus nibh vitae, mollis rutrum nunc. Duis vestibulum augue in purus imperdiet fringilla. Quisque iaculis tortor lacus, viverra convallis erat auctor in. Sed vehicula felis nec turpis aliquam gravida.",
+  "bio": "Morbi urna nulla, congue tempor posuere at, mollis ut est. Sed semper turpis ligula, quis consectetur tortor fringilla vel. Maecenas id neque ullamcorper nunc malesuada porta bibendum ac tortor. Fusce aliquam tincidunt felis. Sed commodo mollis libero a scelerisque. Nulla condimentum blandit nisl, vitae aliquet enim maximus ut. Suspendisse a efficitur orci. Suspendisse nec velit congue, blandit felis in, feugiat eros. Proin a eros sodales, placerat nibh at, aliquam turpis.<br> Phasellus fermentum lobortis purus rhoncus porta. Sed lacus neque, tristique tempus nibh vitae, mollis rutrum nunc. Duis vestibulum augue in purus imperdiet fringilla. Quisque iaculis tortor lacus, viverra convallis erat auctor in. Sed vehicula felis nec turpis aliquam gravida.",
   "image": "",
   "monday_hours": 2,
   "tuesday_hours": 2,
@@ -60,6 +60,7 @@ function init() {
   document.getElementById("name").innerHTML = egdoctor.name;
   document.getElementById("contacts").innerHTML = "&#9742; " + egdoctor.phone + "<br>&#9993 " + egdoctor.email;
   document.getElementById("about").innerHTML = egdoctor.bio;
+  document.getElementById("image").setAttribute("src", "../assets/img/doctors/doctor_amato.jpg") 
   
   if (params['back'] === undefined) {
     $('#back-button').hide()
