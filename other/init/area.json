@@ -1,1 +1,29 @@
-{}
+[
+  {
+    "id":1,
+    "name":"Cancer Care",
+    "info":"",
+    "celebrity":0
+  },
+
+  {
+    "id":2,
+    "name":"Neuroradiology",
+    "info":"",
+    "celebrity":0
+  },
+
+  {
+    "id":3,
+    "name":"Cardiology",
+    "info":"",
+    "celebrity":0
+  },
+
+  {
+    "id":4,
+    "name":"Vascular and vain",
+    "info":"",
+    "celebrity":0
+  }
+]

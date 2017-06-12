@@ -1,5 +1,7 @@
 ///////////////////////////////////////// LOCATIONS /////////////////////////////////////////
 const locationDb = require("./database/locationDb.js");
+const utilities = require("./utilities.js");
+
 module.exports = function(app,_){
   var locationsModule = {
     initLocations: function(){
@@ -21,13 +23,13 @@ module.exports = function(app,_){
     let start=parseInt(_.get(req, "query.start", 0));
     let limit=parseInt(_.get(req, "query.limit", 5));
     let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
-    locationDb.select("location",
+    locationDb.select(
         function(result) {
           res.send(JSON.stringify(result));
         },start,limit,orderBy);
   });
 
-  app.get("location/:id",function(req,res){
+  app.get("/location/:id",function(req,res){
     let id = parseInt(req.params.id);
     //Send the select to the database
     locationDb.selectById(function(result) {

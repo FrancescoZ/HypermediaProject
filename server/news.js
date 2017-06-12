@@ -2,6 +2,7 @@
 
 const newsDb = require("./database/newsDb.js");
 const utilities = require("./utilities.js");
+
 module.exports = function(app,_){
   var newsModule={
     initNews:function(){

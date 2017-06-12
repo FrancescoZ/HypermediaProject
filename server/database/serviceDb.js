@@ -4,7 +4,6 @@ module.exports = {
   init:function(){
     database.init(function(dbConnection,initData,_){
       let serviceList = require(initData + "service.json");
-      let serviceAreaList = require(initData + "serviceArea.json");
 
       //Services
       dbConnection.schema.hasTable("service").then(exists => {
@@ -19,6 +18,7 @@ module.exports = {
               table.text("price");
               table.text("promotion");
               table.integer("celebrity");
+              table.integer("area");
             })
             .then(() => {
               //fill the table just created
@@ -31,30 +31,6 @@ module.exports = {
             });
           } else {
             console.log("Services are already loaded");
-          }
-      });
-
-      //Services's area
-      dbConnection.schema.hasTable("service_area").then(exists => {
-        //check the existance
-        if (!exists) {
-          //if there isn't than create the structure
-          dbConnection.schema
-            .createTable("service_area", table => {
-              table.int('id_service').primary();
-              table.int("id_area").primary();
-            })
-            .then(() => {
-              //fill the table just created
-              Promise.all(
-                _.map(serviceAreaList, d => {
-                  return dbConnection("service_area").insert(d);
-                })
-              );
-              console.log("Service's areas loaded");
-            });
-          } else {
-            console.log("Service's areas are already loaded");
           }
       });
     });

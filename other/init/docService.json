@@ -6,6 +6,41 @@
 
   {
     "id_doctor": 1,
+    "id_service": 2
+  },
+
+  {
+    "id_doctor": 1,
+    "id_service": 3
+  },
+
+  {
+    "id_doctor": 1,
+    "id_service": 4
+  },
+
+  {
+    "id_doctor": 2,
     "id_service": 1
+  },
+
+  {
+    "id_doctor": 2,
+    "id_service": 2
+  },
+
+  {
+    "id_doctor": 3,
+    "id_service": 3
+  },
+
+  {
+    "id_doctor": 3,
+    "id_service": 4
+  },
+
+  {
+    "id_doctor": 4,
+    "id_service": 4
   }
 ]

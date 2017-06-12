@@ -1,6 +1,8 @@
 ///////////////////////////////////////// DOCTORS /////////////////////////////////////////
 
 const doctorDb = require("./database/doctorDb.js");
+const utilities = require("./utilities.js");
+
 module.exports = function(app,_){
   var doctorsModule = {
     initDoctors: function(){
@@ -22,7 +24,7 @@ module.exports = function(app,_){
     let limit=parseInt(_.get(req, "query.limit", 5));
     let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
     //Send the select to the database
-    doctorDb.select("doctor",
+    doctorDb.select(
         function(result) {
           res.send(JSON.stringify(result));
         },start,limit,orderBy);
