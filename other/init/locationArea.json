@@ -27,10 +27,20 @@
     "id_location":2,
     "id_area":2
   },
+  
+  {
+    "id_location":2,
+    "id_area":4
+  },
+  
+  {
+    "id_location":3,
+    "id_area":1
+  },
 
   {
     "id_location":3,
-    "id_area":2
+    "id_area":3
   },
 
   {
