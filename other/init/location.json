@@ -1,1 +1,29 @@
-{}
+[
+  {
+    "id": 1,
+    "name": "Albert B. Chandler",
+    "address": "800 Rose St, Lexington, KY 40536, Stati Uniti",
+    "info": "Opened in 1962, the University of Kentucky Albert B. Chandler Hospital, a 569-bed acute care hospital, is part of the Hospidif patient care enterprise.<br>UK Chandler Hospital has Central and Eastern Kentucky’s only Level I trauma center, and handles the most severe traumas. It has the only Level IV neonatal intensive care unit in the area to treat the sickest infants.<br>The hospital also offers 100 intensive care beds, a post-anesthesia care unit, 17 operating rooms,14-bed labor and delivery, and 26 mother-baby rooms. The hospital draws upon the resources of six UK colleges: Medicine, Nursing, Health Sciences, Dentistry, Pharmacy and Public Health.",
+    "how_to": "The nearest bus stop is 'South Limestone @ 1000 Inbound'. There are two bus going there: 5 and 14",
+    "lat": 38.0311288,
+    "long": -84.508976
+  },
+  {
+    "id": 2,
+    "name": "Good Samaritan Hospital",
+    "address": "310 S Limestone, Lexington, KY 40508, Stati Uniti",
+    "info": "Good Samaritan Hospital offer state-of-the-art medical care services in downtown Lexington, all private rooms and a high level of personal care.<br>With more than 600 clinical and ancillary staff and a medical staff of more than 600 physicians, Good Samaritan is able to offer a broad range of health care services to meet the needs of the residents of central and eastern Kentucky.",
+    "how_to": "The nearest bus stop is 'South Limestone @ Samaritan Hospital'. There are two bus going there: 3 and 5",
+    "lat": 38.0422502,
+    "long": -84.5010722
+  },
+  {
+    "id": 3,
+    "name": "Neuroscience Institute",
+    "address": "740 S. Limestone, First Floor, Wing C, Suite B101, Lexington, KY 40536, Stati Uniti",
+    "info": "The Neuroscience Institute (NI) integrates the expertise of the University of Kentucky’s neurology and neurosurgery clinicians and researchers. NI is a referral center dedicated to providing comprehensive care to our patients with the most complex neurological conditions.<br>Neurosurgeons and neurologists at NI diagnose and treat a wide spectrum of neurological conditions involving the brain, spine, nerves and muscles. Our team includes neurosurgeons, neurologists, neuropsychologists, therapists, nurses and other  clinicians who use the most advanced surgical and medical treatments for brain, spinal cord, and nerve and muscle diseases and disorders. Our faculty are also training the next generation of health care providers and investigators. NI is on the leading edge of patient care, research and education and puts the power of advanced medicine and an entire team of specialists to work on your condition.",
+    "how_to": "The nearest bus stop is 'Kentucky Clinic Ib'. There is a bus going there: 5",
+    "lat": 38.0336722,
+    "long": -84.5102607
+  }
+]
