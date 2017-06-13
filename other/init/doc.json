@@ -11,6 +11,26 @@
 
   {
     "id": 2,
+    "name": "Ahmed Sadiq",
+    "phone": "123-5647890",
+    "email": "ahmed.sadiq@hospidif.com",
+    "bio": "My name is Sadiq Ahmed; I received my medical degree from Mymensingh Medical College, Bangladesh. I then completed a residency in internal medicine at the University of Connecticut and a fellowship in nephrology at Indiana University, Indianapolis.<br>I am certified by the American Board of Internal Medicine in Internal Medicine and Nephrology. I am also certified by American Society of Hypertension. I am a Fellow of the American Society of Nephrology and American College of Physicians.",
+    "image": "",
+    "area_res": 3
+  },
+
+
+  {
+    "id": 3,
+    "name": "Anthony Lowell",
+    "phone": "842-6816579",
+    "email": "anthony.lowell@hospidif.com",
+    "bio": "My name is Lowell Anthony; I joined the UK Markey Cancer Center with more than two decades of experience in oncology and a special focus in gastrointestinal and neuroendocrine oncology. My clinical interests include drug development ranging from Phase I to III clinical trials. Agents targeting specific cellular signaling pathways and injectable radiolabeled compounds make up my past and current clinical investigative interests. I bring a clinical correlative component to complement the ongoing translational activities at Markey Cancer Center.<br>I attended Vanderbilt University Medical School, where I also completed a medical residency and fellowship training in medical oncology and clinical pharmacology. I have previously been on the medical faculties at Vanderbilt University and the Louisiana State University Health Sciences Center in New Orleans.",
+    "image": ""
+  },
+
+  {
+    "id": 4,
     "name": "Brian Armentrout",
     "phone": "549-6248520",
     "email": "brian.armentrout@hospidif.com",
@@ -19,7 +39,7 @@
   },
 
   {
-    "id": 3,
+    "id": 5,
     "name": "Kimberly Applegate",
     "phone": "369-1472586",
     "email": "kimberly.applegate@hospidif.com",
@@ -28,33 +48,13 @@
   },
 
   {
-    "id": 4,
+    "id": 6,
     "name": "Leslie Appiah",
     "phone": "456-9157435",
     "email": "leslie.appiah@hospidif.com",
     "bio": "My name is Leslie A. Appiah; I joined UK HealthCare as a board-certified gynecologist with expertise in oncofertility and fellowship training in pediatric and adolescent gynecology. I bring six years of experience from Cincinnati Children’s Hospital Medical Center, where I served as director of oncofertility and fellowship director of pediatric and adolescent gynecology.<br>I serve as Director of Oncofertility at UK and Norton Healthcare, where I work closely with subspecialists in reproductive endocrinology and infertility, at the Whitney-Hendrickson Women’s Cancer Facility, the Markey Cancer Center and the pediatric oncology team at Kentucky Children’s Hospital. My team and I will collaborate to preserve the fertility and reproductive health of pediatric, adolescent and adult cancer and blood disorders patients of all genders.<br>I attended medical school at the University of Texas Southwestern Medical Center at Dallas. I completed a residency in OB-GYN at Sinai Hospital of Baltimore and a clinical fellowship in pediatric and adolescent gynecology at Texas Children’s Hospital. I have received several teaching awards including the Johns Hopkins Excellence in Teaching Award. My research interests include ovarian tissue cryopreservation, ovarian function post-chemotherapy and radiation, ovarian masses, endometriosis and congenital anomalies of the reproductive tract.",
     "image": ""
   },
-
-  {
-    "id": 5,
-    "name": "Lowell Anthony",
-    "phone": "842-6816579",
-    "email": "anthony.lowell@hospidif.com",
-    "bio": "My name is Lowell Anthony; I joined the UK Markey Cancer Center with more than two decades of experience in oncology and a special focus in gastrointestinal and neuroendocrine oncology. My clinical interests include drug development ranging from Phase I to III clinical trials. Agents targeting specific cellular signaling pathways and injectable radiolabeled compounds make up my past and current clinical investigative interests. I bring a clinical correlative component to complement the ongoing translational activities at Markey Cancer Center.<br>I attended Vanderbilt University Medical School, where I also completed a medical residency and fellowship training in medical oncology and clinical pharmacology. I have previously been on the medical faculties at Vanderbilt University and the Louisiana State University Health Sciences Center in New Orleans.",
-    "image": ""
-  },
-
-  {
-    "id": 6,
-    "name": "Sadiq Ahmed",
-    "phone": "123-5647890",
-    "email": "sadiq.ahmed@hospidif.com",
-    "bio": "My name is Sadiq Ahmed; I received my medical degree from Mymensingh Medical College, Bangladesh. I then completed a residency in internal medicine at the University of Connecticut and a fellowship in nephrology at Indiana University, Indianapolis.<br>I am certified by the American Board of Internal Medicine in Internal Medicine and Nephrology. I am also certified by American Society of Hypertension. I am a Fellow of the American Society of Nephrology and American College of Physicians.",
-    "image": "",
-    "area_res": 3
-  },
-
 
   {
     "id": 7,
