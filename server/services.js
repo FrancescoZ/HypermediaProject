@@ -1,6 +1,7 @@
 ///////////////////////////////////////// SERVICES /////////////////////////////////////////
-
+const utilities = require("./utilities.js");
 const serviceDb = require("./database/serviceDb.js");
+
 module.exports = function(app,_){
   var serviceModule={
     initServices: function(){
@@ -23,13 +24,13 @@ module.exports = function(app,_){
     let limit=parseInt(_.get(req, "query.limit", 5));
     let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
     //Send the select to the database
-    serviceDb.select("services",
+    serviceDb.select(
         function(result) {
           res.send(JSON.stringify(result));
         },start,limit,orderBy);
   });
 
-  app.get("service/:id",function(req,res){
+  app.get("/service/:id",function(req,res){
     let id = parseInt(req.params.id);
     //Send the select to the database
     serviceDb.selectById(function(result) {

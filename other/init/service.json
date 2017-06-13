@@ -1,1 +1,22 @@
-{}
+[
+  {
+    "id": 1,
+    "name": "Vascular surgery",
+    "area": 4
+  },
+  {
+    "id": 2,
+    "name": "Chemotherapy",
+    "area": 1
+  },
+  {
+    "id": 3,
+    "name": "Electrocardiography",
+    "area": 3
+  },
+  {
+    "id": 4,
+    "name": "Radiotherapy",
+    "area": 2
+  }
+]

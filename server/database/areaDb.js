@@ -4,7 +4,6 @@ module.exports ={
   init:function(){
     database.init(function(dbConnection,initData,_){
       let areaList = require(initData + "area.json");
-      let areaDoctorList = require(initData + "areaDoctor.json");
 
       //Areas
       dbConnection.schema.hasTable("area").then(exists => {
@@ -29,30 +28,6 @@ module.exports ={
             });
           } else {
             console.log("Area are already loaded");
-          }
-      });
-
-      //Area' doctorList
-      dbConnection.schema.hasTable("area_doctor").then(exists => {
-        //check the existance
-        if (!exists) {
-          //if there isn't than create the structure
-          dbConnection.schema
-            .createTable("area_doctor", table => {
-              table.int('id_doctor').primary();
-              table.int("id_area").primary();
-            })
-            .then(() => {
-              //fill the table just created
-              Promise.all(
-                _.map(areaDoctorList, d => {
-                  return dbConnection("area_doctor").insert(d);
-                })
-              );
-              console.log("Doctor's areas loaded");
-            });
-          } else {
-            console.log("Doctor's areas are already loaded");
           }
       });
     });
@@ -85,11 +60,11 @@ module.exports ={
       limit:null,
       orderBy: null,
       id:idDoc,
-      idname:"id_doctor"
+      idname:"id"
     };
-    database.select("area_doctor",function(areaIds){
+    database.select("doctor",function(areaIds){
       var areas=[];
-      areaIds.foreach(function(el){areas.append(el.id_area);});
+      areaIds.foreach(function(el){areas.append(el.area_res);});
       let param={
         start:null,
         limit:null,

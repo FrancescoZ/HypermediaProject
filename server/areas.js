@@ -1,7 +1,8 @@
 ///////////////////////////////////////// AREAs /////////////////////////////////////////
-module.exports = function(app,_){
-  const areaDb = require("./database/areaDb.js");
+const utilities = require("./utilities.js");
+const areaDb = require("./database/areaDb.js");
 
+module.exports = function(app,_){
   var areaModule = {
     initAreas: function (){
       areaDb.init();
