@@ -2,36 +2,42 @@
   {
     "id": 1,
     "name": "Chemotherapy",
-    "area": 1
+    "area": 1,
+    "doc_resp":1
   },
 
   {
     "id": 2,
     "name": "Echocardiography",
-    "area": 2
+    "area": 2,
+    "doc_resp":2
   },
 
   {
     "id": 3,
     "name": "Electrocardiogram",
-    "area": 2
+    "area": 2,
+    "doc_resp":3
   },
-  
+
   {
     "id": 4,
     "name": "Magnetic Resonance Spectroscopy",
-    "area": 3
+    "area": 3,
+    "doc_resp":4
   },
 
   {
     "id": 5,
     "name": "Radiotherapy",
-    "area": 1
+    "area": 1,
+    "doc_resp":5
   },
-  
+
   {
     "id": 6,
     "name": "Sclerotherapy",
-    "area": 4
+    "area": 4,
+    "doc_resp":6
   }
 ]

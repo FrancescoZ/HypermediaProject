@@ -18,6 +18,7 @@ module.exports = {
               table.text("price");
               table.text("promotion");
               table.integer("celebrity");
+              table.integer("doc_resp")
               table.integer("area");
             })
             .then(() => {
@@ -55,5 +56,27 @@ module.exports = {
       idname:"id"
     };
     database.select("service",retFunction,param);
+  },
+  selectByResponsible: function(retFunction,idResp){
+    let param={
+      id:idResp,
+      idname:"doc_resp"
+    };
+    database.select("service",retFunction,param);
+  },
+  selectByLocation: function(retFunction,idLoc){
+    let locParam={
+      objType: "location_service",
+      idname: "id_location",
+      id: idLoc,
+      column: "id_service"
+    };
+    let serviceParam={
+      idsubquery:"id",
+      subquery: locParam
+    };
+    database.select("service", retFunction, serviceParam);
   }
+
+
 }

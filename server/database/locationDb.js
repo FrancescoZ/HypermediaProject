@@ -3,7 +3,7 @@ const database=require("./database.js");
 module.exports ={
   init:function(){
     database.init(function(dbConnection,initData,_){
-      let locationAreaList = require(initData + "locationArea.json");
+      let locationAreaList = require(initData + "locationService.json");
       let locationList = require(initData + "location.json");
 
       //Locations
@@ -36,26 +36,26 @@ module.exports ={
       });
 
       //location' area
-      dbConnection.schema.hasTable("location_area").then(exists => {
+      dbConnection.schema.hasTable("location_service").then(exists => {
         //check the existance
         if (!exists) {
           //if there isn't than create the structure
           dbConnection.schema
-            .createTable("location_area", table => {
-              table.int('id_location').primary();
-              table.int("id_area").primary();
+            .createTable("location_service", table => {
+              table.int('id_location')
+              table.int("id_service")
             })
             .then(() => {
               //fill the table just created
               Promise.all(
                 _.map(locationAreaList, d => {
-                  return dbConnection("location_area").insert(d);
+                  return dbConnection("location_service").insert(d);
                 })
               );
-              console.log("Location's areas loaded");
+              console.log("Location's service loaded");
             });
           } else {
-            console.log("Location's areas are already loaded");
+            console.log("Location's service are already loaded");
           }
       });
 
@@ -74,9 +74,6 @@ module.exports ={
   selectById:function(retFunction,id){
     //TODO Check the id
     let param={
-      start:null,
-      limit:null,
-      orderBy: null,
       id:id,
       idname:"id"
     };
@@ -84,24 +81,22 @@ module.exports ={
   },
   selectByArea: function (retFunction, idArea) {
     //TODO Check the id
-    let param = {
-      start: null,
-      limit: null,
-      orderBy: null,
+    let serviceParam={
+      objType:"service",
+      idname: "area",
       id: idArea,
-      idname: "id_area"
+      column: "id"
     };
-    database.select("location_area", result => {
-      var location = [];
-      result.map(el => { location.push(el.id_location) });
-      let param = {
-        start: null,
-        limit: null,
-        orderBy: null,
-        ids: location,
-        idname: "id"
-      };
-      database.select("location", retFunction, param);
-    }, param);
+    let locParam={
+      objType:"location_service",
+      idsubquery:"id_location",
+      subquery: serviceParam,
+      column:"id_location"
+    };
+    let locationParam={
+      idsubquery:"id",
+      subquery: locParam
+    }
+    database.select("location",retFunction,locationParam);
   }
 }

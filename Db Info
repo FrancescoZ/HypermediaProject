@@ -1,0 +1,18 @@
+Servizio:
+  NB: l'id dell'area e contenuto nel nome del servizio
+
+  X L'area- richiedere a /area/:id(area)
+  X Location- richiedere a /location-by-area/area
+  X Responsible- richidere a /doctor/:id(doc_resp)
+  X Doctors- richiedere a /doctor-by-service/id
+
+Dottore:
+
+  X L'area dove responsabile: richiedere a /area-by-resp/id
+  X Servizio responsible: richiedere a /service-by-responsible/id
+  X Servizi: richiedere a /service/:id(at_service)
+
+Location
+
+  X Servizi: richiedere a /service-by-loc/idlocation
+  X Doctor: richiedere a /doctor-by-loc/idlocation

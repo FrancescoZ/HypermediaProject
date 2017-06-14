@@ -46,34 +46,18 @@ module.exports ={
   selectById:function(retFunction,id){
     //TODO Check the id
     let param={
-      start:null,
-      limit:null,
-      orderBy: null,
       id:id,
       idname:"id"
     };
     database.select("area",retFunction,param);
   },
   selectByDoctor:function(retFunction,idDoc){
-    //TODO Check the id
+  },
+  selectByResponsible: function(retFunction,idResp){
     let param={
-      start:null,
-      limit:null,
-      orderBy: null,
-      id:idDoc,
-      idname:"id"
+      id:idResp,
+      idname:"doc_resp"
     };
-    database.select("doctor",function(areaIds){
-      var areas=[];
-      areaIds.foreach(function(el){areas.append(el.area_res);});
-      let param={
-        start:null,
-        limit:null,
-        orderBy: null,
-        ids:areas,
-        idname:"id"
-      };
-      database.select("area",retFunction,param);
-    },param);
+    database.select("area",retFunction,param);
   }
 }
