@@ -16,7 +16,7 @@ function initContent(query, item, index) {
 
 function initService(item, index) {
   if (index == 0) {
-    $('#title').append(item.name)
+    $('#title').append(`<b>${item.name}</b>`)
   }
 }
 

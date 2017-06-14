@@ -50,7 +50,7 @@ function initService(item, index) {
   $('#services-panel').append(
     `<div class="col-sm-6 col-md-4 featurette">
       <h2>${item.name}</h2>
-      <p>${item.description === null ? "" : item.description.substr(0, 100) + "..."}</p>
+      <p>${item.description === null ? "" : item.description.substr(0, 200) + "..."}</p>
       <p><a class="btn btn-info" onclick="clickService(${item.id})" role="button">View details &raquo;</a></p>
     </div>`)
 }

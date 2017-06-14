@@ -9,7 +9,7 @@ function init() {
   $('#button-info').addClass("active")
   $('#location-map').hide()
   $('#button-map').removeClass("active")
-  
+
   setBackBtn(params)
 
   fetchContent(location_query + params['id'])
@@ -44,7 +44,7 @@ function initServices(item, index) {
   $('#services-panel').append(
     `<div class="col-sm-6 col-md-4 featurette">
       <h3>${item.name}</h3>
-      <p>${item.description}</p>
+      <p>${item.description === null ? "" : item.description.substr(0, 200) + "..."}</p>
       <p><a class="btn btn-info" onclick="clickService(${item.id})" role="button">View details &raquo;</a></p>
     </div>`)
 }
