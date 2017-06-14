@@ -25,5 +25,6 @@ npm install .
 ```
 #!
 
+TEST="true" #set environment var TEST
 npm start
 ```
