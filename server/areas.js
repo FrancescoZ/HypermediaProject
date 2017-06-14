@@ -36,7 +36,7 @@ module.exports = function(app,_){
           res.send(JSON.stringify(result));
         },id);
   });
-  app.get("/area-by-resp/:id",function(req,res){
+  app.get("/area-by-responsible/:id",function(req,res){
     let id = parseInt(req.params.id);
     //Send the select to the database
     areaDb.selectByResponsible(function(result) {
