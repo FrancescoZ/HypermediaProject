@@ -12,6 +12,8 @@ function init() {
   $('#service-prices').hide()
   $('#button-prices').removeClass("active")
 
+  setBackBtn(params)
+
   fetchContent(service_query + params['id'])
 }
 
@@ -38,12 +40,6 @@ function initService(item, index) {
     $('#price').html(item.price)
     $('#promotion').html(item.promotion)
 
-    if (params['back'] === undefined) {
-      $('#back-button').hide()
-    } else {
-      $('#back-button').html("&larr; Return to " + params['back'])
-    }
-
     fetchContent(area_query + item.area)
     fetchContent(responsible_query + item.doc_resp)
     fetchContent(doctors_query + item.id)
@@ -59,7 +55,7 @@ function initArea(item, index) {
 
 function initResponsible(item, index) {
   if (index == 0) {
-    $('#description').append(`<br/><br/>Responsible doctor: <a href="#" onclick="clickDoctor(${item.id})"><b>${item.name}</b></a>`)
+    $('#description').append(`<br/><br/>The doctor <a href="#" onclick="clickDoctor(${item.id})"><b>${item.name}</b></a> is responsible for this service`)
   }
 }
 
@@ -110,5 +106,5 @@ function clickLocation(id) {
 }
 
 function clickBook() {
-  document.location.href = `/reservation-form.html` + back_ref
+  document.location.href = `/reservation.html?id=${params['id']}`
 }

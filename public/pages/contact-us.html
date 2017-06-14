@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="author" content="Team 10422848">
+  <!--    TODO cambiare icona-->
+  <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+  <title>Hospidif</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
+
+  <style>
+    .btn-close {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      font-size: xx-large;
+    }
+    
+    .form-container {
+      max-width: 700px;
+      padding: 30px;
+      margin: 100px auto;
+    }
+    
+    @media (max-width: 767px) {
+      .form-container {
+        margin-top: 30px;
+      }
+    }
+
+  </style>
+</head>
+
+<body style="background-color: #eee;">
+
+  <!-- FORM
+================================================== -->
+  <button type="button" class="close btn-close" aria-label="Close" onclick="window.history.back()">
+      <span aria-hidden="true">&#10006;</span>
+    </button>
+  <div class="container form-container">
+    <form id="reservation" onsubmit="clickSubmit();return false;">
+      <h2 id="title">Ask us</h2>
+      <br>
+      <div class="form-group">
+        <label for="inputName" class="sr-only">Full name (optional)</label>
+        <input type="name" id="inputName" class="form-control" placeholder="Full name (optional)" name="name" autofocus>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="mail" required>
+      </div>
+      <div class="form-group">
+        <label for="inputNote" class="sr-only">Note</label>
+        <input type="text" id="inputNote" class="form-control" placeholder="Note" name="note" required>
+      </div>
+      <br>
+      <button type="submit" type="button" class="btn btn-lg btn-primary btn-block">Submit</button>
+      <h5 style="text-align: center;">We will answer you as soon as possible. Thank you.</h5>
+    </form>
+  </div>
+
+  <!-- JavaScript
+================================================== -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/bootstrap.js"></script>
+  <script src="../assets/js/contact-us.js"></script>
+</body>
+
+</html>

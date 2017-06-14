@@ -46,8 +46,8 @@
       <span aria-hidden="true">&#10006;</span>
     </button>
   <div class="container form-container">
-    <form id="reservation">
-      <h2>Make a reservation</h2>
+    <form id="reservation" onsubmit="clickSubmit();return false;">
+      <h2 id="title">Make a reservation for </h2>
       <br>
       <div class="form-group">
         <label for="inputName" class="sr-only">Full name</label>
@@ -62,21 +62,15 @@
         <input type="tel" id="inputPhone" class="form-control" placeholder="Phone" name="phone" pattern="[0-9]{6,12}" required>
       </div>
       <div class="form-group">
-        <label for="inputNote" class="sr-only">Note</label>
+        <label for="inputNote" class="sr-only">Note (optional)</label>
         <input type="text" id="inputNote" class="form-control" placeholder="Note (optional)" name="note">
       </div>
       <div class="form-group">
         <label for="inputDate" class="sr-only">Date</label>
         <input type="date" id="inputDate" class="form-control" name="date" required>
       </div>
-      <div class="form-group">
-        <label for="inputService" class="sr-only">Select service</label>
-        <select class="form-control" id="inputService" name="service" required>
-            <option value="" selected hidden>Select service</option>
-          </select>
-      </div>
       <br>
-      <button type="submit" class="btn btn-lg btn-primary btn-block" onclick="clickSubmit()">Submit</button>
+      <button type="submit" type="button" class="btn btn-lg btn-primary btn-block">Submit</button>
       <h5 style="text-align: center;">You will receive a confirmation email</h5>
     </form>
   </div>
@@ -84,8 +78,9 @@
   <!-- JavaScript
 ================================================== -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="../assets/js/util.js"></script>
   <script src="../assets/js/bootstrap.js"></script>
-  <script src="../assets/js/reservation-form.js"></script>
+  <script src="../assets/js/reservation.js"></script>
 </body>
 
 </html>

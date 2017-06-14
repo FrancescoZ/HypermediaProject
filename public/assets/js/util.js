@@ -21,14 +21,22 @@ function fetchContent(query) {
     })
 }
 
-function findFromJSONArray(id, array) {
-  for (var i in array) {
-    if (array[i].id == id) {
-      return array[i]
-    }
+function goBack() {
+  window.history.back()
+}
+
+function setBackBtn(params) {
+  if (params['back'] === undefined) {
+    $('#back-button').hide()
+  } else {
+    $('#back-button').html("&larr; Return to " + params['back'])
   }
 }
 
-function goBack() {
-  window.history.back()
+function formDataAsJSON(formData) {
+  let x = {};
+  for (var pair of formData.entries()) {
+    x[pair[0]] = pair[1];
+  }
+  return x;
 }

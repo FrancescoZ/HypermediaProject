@@ -9,6 +9,8 @@ function init() {
   $('#button-info').addClass("active")
   $('#location-map').hide()
   $('#button-map').removeClass("active")
+  
+  setBackBtn(params)
 
   fetchContent(location_query + params['id'])
 }
@@ -29,12 +31,6 @@ function initLocation(item, index) {
     $('#address').html(item.address)
     $('#description').html(item.info)
     $('#how-to').html(item.how_to)
-
-    if (params['back'] === undefined) {
-      $('#back-button').hide()
-    } else {
-      $('#back-button').html("&larr; Return to " + params['back'])
-    }
 
     position = {}
     position['lat'] = item.lat
