@@ -8,7 +8,6 @@
 
   <meta name="author" content="Team 10422848">
   <link rel="icon" href="../assets/img/logo.ico">
-
   <title>Hospidif</title>
 
   <!-- Bootstrap core CSS -->
@@ -16,7 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link href="../assets/css/base.css" rel="stylesheet">
-  <link href="../assets/css/doctor.css" rel="stylesheet">
+  <link href="../assets/css/doctors.css" rel="stylesheet">
 
 </head>
 
@@ -59,48 +58,34 @@
 ================================================== -->
 
   <div class="container">
-    <button type="button" class="btn btn-xs btn-primary back" id="back-button" onClick="goBack()"></button>
-    <div class="jumbotron">
-      <div class="row">
-        <div class=col-md-9>
-          <h1 id="name"></h1>
-          <p id="area-resp"></p>
-          <p id="operating-service"></p>
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+      <div class="col-xs-12 col-sm-9">
+
+        <div class="section-header">
+          <h1><span id="sectionHeader" class="label label-default"></span></h1>
         </div>
-        <div class=col-md-3>
-          <img class="elevate center-block center-img" width="200px" height="200px" style="object-fit: contain;" id="image" alt="doctor img">
+
+        <div class="row">
+          <div id="doctorsPanelLeft"></div>
         </div>
+
       </div>
-    </div>
-    <div class="container">
-      <div class="section-header">
-        <h1><span class="label label-default">About the Doctor</span></h1>
-      </div>
-      <div class="doctor-panel" id="doctor-about">
-        <div class="panel panel-default contact">
-          <div class="panel-heading">
-            <h3 class="panel-title">Contacts</h3>
-          </div>
-          <div class="panel-body">
-            <p id="contacts"></p>
-          </div>
+
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+
+        <div class="list-group">
+          `
+          <div><a href="#" class="list-group-item" id="all-doctors-button" onClick="clickAllDoctors()">All Doctors</a></div>
         </div>
-        <div class="panel panel-default contact">
-          <div class="panel-heading">
-            <h3 class="panel-title">Biography</h3>
-          </div>
-          <div class="panel-body">
-            <p id="biography"></p>
-          </div>
+
+        <p>Select a location to filter the doctors:</p>
+
+        <div class="list-group">
+          <div id="doctorsPanelRight"></div>
         </div>
-        <div class="panel panel-default contact">
-          <div class="panel-heading">
-            <h3 class="panel-title">Office hours</h3>
-          </div>
-          <div class="panel-body">
-            <p id="office-hours"></p>
-          </div>
-        </div>
+
       </div>
 
     </div>
@@ -113,13 +98,11 @@
     <p>© 2017 Hospidif, Inc.</p>
   </footer>
 
-
   <!-- JavaScript
 ================================================== -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="../assets/js/bootstrap.js"></script>
-  <script src="../assets/js/util.js"></script>
-  <script src="../assets/js/doctor.js"></script>
+  <script src="../assets/js/doctors.js"></script>
 </body>
 
 </html>
