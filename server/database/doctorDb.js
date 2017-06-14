@@ -81,7 +81,7 @@ module.exports = {
       idsubquery:"at_service",
       subquery: locParam
     };
-    database.select("doctor", retFunction, serviceParam);
+    database.select("doctor", retFunction, docParam);
   }
 
 

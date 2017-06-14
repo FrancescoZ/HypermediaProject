@@ -38,7 +38,7 @@ module.exports = function(app,_){
         },id);
   });
 
-  app.get("/service-by-resp/:id",function(req,res){
+  app.get("/service-by-responsible/:id",function(req,res){
     let id = parseInt(req.params.id);
     //Send the select to the database
     serviceDb.selectByResponsible(function(result) {

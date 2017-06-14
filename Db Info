@@ -14,5 +14,5 @@ Dottore:
 
 Location
 
-  V Servizi: richiedere a /service-by-loc/idlocation
-  V Doctor: richiedere a /doctor-by-loc/idlocation
+  V Servizi: richiedere a /service-by-location/idlocation
+  V Doctor: richiedere a /doctor-by-location/idlocation
