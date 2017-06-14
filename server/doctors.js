@@ -37,7 +37,7 @@ module.exports = function(app,_){
           res.send(JSON.stringify(result));
         },id);
   });
-  
+
   app.get("/doctors-by-service/:id",function(req,res){
     let id = parseInt(req.params.id);
     //Send the select to the database
@@ -46,5 +46,12 @@ module.exports = function(app,_){
         },id);
   });
 
+  app.get("/doctors-by-location/:id",function(req,res){
+    let id = parseInt(req.params.id);
+    //Send the select to the database
+    doctorDb.selectByLocation(function(result) {
+          res.send(JSON.stringify(result));
+        },id);
+  });
   return doctorsModule;
 }

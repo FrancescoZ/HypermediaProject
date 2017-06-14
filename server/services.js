@@ -38,5 +38,21 @@ module.exports = function(app,_){
         },id);
   });
 
+  app.get("/service-by-resp/:id",function(req,res){
+    let id = parseInt(req.params.id);
+    //Send the select to the database
+    serviceDb.selectByResponsible(function(result) {
+          res.send(JSON.stringify(result));
+        },id);
+  });
+
+  app.get("/service-by-location/:id",function(req,res){
+    let id = parseInt(req.params.id);
+    //Send the select to the database
+    serviceDb.selectByLocation(function(result) {
+          res.send(JSON.stringify(result));
+        },id);
+  });
+
   return serviceModule;
 }
