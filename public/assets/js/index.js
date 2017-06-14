@@ -1,18 +1,23 @@
+const news_query = '/news/'
+const services_query = '/services/'
+const doctors_query = '/doctors/'
+const locations_query = '/locations/'
+
 function init() {
-  fetchContent(`/news`)
-  fetchContent('/services')
-  fetchContent('/doctors')
-  fetchContent('/locations')
+  fetchContent(news_query)
+  fetchContent(services_query)
+  fetchContent(doctors_query)
+  fetchContent(locations_query)
 }
 
 function initContent(query, item, index) {
-  if (query.includes('/news')) {
+  if (query.includes(news_query)) {
     initNews(item, index)
-  } else if (query.includes('/services')) {
+  } else if (query.includes(services_query)) {
     initService(item, index)
-  } else if (query.includes('/doctors')) {
+  } else if (query.includes(doctors_query)) {
     initDoctor(item, index)
-  } else if (query.includes('/locations')) {
+  } else if (query.includes(locations_query)) {
     initLocation(item, index)
   } else {
     console.log("Error: " + query)
@@ -80,7 +85,7 @@ function initLocation(item, index) {
 
 function getLocationHeading(item) {
   return `<div class="col-md-7">
-            <h2 class="location-heading">${item.name}<br><span class="text-muted h4">${item.address}</span></h2>
+            <h2 class="location-heading">${item.name}<br/><span class="text-muted h4">${item.address}</span></h2>
             <p>${item.info.substr(0, 200) + "..."}</p>
             <p><a class="btn btn-info" onclick="clickLocation(${item.id})" role="button">View details &raquo;</a></p>
           </div>`

@@ -46,7 +46,7 @@ module.exports = function(app,_){
         },id);
   });
 
-  app.get("/service-by-location/:id",function(req,res){
+  app.get("/services-by-location/:id",function(req,res){
     let id = parseInt(req.params.id);
     //Send the select to the database
     serviceDb.selectByLocation(function(result) {
