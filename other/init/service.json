@@ -1,22 +1,37 @@
 [
   {
     "id": 1,
-    "name": "Vascular surgery",
-    "area": 4
-  },
-  {
-    "id": 2,
     "name": "Chemotherapy",
     "area": 1
   },
+
+  {
+    "id": 2,
+    "name": "Echocardiography",
+    "area": 2
+  },
+
   {
     "id": 3,
-    "name": "Electrocardiography",
-    "area": 3
+    "name": "Electrocardiogram",
+    "area": 2
   },
+  
   {
     "id": 4,
+    "name": "Magnetic Resonance Spectroscopy",
+    "area": 3
+  },
+
+  {
+    "id": 5,
     "name": "Radiotherapy",
-    "area": 2
+    "area": 1
+  },
+  
+  {
+    "id": 6,
+    "name": "Sclerotherapy",
+    "area": 4
   }
 ]

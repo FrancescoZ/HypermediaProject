@@ -20,8 +20,8 @@ module.exports = {
               table.text("image");
               table.time("monday_hours");
               table.time("tuesday_hours");
-              table.time("wensday_hours");
-              table.time("thuesday_hours");
+              table.time("wednesday_hours");
+              table.time("thursday_hours");
               table.time("friday_hours");
               table.integer("celebrity");
               table.integer("area_res");
@@ -49,6 +49,7 @@ module.exports = {
             .createTable("doctor_service", table => {
               table.int('id_doctor').primary();
               table.int("id_service").primary();
+              table.int("grade");
             })
             .then(() => {
               //fill the table just created

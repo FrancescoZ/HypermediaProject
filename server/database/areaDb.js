@@ -16,6 +16,7 @@ module.exports ={
               table.string("name");
               table.text("info");
               table.integer("celebrity");
+              table.integer("doc_resp");
             })
             .then(() => {
               //fill the table just created

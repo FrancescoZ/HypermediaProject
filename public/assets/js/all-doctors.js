@@ -1,4 +1,3 @@
-// TODO da eliminare
 const eglocations = [
   {
     "id": 1,
@@ -167,26 +166,18 @@ const egdoctorsMilano = [
 ]
 
 function init() {
-
   document.getElementById("sectionHeader").innerHTML = "All Doctors";
-
   updateDoctorList(egdoctors);
-
   $('#all-doctors-button').addClass("active")
-
   for (var i in eglocations) {
     $('#doctorsPanelRight').append(
       `<a href="#" class="list-group-item" id="location-${eglocations[i].id}-button" onClick="clickLocationFilter(${eglocations[i].id})">${eglocations[i].name}</a>`)
   }
-
 }
 
 function updateDoctorList(doctors) {
-
   document.getElementById("doctorsPanelLeft").innerHTML = "";
-
   for (var i in doctors) {
-
     $('#doctorsPanelLeft').append(
       `<div class="col-xs-6 col-lg-4" style="padding-left: 10px; padding-right: 10px;">
         <div class="well">
@@ -196,7 +187,6 @@ function updateDoctorList(doctors) {
         </dv>
         </div>`);
   }
-
 }
 
 function clickDoctor(id) {
@@ -204,35 +194,27 @@ function clickDoctor(id) {
 }
 
 function clickAllDoctors() {
-
   document.getElementById("sectionHeader").innerHTML = "All Doctors";
   updateDoctorList(egdoctors);
   deactivateAllButton();
   $('#all-doctors-button').addClass("active")
-
 }
 
 function clickLocationFilter(id) {
-
   for (var i in eglocations) {
-
     if (eglocations[i].id == id) {
       var name = eglocations[i].name
     }
 
   }
-
   document.getElementById("sectionHeader").innerHTML = "All Doctors in " + name;
   updateDoctorList(egdoctorsMilano);
   deactivateAllButton();
   $('#location-' + id + '-button').addClass("active")
-
 }
 
 function deactivateAllButton() {
-
   $('#all-doctors-button').removeClass("active")
-
   for (var i in eglocations) {
     $('#location-' + eglocations[i].id + '-button').removeClass("active")
   }

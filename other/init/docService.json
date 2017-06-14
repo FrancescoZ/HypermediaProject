@@ -1,46 +1,205 @@
 [
   {
     "id_doctor": 1,
-    "id_service": 1
+    "id_service": 1,
+    "grade": 2
   },
 
   {
     "id_doctor": 1,
-    "id_service": 2
+    "id_service": 3,
+    "grade": 1
   },
 
   {
     "id_doctor": 1,
-    "id_service": 3
+    "id_service": 4,
+    "grade": 1
   },
 
   {
     "id_doctor": 1,
-    "id_service": 4
+    "id_service": 6,
+    "grade": 1
   },
 
   {
     "id_doctor": 2,
-    "id_service": 1
+    "id_service": 1,
+    "grade": 1
   },
 
   {
     "id_doctor": 2,
-    "id_service": 2
+    "id_service": 2,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 2,
+    "id_service": 5,
+    "grade": 1
   },
 
   {
     "id_doctor": 3,
-    "id_service": 3
+    "id_service": 3,
+    "grade": 1
   },
 
   {
     "id_doctor": 3,
-    "id_service": 4
+    "id_service": 4,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 3,
+    "id_service": 6,
+    "grade": 2
   },
 
   {
     "id_doctor": 4,
-    "id_service": 4
-  }
+    "id_service": 1,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 4,
+    "id_service": 3,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 4,
+    "id_service": 4,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 4,
+    "id_service": 5,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 5,
+    "id_service": 3,
+    "grade": 2
+  },
+  
+  {
+    "id_doctor": 5,
+    "id_service": 5,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 5,
+    "id_service": 6,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 6,
+    "id_service": 2,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 6,
+    "id_service": 3,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 6,
+    "id_service": 5,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 7,
+    "id_service": 1,
+    "grade": 1
+  },
+
+  {
+    "id_doctor": 7,
+    "id_service": 2,
+    "grade": 2
+  },
+  
+  {
+    "id_doctor": 7,
+    "id_service": 4,
+    "grade": 1
+  },
+
+  {
+    "id_doctor": 7,
+    "id_service": 5,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 8,
+    "id_service": 1,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 8,
+    "id_service": 4,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 8,
+    "id_service": 5,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 9,
+    "id_service": 3,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 9,
+    "id_service": 4,
+    "grade": 2
+  },
+  
+  {
+    "id_doctor": 9,
+    "id_service": 5,
+    "grade": 1
+  },
+  
+  {
+    "id_doctor": 10,
+    "id_service": 2,
+    "grade": 1
+  }, 
+  
+  {
+    "id_doctor": 10,
+    "id_service": 3,
+    "grade": 1
+  }, 
+  
+  {
+    "id_doctor": 10,
+    "id_service": 5,
+    "grade": 2
+  }, 
+  
+  {
+    "id_doctor": 10,
+    "id_service": 6,
+    "grade": 1
+  } 
 ]
