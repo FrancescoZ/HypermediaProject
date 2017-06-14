@@ -36,6 +36,14 @@ module.exports = function(app,_){
           res.send(JSON.stringify(result));
         },id);
   });
+  
+  app.get("/locations-by-area/:id",function(req,res){
+    let id = parseInt(req.params.id);
+    //Send the select to the database
+    locationDb.selectByArea(function(result) {
+          res.send(JSON.stringify(result));
+        },id);
+  });
 
   return locationsModule;
 }

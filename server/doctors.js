@@ -30,10 +30,18 @@ module.exports = function(app,_){
         },start,limit,orderBy);
   });
 
-  app.get("doctor/:id",function(req,res){
+  app.get("/doctor/:id",function(req,res){
     let id = parseInt(req.params.id);
     //Send the select to the database
     doctorDb.selectById(function(result) {
+          res.send(JSON.stringify(result));
+        },id);
+  });
+  
+  app.get("/doctors-by-service/:id",function(req,res){
+    let id = parseInt(req.params.id);
+    //Send the select to the database
+    doctorDb.selectByService(function(result) {
           res.send(JSON.stringify(result));
         },id);
   });

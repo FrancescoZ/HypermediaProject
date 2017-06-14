@@ -1,8 +1,8 @@
-const database=require("./database.js");
+const database = require("./database.js");
 
 module.exports = {
-  init:function(){
-    database.init(function(dbConnection,initData,_){
+  init: function () {
+    database.init(function (dbConnection, initData, _) {
       let doctorServiceList = require(initData + "docService.json");
       let doctorList = require(initData + "doc.json");
       //Doctors
@@ -36,9 +36,9 @@ module.exports = {
               );
               console.log("Doctors loaded");
             });
-          } else {
-            console.log("Doctors are already loaded");
-          }
+        } else {
+          console.log("Doctors are already loaded");
+        }
       });
       //Doctors's services
       dbConnection.schema.hasTable("doctor_service").then(exists => {
@@ -59,32 +59,56 @@ module.exports = {
               );
               console.log("Doctors's services loaded");
             });
-          } else {
-            console.log("Doctors's services are already loaded");
-          }
+        } else {
+          console.log("Doctors's services are already loaded");
+        }
       });
     });
   },
   ///////////////////////////////////////// SELECT ///////////////////////////
-  select:function(retFunction,start=null,limit=null,order=null){
+  select: function (retFunction, start = null, limit = null, order = null) {
     //Check the parameter
-    let param={
-      start:start,
-      limit:limit,
+    let param = {
+      start: start,
+      limit: limit,
       orderBy: order
     };
-    database.select("doctor",retFunction,param);
+    database.select("doctor", retFunction, param);
   },
-  selectById:function(retFunction,id){
+  selectById: function (retFunction, id) {
     //TODO Check the id
-    let param={
-      start:null,
-      limit:null,
+    let param = {
+      start: null,
+      limit: null,
       orderBy: null,
-      id:id,
-      idname:"id"
+      id: id,
+      idname: "id"
     };
-    database.select("doctors",retFunction,param);
+    database.select("doctors", retFunction, param);
+  },
+  selectByService: function (retFunction, idService) {
+    //TODO Check the id
+    let param = {
+      start: null,
+      limit: null,
+      orderBy: null,
+      id: idService,
+      idname: "id_service"
+    };
+    database.select("doctor_service", result => {
+      var doctors = [];
+      result.map(el => {
+        doctors.push(el.id_doctor);
+      });
+      let param = {
+        start: null,
+        limit: null,
+        orderBy: null,
+        ids: doctors,
+        idname: "id"
+      };
+      database.select("doctor", retFunction, param);
+    }, param);
   }
 
 }

@@ -5,26 +5,14 @@ function init() {
   fetchContent('/locations')
 }
 
-function fetchContent(query) {
-  fetch(query)
-    .then(response => response.json())
-    .then(data => {
-      console.log(query)
-      console.log(data)
-      data.map((item, index) => {
-        initContent(query, item, index)
-      })
-    })
-}
-
 function initContent(query, item, index) {
-  if (query.includes('news')) {
+  if (query.includes('/news')) {
     initNews(item, index)
-  } else if (query.includes('services')) {
+  } else if (query.includes('/services')) {
     initService(item, index)
-  } else if (query.includes('doctors')) {
+  } else if (query.includes('/doctors')) {
     initDoctor(item, index)
-  } else if (query.includes('locations')) {
+  } else if (query.includes('/locations')) {
     initLocation(item, index)
   } else {
     console.log("Error: " + query)
@@ -35,18 +23,18 @@ function initNews(item, index) {
   $('#ind-carousel').append(`<li data-target="#myCarousel" data-slide-to="${index}" ${index == 0 ? `class="active"` : ``}></li>`)
   $('#item-carousel').append(
     `<div class="item ${index == 0 ? `active` : ``}">
-        ${getNewsImage(item)}
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>${item.name}</h1>
-            <p>${item.text}</p>
-          </div>
+      ${getNewsImage(item)}
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>${item.name}</h1>
+          <p>${item.text}</p>
         </div>
-      </div>`)
+      </div>
+    </div>`)
 }
 
 function getNewsImage(item) {
-  if (item.image === null) {
+  if (item.image === null || item.image == "") {
     return `<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="${item.name}">`
   } else {
     return `<img src="${item.image}" alt="${item.name}">`
@@ -65,14 +53,14 @@ function initService(item, index) {
 function initDoctor(item, index) {
   $('#doctors-panel').append(
     `<div class="col-sm-6 col-md-4 featurette">
-        ${getDoctorImage(item)}
-        <h2>${item.name}</h2>
-        <p><a class="btn btn-info" onclick="clickDoctor(${item.id})" role="button">View details &raquo;</a></p>
+      ${getDoctorImage(item)}
+      <h2>${item.name}</h2>
+      <p><a class="btn btn-info" onclick="clickDoctor(${item.id})" role="button">View details &raquo;</a></p>
     </div>`)
 }
 
 function getDoctorImage(item) {
-  if (item.image === null) {
+  if (item.image === null || item.image == "") {
     return `<img class="img-circle center-img elevate" src="./assets/img/doctor.png" alt="Doctor ${item.name}" height="140" width="140">`
   } else {
     return `<img class="img-circle center-img elevate" src="${item.image}" alt="Doctor ${item.name}" height="140" width="140">`

@@ -9,6 +9,18 @@ function urlParams() {
   return result
 }
 
+function fetchContent(query) {
+  fetch(query)
+    .then(response => response.json())
+    .then(data => {
+      console.log(query)
+      console.log(data)
+      data.map((item, index) => {
+        initContent(query, item, index)
+      })
+    })
+}
+
 function findFromJSONArray(id, array) {
   for (var i in array) {
     if (array[i].id == id) {

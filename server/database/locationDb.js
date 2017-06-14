@@ -81,5 +81,27 @@ module.exports ={
       idname:"id"
     };
     database.select("location",retFunction,param);
+  },
+  selectByArea: function (retFunction, idArea) {
+    //TODO Check the id
+    let param = {
+      start: null,
+      limit: null,
+      orderBy: null,
+      id: idArea,
+      idname: "id_area"
+    };
+    database.select("location_area", result => {
+      var location = [];
+      result.map(el => { location.push(el.id_location) });
+      let param = {
+        start: null,
+        limit: null,
+        orderBy: null,
+        ids: location,
+        idname: "id"
+      };
+      database.select("location", retFunction, param);
+    }, param);
   }
 }
