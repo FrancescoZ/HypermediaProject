@@ -90,7 +90,12 @@ module.exports = {
     });
   },
 
-  insert : function(){},
+  insert : function(objType,obj,retFunction){
+    sqlDb(objType).insert(obj).then(o => {
+      retFunction(o);
+    });
+
+  },
   delete : function(){},
   update : function(){}
 };

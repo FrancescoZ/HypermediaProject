@@ -11,6 +11,7 @@ const util=require("./server/utilities.js");
 
 // /* Register REST entry point */
 const news = require("./server/news.js")(app,_);
+const com = require("./server/comunication.js")(app,_);
 const doctors = require("./server/doctors.js")(app,_);
 const locations = require("./server/locations.js")(app,_);
 const services = require("./server/services.js")(app,_);
@@ -24,6 +25,7 @@ function init() {
   doctors.initDoctors();
   locations.initLocations();
   news.initNews();
+  com.initCom();
   services.initServices();
 };
 
@@ -37,33 +39,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
 app.use(function(err, req, res, next) {
     console.log(err);
-    res.send(500);
+    res.send(404);
 });
-/*
-app.delete("/pets/:id", function(req, res) {
-  let idn = parseInt(req.params.id);
-  sqlDb("pets").where("id", idn).del().then(() => {
-    res.status(200);
-    res.send({ message: "ok" });
-  });
-});
-
-app.post("/pets", function(req, res) {
-  let toappend = {
-    name: req.body.name,
-    tag: req.body.tag,
-    born: req.body.year
-  };
-  sqlDb("pets").insert(toappend).then(ids => {
-    let id = ids[0];
-    res.send(_.merge({ id, toappend }));
-  });
-});
-*/
-// app.use(function(req, res) {
-//   res.status(400);
-//   res.send({ error: "400", title: "404: File Not Found" });
-// });
 
 app.set("port", serverPort);
 
