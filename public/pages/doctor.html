@@ -70,7 +70,8 @@
       <div class="row">
         <div class=col-md-9>
           <h1 id="name"></h1>
-          <p id="contacts"></p>
+          <p id="area-resp"></p>
+          <p id="operating-service"></p>
         </div>
         <div class=col-md-3>
           <img class="elevate center-block center-img" width="200px" height="200px" style="object-fit: contain;" id="image" alt="doctor img">
@@ -78,76 +79,32 @@
       </div>
     </div>
     <div class="container">
-      <ul class="nav nav-tabs" role="tablist">
-        <li id="button-about" role="presentation"><a onClick="clickAbout()">Biography</a></li>
-        <li id="button-working-hours" role="presentation"><a onClick="clickWorkingHours()">Working Hours</a></li>
-        <li id="button-related-services" role="presentation"><a onClick="clickRelatedServices()">Related Services</a></li>
-      </ul>
-
+      <div class="section-header">
+        <h1><span class="label label-default">About the Doctor</span></h1>
+      </div>
       <div class="doctor-panel" id="doctor-about">
-        <p id="about"></p>
-      </div>
-
-      <div class="doctor-panel" id="doctor-working-hours">
-        <p>
-          <table class="table table-striped">
-            <tbody>
-              <tr>
-                <th>Sunday:</th>
-                <th id="sunday-wh"></th>
-              </tr>
-              <tr>
-                <td>Monday:</td>
-                <td id="monday-wh"></td>
-              </tr>
-              <tr>
-                <th>Tuesday:</th>
-                <th id="tuesday-wh"></th>
-              </tr>
-              <tr>
-                <td>Wednesday:</td>
-                <td id="wednesday-wh"></td>
-              </tr>
-              <tr>
-                <th>Thurday:</th>
-                <th id="thurday-wh"></th>
-              </tr>
-              <tr>
-                <td>Friday:</td>
-                <td id="friday-wh"></td>
-              </tr>
-              <tr>
-                <th>Saturday:</th>
-                <th id="saturday-wh"></th>
-              </tr>
-            </tbody>
-          </table>
-        </p>
-      </div>
-
-      <div class="doctor-panel" id="doctor-related-services">
         <div class="panel panel-default contact">
           <div class="panel-heading">
-            <h3 class="panel-title">Operating Services</h3>
+            <h3 class="panel-title">Contacts</h3>
           </div>
           <div class="panel-body">
-            <p id="operating-services"></p>
+            <p id="contacts"></p>
           </div>
         </div>
         <div class="panel panel-default contact">
           <div class="panel-heading">
-            <h3 class="panel-title">Area Responsible</h3>
+            <h3 class="panel-title">Biography</h3>
           </div>
           <div class="panel-body">
-            <p id="area-responsible"></p>
+            <p id="biography"></p>
           </div>
         </div>
         <div class="panel panel-default contact">
           <div class="panel-heading">
-            <h3 class="panel-title">Service Responsible</h3>
+            <h3 class="panel-title">Office hours</h3>
           </div>
           <div class="panel-body">
-            <p id="service-responsible"></p>
+            <p id="office-hours"></p>
           </div>
         </div>
       </div>

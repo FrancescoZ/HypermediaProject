@@ -15,13 +15,9 @@ module.exports = {
               table.string("name");
               table.string("phone");
               table.string("email");
+              table.string("office_hours");
               table.text("bio");
               table.text("image");
-              table.time("monday_hours");
-              table.time("tuesday_hours");
-              table.time("wednesday_hours");
-              table.time("thursday_hours");
-              table.time("friday_hours");
               table.integer("celebrity");
               table.integer("at_service");
             })
