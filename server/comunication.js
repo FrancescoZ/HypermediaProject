@@ -20,7 +20,7 @@ module.exports = function(app,_){
       note: req.body.note,
       date: req.body.date,
       service: req.body.service,
-      time: (new Date()).toISOString()
+      time: utilities.getDateTime()
     };
     comDb.insertReservation(toappend,function(){
       res.send(200);
@@ -33,7 +33,7 @@ module.exports = function(app,_){
       name: req.body.name,
       mail: req.body.mail,
       note: req.body.note,
-      time: (new Date()).toISOString()
+      time: utilities.getDateTime()
     };
     comDb.insertContact(toappend,function(){
       res.send(200);
