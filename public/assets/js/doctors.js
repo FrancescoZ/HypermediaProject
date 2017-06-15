@@ -1,5 +1,5 @@
 const params = urlParams()
-const doctors_query = '/doctors/' + '?limit='
+const doctors_query = '/doctors/' + '?limit=30&orderBy=2' 
 const locations_query = '/locations/'
 const location_query = '/location/'
 const doc_by_loc_query = '/doctors-by-location/'
@@ -60,7 +60,7 @@ function clickAllDoctors() {
 function clickLocationFilter(id) {
   fetchContent(location_query + id)
   document.getElementById("doctorsPanelLeft").innerHTML = "";
-  fetchContent(doc_by_loc_query + id)
+  fetchContent(doc_by_loc_query + id + '/?&orderBy=2')
 }
 
 function deactivateAllButton() {

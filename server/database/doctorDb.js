@@ -66,7 +66,7 @@ module.exports = {
     };
     database.select("doctor", retFunction, doctorParam);
   },
-  selectByLocation: function(retFunction,idLoc){
+  selectByLocation: function(retFunction,idLoc, order=null){
     let locParam={
       objType: "location_service",
       idname: "id_location",
@@ -75,7 +75,8 @@ module.exports = {
     };
     let docParam={
       idsubquery:"at_service",
-      subquery: locParam
+      subquery: locParam,
+      orderBy: order
     };
     database.select("doctor", retFunction, docParam);
   }

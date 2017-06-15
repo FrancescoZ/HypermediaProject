@@ -87,20 +87,9 @@
     "image": "doctor_amato.jpg",
     "at_service":2
   },
-
+  
   {
     "id": 9,
-    "name": "Susanne Arnold",
-    "phone": "302-8513674",
-    "email": "susanne.arnold@hospidif.com",
-    "bio": "My name is Susanne M. Arnold; I received my medical degree from the University of Kentucky, College of Medicine, Lexington. I completed a residency in Internal Medicine at the University of Virginia and fellowship in Medical Oncology and Hematology at the University of Kentucky, Lexington.<br>I am board certified by the American Board of Internal Medicine in Medical Oncology. I am the Associate Director of Clinical Translation of the Markey Cancer Center with interests in lung cancer, head and neck cancer and early therapeutics. ",
-    "office_hours": "Tuesday 10:30 AM - 12:30 AM",
-    "image": "doctor_arnold.jpg",
-    "at_service":3
-  },
-
-  {
-    "id": 10,
     "name": "Vrushali Angadi",
     "phone": "375-9152384",
     "email": "vrushali.angadi@hospidif.com",
@@ -108,5 +97,16 @@
     "office_hours": "Monday 8:00 AM - 10:00 AM",
     "image": "doctor_angadi.jpg",
     "at_service":4
+  },
+
+  {
+    "id": 10,
+    "name": "Susanne Arnold",
+    "phone": "302-8513674",
+    "email": "susanne.arnold@hospidif.com",
+    "bio": "My name is Susanne M. Arnold; I received my medical degree from the University of Kentucky, College of Medicine, Lexington. I completed a residency in Internal Medicine at the University of Virginia and fellowship in Medical Oncology and Hematology at the University of Kentucky, Lexington.<br>I am board certified by the American Board of Internal Medicine in Medical Oncology. I am the Associate Director of Clinical Translation of the Markey Cancer Center with interests in lung cancer, head and neck cancer and early therapeutics. ",
+    "office_hours": "Tuesday 10:30 AM - 12:30 AM",
+    "image": "doctor_arnold.jpg",
+    "at_service":3
   }
 ]

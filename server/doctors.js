@@ -48,10 +48,11 @@ module.exports = function(app,_){
 
   app.get("/doctors-by-location/:id",function(req,res){
     let id = parseInt(req.params.id);
+    let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
     //Send the select to the database
     doctorDb.selectByLocation(function(result) {
           res.send(JSON.stringify(result));
-        },id);
+        },id,orderBy);
   });
   return doctorsModule;
 }
