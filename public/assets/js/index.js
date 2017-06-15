@@ -32,7 +32,6 @@ function initNews(item, index) {
       <div class="container">
         <div class="carousel-caption">
           <h1>${item.name}</h1>
-          <p>${item.text}</p>
         </div>
       </div>
     </div>`)
