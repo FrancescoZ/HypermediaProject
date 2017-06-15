@@ -42,9 +42,8 @@ module.exports = {
           //if there isn't than create the structure
           dbConnection.schema
             .createTable("location_service", table => {
-              table.increments('id').primary
-              table.int('id_location')
-              table.int("id_service")
+              table.integer('id_location')
+              table.integer("id_service")
             })
             .then(() => {
               //fill the table just created
