@@ -20,6 +20,7 @@ module.exports = {
               table.text("how_to");
               table.float("long");
               table.float("lat");
+              table.string("image")
             })
             .then(() => {
               //fill the table just created

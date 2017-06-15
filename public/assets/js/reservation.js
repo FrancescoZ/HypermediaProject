@@ -40,10 +40,12 @@ function clickSubmit() {
     .then(response => {
       if (response.ok) {
         $('#banner').html(`<strong>Well done!</strong> You request has been submitted`)
-        $('#banner').addClass("alert-success")      
+        $('#banner').addClass("alert-success")
+        $('#submit-btn').hide()
       } else {
         $('#banner').html(`<strong>Warning!</strong> An error as occured, please retry`)
         $('#banner').addClass("alert-danger")
+        $('#submit-btn').hide()
       }
     })
 }
