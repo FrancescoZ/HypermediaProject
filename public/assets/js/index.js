@@ -1,12 +1,12 @@
 const news_query = '/news/'
-const services_query = '/services/' + '?limit=6'
-const doctors_query = '/doctors/' + '?limit=6'
+const services_query = '/services/'
+const doctors_query = '/doctors/'
 const locations_query = '/locations/'
 
 function init() {
   fetchContent(news_query)
-  fetchContent(services_query)
-  fetchContent(doctors_query)
+  fetchContent(services_query + '?limit=6')
+  fetchContent(doctors_query + '?limit=6')
   fetchContent(locations_query)
 }
 
@@ -32,7 +32,7 @@ function initNews(item, index) {
       <div class="container">
         <div class="carousel-caption">
           <h1>${item.name}</h1>
-          <p>${item.text === null ? "" : item.text.substr(0, 200) + "..."}</p>
+          <p>${item.text === null ? "" : item.text.substr(0, 100) + "..."}</p>
         </div>
       </div>
     </div>`)

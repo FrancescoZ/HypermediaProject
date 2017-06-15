@@ -5,7 +5,6 @@ const responsible_query = '/doctor/'
 const doctors_query = '/doctors-by-service/'
 const locations_query = '/locations-by-service/'
 
-
 function init() {
   $('#service-info').show()
   $('#button-info').addClass("active")
@@ -39,6 +38,7 @@ function initService(item, index) {
     $('#description').html(item.description)
     $('#price').html(item.price)
     $('#promotion').html(item.promotion)
+    responsible = item.doc_resp
 
     fetchContent(area_query + item.area)
     fetchContent(responsible_query + item.doc_resp)
@@ -64,7 +64,7 @@ function initDoctors(item, index) {
     `<div class="col-sm-6 col-md-3 featurette" style="text-align:center;">
       ${getDoctorImage(item)}
       <h4>${item.name}</h4>
-      <p><a class="btn btn-info" onclick="clickDoctor(${item.id})" role="button">View details &raquo;</a></p>
+      <p><a class="btn ${item.id == responsible ? 'btn-primary' : 'btn-info'}" onclick="clickDoctor(${item.id})" role="button">View details &raquo;</a></p>
     </div>`)
 }
 
@@ -93,6 +93,7 @@ function getLocationImage(item) {
   }
 }
 
+var responsible
 init();
 
 // CLICK EVENTS ==========================>

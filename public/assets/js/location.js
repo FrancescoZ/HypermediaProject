@@ -2,8 +2,6 @@ const params = urlParams()
 const location_query = '/location/'
 const services_query = '/services-by-location/'
 
-var position
-
 function init() {
   $('#location-info').show()
   $('#button-info').addClass("active")
@@ -71,6 +69,7 @@ function initMap() {
   }
 }
 
+var position
 init()
 
 // CLICK EVENTS ==========================>
