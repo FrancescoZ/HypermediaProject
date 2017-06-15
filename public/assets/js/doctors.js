@@ -70,7 +70,7 @@ function deactivateAllButton() {
   }
 }
 
-const back_ref = `&back=doctor`
+const back_ref = `&back=doctors`
 
 function clickDoctor(id) {
   document.location.href = `/doctor.html?id=${id} + back_ref`

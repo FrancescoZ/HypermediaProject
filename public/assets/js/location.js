@@ -31,12 +31,21 @@ function initLocation(item, index) {
     $('#address').html(item.address)
     $('#description').html(item.info)
     $('#how-to').html(item.how_to)
+    $('#loc-img').html(getLocationImage(item))
 
     position = {}
     position['lat'] = item.lat
     position['lng'] = item.long
 
     fetchContent(services_query + item.id)
+  }
+}
+
+function getLocationImage(item) {
+  if (item.image === undefined || item.image === null || item.image == "") {
+    return `<img src="../assets/img/location.png" class="img-circle center-block center-img elevate" height="150px" width="150px" alt="${item.name}">`
+  } else {
+    return `<img src="../assets/img/locations/${item.image}" class="img-circle center-block center-img elevate" style="object-fit: cover;" height="150px" width="150px" alt="${item.name}">`
   }
 }
 

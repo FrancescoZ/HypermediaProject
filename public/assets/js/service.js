@@ -62,19 +62,35 @@ function initResponsible(item, index) {
 function initDoctors(item, index) {
   $('#doctors-panel').append(
     `<div class="col-sm-6 col-md-3 featurette" style="text-align:center;">
-      <img class="img-circle center-img elevate" src="../assets/img/doctor.png" alt="Generic placeholder image" height="110" width="110">
+      ${getDoctorImage(item)}
       <h4>${item.name}</h4>
       <p><a class="btn btn-info" onclick="clickDoctor(${item.id})" role="button">View details &raquo;</a></p>
     </div>`)
 }
 
+function getDoctorImage(item) {
+  if (item.image === undefined || item.image === null || item.image == "") {
+    return `<img class="img-circle center-img elevate" src="../assets/img/doctor.png" alt="${item.name}" height="110" width="110">`
+  } else {
+    return `<img class="img-circle center-img elevate" style="object-fit: cover;" src="../assets/img/doctors/${item.image}" alt="${item.name}" height="110" width="110">`
+  }
+}
+
 function initLocations(item, index) {
   $('#locations-panel').append(
     `<div class="col-sm-6 col-md-3 featurette" style="text-align:center;">
-        <img class="img-circle center-img elevate" src="../assets/img/location.png" alt="Generic placeholder image" height="110" width="110">
+        ${getLocationImage(item)}
         <h4>${item.name}</h4>
         <p><a class="btn btn-info" onclick="clickLocation(${item.id})" role="button">View details &raquo;</a></p>
       </div>`)
+}
+
+function getLocationImage(item) {
+  if (item.image === undefined || item.image === null || item.image == "") {
+    return `<img class="img-circle center-img elevate" src="../assets/img/location.png" alt="${item.name}" height="110" width="110">`
+  } else {
+    return `<img class="img-circle center-img elevate" style="object-fit: cover;" src="../assets/img/locations/${item.image}" alt="${item.name}" height="110" width="110">`
+  }
 }
 
 init();

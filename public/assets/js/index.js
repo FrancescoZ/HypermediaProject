@@ -1,6 +1,6 @@
 const news_query = '/news/'
-const services_query = '/services/'
-const doctors_query = '/doctors/'
+const services_query = '/services/' + '?limit=6'
+const doctors_query = '/doctors/' + '?limit=6'
 const locations_query = '/locations/'
 
 function init() {
@@ -32,16 +32,17 @@ function initNews(item, index) {
       <div class="container">
         <div class="carousel-caption">
           <h1>${item.name}</h1>
+          <p>${item.text === null ? "" : item.text.substr(0, 200) + "..."}</p>
         </div>
       </div>
     </div>`)
 }
 
 function getNewsImage(item) {
-  if (item.image === null || item.image == "") {
+  if (item.image === undefined || item.image === null || item.image == "") {
     return `<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="${item.name}">`
   } else {
-    return `<img src="./assets/img/${item.image}" alt="${item.name}">`
+    return `<img class="center-img elevate" style="object-fit: cover;" src="./assets/img/news/${item.image}" alt="${item.name}">`
   }
 }
 
@@ -64,10 +65,10 @@ function initDoctor(item, index) {
 }
 
 function getDoctorImage(item) {
-  if (item.image === null || item.image == "") {
+  if (item.image === undefined || item.image === null || item.image == "") {
     return `<img class="img-circle center-img elevate" src="./assets/img/doctor.png" alt="Doctor ${item.name}" height="140" width="140">`
   } else {
-    return `<img class="img-circle center-img elevate" src="./assets/img/${item.image}" alt="Doctor ${item.name}" height="140" width="140">`
+    return `<img class="img-circle center-img elevate" style="object-fit: cover;" src="./assets/img/doctors/${item.image}" alt="Doctor ${item.name}" height="140" width="140">`
   }
 }
 
