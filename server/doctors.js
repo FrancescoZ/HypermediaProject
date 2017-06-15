@@ -46,7 +46,7 @@ module.exports = function(app,_){
         },id);
   });
 
-  app.get("/doctor-by-location/:id",function(req,res){
+  app.get("/doctors-by-location/:id",function(req,res){
     let id = parseInt(req.params.id);
     //Send the select to the database
     doctorDb.selectByLocation(function(result) {

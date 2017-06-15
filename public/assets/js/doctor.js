@@ -27,7 +27,7 @@ function initDoctor(item, index) {
     $("#contacts").html("&#9742; " + item.phone + "<br>&#9993 " + item.email)
     $("#biography").html(item.bio)
     $("#office-hours").html(item.office_hours)
-    document.getElementById("image").setAttribute("src", item.image)
+    document.getElementById("image").setAttribute("src", "../assets/img/doctors/" + item.image)
 
     if (params['back'] === undefined) {
       $('#back-button').hide()
