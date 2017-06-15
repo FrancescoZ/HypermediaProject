@@ -73,7 +73,7 @@ function deactivateAllButton() {
 const back_ref = `&back=doctor`
 
 function clickDoctor(id) {
-  document.location.href = `/doctor.html?id=${id} + back_ref`
+  document.location.href = `/doctor.html?id=${id}` + back_ref
 }
 
 init();
