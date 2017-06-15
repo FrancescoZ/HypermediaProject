@@ -13,9 +13,9 @@ module.exports = {
           dbConnection.schema
             .createTable("reservation", table => {
               table.increments('id').primary();
-              table.string("full_name");
-              table.time("time");
-              table.string("email");
+              table.string("name");
+              table.date("date");
+              table.string("mail");
               table.string("phone");
               table.text("note");
               table.integer("service");
@@ -36,9 +36,9 @@ module.exports = {
           dbConnection.schema
             .createTable("contact", table => {
               table.increments('id').primary();
-              table.string("full_name");
+              table.string("name");
               table.time("time");
-              table.string("email");
+              table.string("mail");
               table.text("note");
             })
             .then(() => {

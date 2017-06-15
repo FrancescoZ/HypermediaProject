@@ -34,9 +34,9 @@ function setBackBtn(params) {
 }
 
 function formDataAsJSON(formData) {
-  let x = {};
+  let data = {};
   for (var pair of formData.entries()) {
-    x[pair[0]] = pair[1];
+    data[pair[0]] = pair[1];
   }
-  return x;
+  return JSON.stringify(data);
 }

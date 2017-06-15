@@ -25,8 +25,25 @@ init()
 // CLICK EVENTS ==========================>
 
 function clickSubmit() {
-  var data = new FormData(document.getElementById("reservation"))
-  var json = formDataAsJSON(data)
-  json['service'] = params['id']
-  console.log(json)
+  let headers = new Headers();
+  headers.set("Content-Type", "application/json");
+
+  let formdata = new FormData(document.getElementById("reservation"))
+  formdata.set('service', params['id'])
+  let body = formDataAsJSON(formdata)
+
+  fetch("/reservation", {
+      method: "POST",
+      body: body,
+      headers: headers
+    })
+    .then(response => {
+      if (response.ok) {
+        $('#banner').html(`<strong>Well done!</strong> You request has been submitted`)
+        $('#banner').addClass("alert-success")      
+      } else {
+        $('#banner').html(`<strong>Warning!</strong> An error as occured, please retry`)
+        $('#banner').addClass("alert-danger")
+      }
+    })
 }

@@ -12,12 +12,14 @@ module.exports = function(app,_){
   };
 
   app.post("/reservation", function(req, res) {
+    console.log(req.body)
     let toappend = {
       name: req.body.name,
       mail: req.body.mail,
       phone: req.body.phone,
       note: req.body.note,
-      time: req.body.date
+      date: req.body.date,
+      service: req.body.service
     };
     comDb.insertReservation(toappend,function(){
       res.send(200);
@@ -25,6 +27,7 @@ module.exports = function(app,_){
   });
 
   app.post("/contact", function(req, res) {
+    console.log(req.body)
     let toappend = {
       name: req.body.name,
       mail: req.body.mail,
