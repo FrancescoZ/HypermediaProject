@@ -12,7 +12,6 @@ module.exports = function(app,_){
   };
 
   app.post("/reservation", function(req, res) {
-    console.log(req.body)
     let toappend = {
       name: req.body.name,
       mail: req.body.mail,
@@ -28,7 +27,6 @@ module.exports = function(app,_){
   });
 
   app.post("/contact", function(req, res) {
-    console.log(req.body)
     let toappend = {
       name: req.body.name,
       mail: req.body.mail,
