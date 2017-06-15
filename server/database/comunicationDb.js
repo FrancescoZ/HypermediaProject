@@ -1,8 +1,8 @@
-const database=require("./database.js");
+const database = require("./database.js");
 
 module.exports = {
-  init:function(){
-    database.init(function(dbConnection,initData,_){
+  init: function () {
+    database.init(function (dbConnection, initData, _) {
       //initial data stored in json
 
       //Reservation
@@ -19,13 +19,14 @@ module.exports = {
               table.string("phone");
               table.text("note");
               table.integer("service");
+              table.timestamp("time")
             })
             .then(() => {
               console.log("Reservation created");
             });
-          } else {
-            console.log("Reservation already created");
-          }
+        } else {
+          console.log("Reservation already created");
+        }
       });
 
       //Contact
@@ -37,24 +38,24 @@ module.exports = {
             .createTable("contact", table => {
               table.increments('id').primary();
               table.string("name");
-              table.time("time");
+              table.timestamp("time");
               table.string("mail");
               table.text("note");
             })
             .then(() => {
               console.log("Contact created");
             });
-          } else {
-            console.log("Contact already created");
-          }
+        } else {
+          console.log("Contact already created");
+        }
       });
     });
   },
-  insertContact: function(obj,retFunction){
-    database.insert("contact",obj,retFunction);
+  insertContact: function (obj, retFunction) {
+    database.insert("contact", obj, retFunction);
   },
-  insertReservation: function(obj,retFunction){
+  insertReservation: function (obj, retFunction) {
     //TODO Check if reservation is possible
-    database.insert("reservation",obj,retFunction);
+    database.insert("reservation", obj, retFunction);
   }
 }
