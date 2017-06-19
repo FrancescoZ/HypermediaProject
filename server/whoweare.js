@@ -5,7 +5,7 @@ const whoDb = require("./database/whoweareDb.js");
 module.exports = function(app,_){
   var whoweareModule = {
     initWhoweare: function (){
-      areaDb.init();
+      whoDb.init();
     }
   };
 
