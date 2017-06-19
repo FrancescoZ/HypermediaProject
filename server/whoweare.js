@@ -22,5 +22,5 @@ module.exports = function(app,_){
           res.send(JSON.stringify(result));
         });
   });
-  return areaModule;
+  return whoweareModule;
 }
