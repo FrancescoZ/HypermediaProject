@@ -28,12 +28,12 @@ function initContent(query, item, index) {
 
 function initDoctors(item, index) {
   $('#doctorsPanelLeft').append(
-    `<div class="col-xs-6 col-lg-4" style="padding-left: 10px; padding-right: 10px;">
-        <div class="well">
-          <h3>${item.name}</h3>
+    `<div class="col-xs-12 col-sm-6 col-lg-4" style="padding-left: 10px; padding-right: 10px;">
+        <div class="well featurette">
+          <h3 style="margin-top: 0;">${item.name}</h3>
           <img class="center-img img-circle elevate center-block" width="150px" height="150px" style="object-fit: contain;" alt="location img" src="../assets/img/doctors/${item.image}">
-          <button type="button" class="btn btn-info" onClick="clickDoctor(${item.id})">View details &raquo;</button>
-        </dv>
+          <button type="button" class="btn btn-info" style="margin-top: 15px;" onClick="clickDoctor(${item.id})">View details &raquo;</button>
+        </div>
       </div>`);
 }
 

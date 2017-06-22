@@ -17,6 +17,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(methodOverride());
+app.use(function (err, req, res, next) {
+  console.log(err);
+  res.send(404);
+});
 
 app.set("port", serverPort);
 

@@ -15,7 +15,6 @@
 
   <!-- Custom styles for this template -->
   <link href="../assets/css/base.css" rel="stylesheet">
-  <link href="../assets/css/doctors.css" rel="stylesheet">
 
 </head>
 
@@ -59,37 +58,27 @@
 
   <div class="container">
 
-    <div class="row row-offcanvas row-offcanvas-right">
-
-      <div class="col-xs-12 col-sm-9">
-
+    <div class="row">
+      <div class="col-xs-12 col-md-3"></div>
+      <div class="col-xs-12 col-md-9">
         <div class="section-header">
           <h1><span id="sectionHeader" class="label label-default"></span></h1>
         </div>
-
-        <div class="row">
-          <div id="doctorsPanelLeft"></div>
-        </div>
-
       </div>
-
-      <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-
-        <div class="list-group">
-          `
-          <div><a href="#" class="list-group-item" id="all-doctors-button" onClick="clickAllDoctors()">All Doctors</a></div>
-        </div>
-
-        <p>Select a location to filter the doctors:</p>
-
-        <div class="list-group">
-          <div id="doctorsPanelRight"></div>
-        </div>
-
-      </div>
-
     </div>
 
+    <div class="row section">
+      <div class="col-xs-12 col-md-3" id="sidebar">
+        <div class="list-group">
+          <div><a href="#" class="list-group-item" id="all-doctors-button" onClick="clickAllDoctors()">All Doctors</a></div>
+        </div>
+        <p><b>Select a location to filter the doctors:</b></p>
+        <div class="list-group" id="doctorsPanelRight"></div>
+      </div>
+      <div class="col-xs-12 col-md-9">
+        <div id="doctorsPanelLeft"></div>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->

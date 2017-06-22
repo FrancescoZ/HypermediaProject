@@ -7,8 +7,6 @@ const description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nu
 function init() {
   $('#about-panel').show();
   $('#about-btn').addClass("active")
-  $('#where-panel').hide();
-  $('#where-btn').removeClass("active")
   $('#projects-panel').hide();
   $('#projects-btn').removeClass("active")
 
@@ -45,8 +43,6 @@ init()
 function clickAbout() {
   $('#about-panel').show();
   $('#about-btn').addClass("active")
-  $('#where-panel').hide();
-  $('#where-btn').removeClass("active")
   $('#projects-panel').hide();
   $('#projects-btn').removeClass("active")
 }
@@ -54,8 +50,6 @@ function clickAbout() {
 function clickProjects() {
   $('#about-panel').hide();
   $('#about-btn').removeClass("active")
-  $('#where-panel').hide();
-  $('#where-btn').removeClass("active")
   $('#projects-panel').show();
   $('#projects-btn').addClass("active")
 }
