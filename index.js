@@ -32,6 +32,7 @@ const doctors = require("./server/doctors.js")(app, _);
 const locations = require("./server/locations.js")(app, _);
 const services = require("./server/services.js")(app, _);
 const areas = require("./server/areas.js")(app, _);
+const whowe = require("./server/whoweare.js")(app, _);
 
 /**
  * Call the different submodule, and crete the connection with the database
@@ -43,6 +44,7 @@ function init() {
   news.initNews();
   com.initCom();
   services.initServices();
+  whowe.initWhoweare();
 };
 
 init();
