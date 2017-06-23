@@ -81,12 +81,14 @@
     <div class="container">      
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active" id="about-btn"><a class="btn" onclick="clickAbout()">About us</a></li>
+        <li role="presentation" id="history-btn"><a class="btn" onclick="clickHistory()">History Timeline</a></li>
         <li role="presentation" id="projects-btn"><a class="btn" onclick="clickProjects()">Projects</a></li>
         <li role="presentation" class="pull-right" onclick="clickContactUs()"><a class="btn btn-success">Contact us</a></li>
       </ul>
 
       <div class="panel-tab">
         <div id="about-panel"></div>
+        <div id="history-panel"></div>
         <div id="projects-panel"></div>
       </div>
     </div>
@@ -104,6 +106,7 @@
 ================================================== -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/util.js"></script>
     <script src="../assets/js/about.js"></script>
   </body>
 </html>
