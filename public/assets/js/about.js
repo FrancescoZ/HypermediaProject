@@ -30,7 +30,7 @@ function init() {
     } else if(item.tab == "History") {
       $("#history-panel").append(`<p>${item.text}</p>`)
     } else if(item.tab == "Project") {
-      if (item.id != 4) {
+      if (item.id != 5) {
         $("#projects-panel").append(`<br>`)
       }
       $("#projects-panel").append(`<h2>${item.title}</h2><p>${item.text}</p>`)

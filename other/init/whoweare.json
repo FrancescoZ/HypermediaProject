@@ -1,44 +1,50 @@
 [
   {
     "id": 1,
+    "title": "Hospidif – The Power of Advanced Medicine",
+    "text": "UK HealthCare is the hospitals and clinics of the University of Kentucky. But it is so much more. It is 9,000 people – physicians, nurses, pharmacists and other healthcare professionals – all dedicated to providing the most advanced, most effective care available, not just in Kentucky but anywhere.<br>It is physicians and other medical professionals trained in the most sophisticated, most up-to-the-minute medical techniques so that no Kentuckian, no matter how sick they are or how rare their illness, needs to go far from home for the treatment they need.<br>It is a Level 1 trauma center, ready every minute of every day to treat even the most serious injuries when they come through the door. And a Level IV Neonatal Intensive Care Unit, caring for the tiniest and sickest newborns – and giving them a chance not just to live, but to live normal, productive, happy lives.<br>It is nurses providing care for every patient, every time that’s so good it has received Magnet status, the highest recognition available in the nursing field.<br>It is educators in our six health professions colleges teaching the next generations of doctors, nurses and other healthcare professionals, spreading the highest standards of care like ripples to the future.<br>It is researchers working to discover treatments and cures not yet even imagined.<br>And it is a network of partnerships and outreach locations throughout the state, so that world-class care is always close to home.",
+    "tab": "About"
+  },
+  {
+    "id": 2,
     "title": "Quality and Safety",
     "text": "Our goal is to provide both measures for which external agencies hold us accountable as well as measures that show how we are performing in key components of quality: patient survival, quality of care, patient safety, efficient care and patient centeredness.<br>We are presenting this information as accurately as possible: We are not creating any new measures or changing the scale, format or target to make ourselves look better or worse. And we’ll be clear about what’s good and what isn’t.<br>Why make this information public? Because we believe that our patients have the right to understand the quality of care we provide, what we are doing well and where we need to do better. We may not always look good, but it is our belief that honesty, and an honest effort to improve when and where we need to, makes for better care.",
     "tab": "About"
   },
   {
-    "id": 2,
-    "title": "Curiosity",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum nulla lacus, at vehicula nisi finibus ut. Phasellus et porta nisi. Praesent efficitur turpis dui, in fringilla magna accumsan commodo. Maecenas gravida venenatis lorem id tempor. Aenean ligula orci, ullamcorper eu finibus vel, cursus ac metus. Phasellus nisi nunc, imperdiet bibendum rutrum sed, semper nec odio. Maecenas ac dui blandit, porttitor turpis ut, consequat elit. Nunc congue, mi ut interdum aliquam, felis diam bibendum quam, non accumsan felis justo eu dui. Mauris maximus, neque quis suscipit rhoncus, elit velit accumsan elit, eget molestie nisl ex vitae justo. Maecenas quis sem sit amet nisi dictum ultrices. Praesent tempus fermentum malesuada. Mauris tristique ut sapien et aliquet. Mauris tortor ante, pellentesque eu tristique vitae, aliquet at orci. Praesent massa purus, hendrerit vitae pretium nec, consequat hendrerit sem. Suspendisse potenti. Phasellus malesuada mattis metus et semper.",
+    "id": 3,
+    "title": "Our intensive care unit",
+    "text": "The London Clinic’s intensive care unit is a state-of-the-art facility with 13 individual patient rooms. The unit was designed to provide the very best environment to nurse patients with complex care needs, and to be as comfortable as possible for patients, friends and family.<br>Our Intensive Care Unit is supported by a dedicated team of specialist ICU consultants and nurses 24 hours a day. The facility incorporates sophisticated medical technology to provide our consultants and nurses with everything they need to look after our patients.  It also allows us to tailor each room to the individual needs of each patient, even changing the colour of the lighting to suit each patient’s preference. ",
     "tab": "About"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "History Timeline",
     "text": "<b>1917</b><br>Frank McVey inaugurated as president of UK, making a state-funded medical school a top priority<br><br><b>1954</b><br>UK Board of Trustees creates a College of Medicine<br><br><b>1956</b><br>Kentucky General Assembly approves funding request from Gov. Albert B. “Happy” Chandler;<br>Dr. William R. Willard selected to oversee development of a medical center;<br>Dr. Willard issues philosophy statement<br><br><b>1957</b><br>Groundbreaking ceremony at Rose Street and Limestone Road<br><br><b>1960</b><br>College of Medicine accepts its first students<br><br><b>1962</b><br>Construction completed on hospital at Chandler Medical Center<br><br><b>1984</b><br>Kentucky Clinic established<br><br><b>1986</b><br>Lucille P. Markey Cancer Center opensLinda and Jack Gill Building opens<br><br><b>1997</b><br>Gill Heart Institute established<br><br><b>2006</b><br>UK President Lee T. Todd, Jr., unveils plans for 1 million-square-foot hospital<br><br><b>2007</b><br>Ground broken for new UK Albert B. Chandler Hospital;<br> new UK Albert B. Chandler Hospital parking structure opens with 1,600 parking spaces<br><br><b>2008</b><br>New Hospital & Shuttle opened<br><br><b>2009</b><br>New Hospital Topping Out Ceremony<br><br><b>2010</b><br>Overture to Healing, inaugural concert of the Teresa Garbulinska Annual Premiere Concert Series (April)<br>Emergency Department Open House (June)<br>New A.B. Chandler Emergency Department and Makenna David Pediatric Emergency Center open (July)<br><br><b>2011</b><br>New UK Albert B. Chandler Pavilion A opensNew Pavilion Open Houses and Dedication (May)<br>New patient floors, including Neurosciences (floor 6) and Trauma (floor 7) open and patients move in (May)<br><br><b>2012</b><br>Eight additional operating rooms and a hybrid OR open  (February) ",
     "tab": "History"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "New Papworth Hospital",
     "text": "We are building the New Papworth Hospital, Kentucky, for the Papworth NHS Foundation Trust, with completion scheduled for 2018.<br>In its current location, the world-renowned cardiothoracic specialist hospital cares for and treats 24,400 inpatient and day cases and nearly 73,600 outpatient cases each year. The new hospital will provide patients, staff members and the local and international community with a leading-edge healthcare facility.",
     "tab": "Project"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Innovation Clinic",
     "text": "The Innovation Clinic gives students the opportunity to counsel startups and venture capital funds on a broad range of corporate law and strategic issues including regulatory compliance, entity formation, stock options and employee equity, venture financings, licensing of intellectual property, privacy, employment, governance and founders agreements, and commercial agreements.<br>The Clinic also supervises students in helping evaluate potential venture investments as Venture Associates at the University of Kentucky Innovation Fund. Students in the clinic interact with startup founders, venture capitalists, and other members of the technology ecosystem and teach workshops for entrepreneurs at the Kentucky Innovation Exchange.",
     "tab": "Project"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Scientific Reports",
     "text": "The Scientific Report is published every year; it contains scientific contributions of basic research and clinic research. The work's plan reflects the rearrangement of the Institute in departments and in research enters. The Scientific Report represents an important tool of distribution of Hospidif's scientific activities, it is easy to consult and it is accesible either to all desire have a general sight of institutional research's lines, or to whom search more detailed information on particoular argumets.",
     "tab": "Project"
   },
   {
-    "id": 7,
-    "title": "Project 4",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum nulla lacus, at vehicula nisi finibus ut. Phasellus et porta nisi. Praesent efficitur turpis dui, in fringilla magna accumsan commodo. Maecenas gravida venenatis lorem id tempor. Aenean ligula orci, ullamcorper eu finibus vel, cursus ac metus. Phasellus nisi nunc, imperdiet bibendum rutrum sed, semper nec odio. Maecenas ac dui blandit, porttitor turpis ut, consequat elit. Nunc congue, mi ut interdum aliquam, felis diam bibendum quam, non accumsan felis justo eu dui. Mauris maximus, neque quis suscipit rhoncus, elit velit accumsan elit, eget molestie nisl ex vitae justo. Maecenas quis sem sit amet nisi dictum ultrices. Praesent tempus fermentum malesuada. Mauris tristique ut sapien et aliquet. Mauris tortor ante, pellentesque eu tristique vitae, aliquet at orci. Praesent massa purus, hendrerit vitae pretium nec, consequat hendrerit sem. Suspendisse potenti. Phasellus malesuada mattis metus et semper.",
+    "id": 8,
+    "title": "Central Campus Health Clinic",
+    "text": "Designed by Gensler in collaboration with Forum Studio as part of a design/build partnership led and developed by Clayco, the Central Campus Health Clinic (CCHC) is a new, state-of-the-art ambulatory care facility. The building comprises 103,000 square feet of flexible, patient-centric clinical space and 137,000 square feet of highly collaborative administration space for the Cook County Health Hospital System. The building will provide a continuum of services with an emphasis on workplace well-being and patient experience. It will offer Cook County residents a facility they will seek out for its research-driven and community-focused design. ",
     "tab": "Project"
   }
 ]
