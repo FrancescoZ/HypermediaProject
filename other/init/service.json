@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Chemotherapy",
+    "description": "Chemotherapy is one of the longest used and most common treatments for cancer. In most cases, chemotherapy works by interfering with the cancer cell's ability to grow and reproduce. For some types of cancer, chemotherapy may be used alone or in combination with other treatments such as radiation or surgery. A combination of chemotherapy medicines is typically used to fight a specific cancer.<br>While chemotherapy can be quite effective in treating certain cancers, the medicines reach all parts of the body, not just the cancer cells. There can be many side effects during treatment, and being prepared for these side effects can help you and your caregivers manage them effectively.",
     "area": 1,
     "doc_resp":1
   },
@@ -9,6 +10,7 @@
   {
     "id": 2,
     "name": "Echocardiography",
+    "description": "An echocardiogram, or 'echo', is a scan used to look at the heart and nearby blood vessels.<br>It's a type of ultrasound scan, which means a small probe is used to send out high-frequency sound waves that create echoes when they bounce off different parts of the body.<br>These echoes are picked up by the probe and turned into a moving image that's displayed on a monitor while the scan is carried out.<br>An echocardiogram may be requested by a heart specialist (cardiologist) or any doctor who thinks you might have a problem with your heart, including your GP.<br>The test will usually be carried out at a hospital or clinic by a cardiologist or a trained specialist called a cardiac physiologist.<br>Although it has a similar name, an echocardiogram isn't the same as an electrocardiogram (ECG), which is a test used to check your heart's rhythm and electrical activity.",
     "area": 2,
     "doc_resp":2
   },
@@ -16,6 +18,7 @@
   {
     "id": 3,
     "name": "Electrocardiogram",
+    "description": "An electrocardiogram (ECG) is a simple test that can be used to check your heart's rhythm and electrical activity.<br>Sensors attached to the skin are used to detect the electrical signals produced by your heart each time it beats.<br>These signals are recorded by a machine and are looked at by a doctor to see if they're unusual.<br>An ECG may be requested by a heart specialist (cardiologist) or any doctor who thinks you might have a problem with your heart, including your GP.<br>The test will usually be carried out at a hospital or clinic by a trained specialist called a cardiac physiologist, although it can sometimes be done at your GP surgery.<br>Despite having a similar name, an ECG isn't the same as an echocardiogram, which is a scan of the heart.",
     "area": 2,
     "doc_resp":3
   },
@@ -23,6 +26,7 @@
   {
     "id": 4,
     "name": "Magnetic Resonance Spectroscopy",
+    "description": "Magnetic Resonance (MR) spectroscopy is a noninvasive diagnostic test for measuring biochemical changes in the brain, especially the presence of tumors. While magnetic resonance imaging (MRI) identifies the anatomical location of a tumor, MR spectroscopy compares the chemical composition of normal brain tissue with abnormal tumor tissue. This test can also be used to detect tissue changes in stroke and epilepsy. ",
     "area": 3,
     "doc_resp":4
   },
@@ -30,6 +34,7 @@
   {
     "id": 5,
     "name": "Radiotherapy",
+    "description": "In radiotherapy, high-energy rays are often used to damage cancer cells and stop them from growing and dividing. A specialist in the radiation treatment of cancer is called a radiation oncologist.<br>Like surgery, radiation therapy is a local treatment; it affects cancer cells only in the treated area. Radiation can come from a machine (external radiation). It can also come from an implant (a small container of radioactive material) placed directly into or near the tumor (internal radiation). Some patients receive both kinds of radiation therapy.<br>External radiation therapy is usually given on an outpatient basis in a hospital or clinic, for example, 5 days a week for several weeks. Patients are not radioactive during or after the treatment.<br>For internal radiation therapy, the patient usually stays in the hospital for a few days. The radiation implant may be temporary or permanent. Because the level of radiation is highest during the hospital stay, patients may not be able to have visitors or may have visitors only for a short time. Once an implant is removed, there is no radioactivity in the body. The amount of radiation in a permanent implant goes down to a safe level before the patient leaves the hospital.<br>With radiation therapy, the side effects depend on the treatment dose and the part of the body that is treated. The most common side effects are tiredness, skin reactions (such as a rash or redness) in the treated area, and loss of appetite. Radiation therapy can also cause a decrease in the number of white blood cells, cells that help protect the body against infection. Although the side effects of radiation therapy can be unpleasant, they can usually be treated or controlled and, in most cases, they are not permanent.",
     "area": 1,
     "doc_resp":5
   },
@@ -37,6 +42,7 @@
   {
     "id": 6,
     "name": "Sclerotherapy",
+    "description": "Sclerotherapy effectively treats varicose and spider veins. It's often considered the treatment of choice for small varicose veins.<br>Sclerotherapy involves injecting a solution directly into the vein. The sclerotherapy solution causes the vein to scar, forcing blood to reroute through healthier veins. The collapsed vein is reabsorbed into local tissue and eventually fades.<br>After sclerotherapy, treated veins tend to fade within a few weeks, although occasionally it may take a month or more to see the full results. In some instances, several sclerotherapy treatments may be needed.",
     "area": 4,
     "doc_resp":6
   }
