@@ -23,17 +23,11 @@ function init() {
   
   function initWhoWeAre(item, index) {
     if(item.tab == "About") {
-      if (item.id != 1) {
-        $("#about-panel").append(`<br>`)
-      }
-      $("#about-panel").append(`<h2>${item.title}</h2><p>${item.text}</p>`)
+      $("#about-panel").append(`<h2>${item.title}</h2><p>${item.text}</p><br>`)
     } else if(item.tab == "History") {
-      $("#history-panel").append(`<p>${item.text}</p>`)
+      $("#history-panel").append(`<p>${item.text}</p><br>`)
     } else if(item.tab == "Project") {
-      if (item.id != 5) {
-        $("#projects-panel").append(`<br>`)
-      }
-      $("#projects-panel").append(`<h2>${item.title}</h2><p>${item.text}</p>`)
+      $("#projects-panel").append(`<h2>${item.title}</h2><p>${item.text}</p><br>`)
     }
   }
 
