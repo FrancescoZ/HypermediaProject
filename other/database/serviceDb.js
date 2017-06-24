@@ -1,8 +1,8 @@
-const database=require("./database.js");
+const database = require("./database.js");
 
 module.exports = {
-  init:function(){
-    database.init(function(dbConnection,initData,_){
+  init: function () {
+    database.init(function (dbConnection, initData, _) {
       let serviceList = require(initData + "service.json");
 
       //Services
@@ -30,49 +30,49 @@ module.exports = {
               );
               console.log("Services loaded");
             });
-          } else {
-            console.log("Services are already loaded");
-          }
+        } else {
+          console.log("Services are already loaded");
+        }
       });
     });
   },
   ///////////////////////////////////////// SELECT ///////////////////////////
-  select:function(retFunction,start=null,limit=null,order=null){
+  select: function (retFunction, start = null, limit = null, order = null) {
     //Check the parameter
-    let param={
-      start:start,
-      limit:limit,
+    let param = {
+      start: start,
+      limit: limit,
       orderBy: order
     };
-    database.select("service",retFunction,param);
+    database.select("service", retFunction, param);
   },
-  selectById:function(retFunction,id){
+  selectById: function (retFunction, id) {
     //TODO Check the id
-    let param={
-      start:null,
-      limit:null,
+    let param = {
+      start: null,
+      limit: null,
       orderBy: null,
-      id:id,
-      idname:"id"
+      id: id,
+      idname: "id"
     };
-    database.select("service",retFunction,param);
+    database.select("service", retFunction, param);
   },
-  selectByResponsible: function(retFunction,idResp){
-    let param={
-      id:idResp,
-      idname:"doc_resp"
+  selectByResponsible: function (retFunction, idResp) {
+    let param = {
+      id: idResp,
+      idname: "doc_resp"
     };
-    database.select("service",retFunction,param);
+    database.select("service", retFunction, param);
   },
-  selectByLocation: function(retFunction,idLoc){
-    let locParam={
+  selectByLocation: function (retFunction, idLoc) {
+    let locParam = {
       objType: "location_service",
       idname: "id_location",
       id: idLoc,
       column: "id_service"
     };
-    let serviceParam={
-      idsubquery:"id",
+    let serviceParam = {
+      idsubquery: "id",
       subquery: locParam
     };
     database.select("service", retFunction, serviceParam);

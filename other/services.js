@@ -2,9 +2,9 @@
 const utilities = require("./utilities.js");
 const serviceDb = require("./database/serviceDb.js");
 
-module.exports = function(app,_){
-  var serviceModule={
-    initServices: function(){
+module.exports = function (app, _) {
+  var serviceModule = {
+    initServices: function () {
       serviceDb.init();
     }
   };
@@ -19,39 +19,39 @@ module.exports = function(app,_){
    * @param {integer} orderBy [order criteria: 0-none 1- celebrity, 2- alphabetic order]
    * @return {JSON}           [news from the database]
    */
-  app.get('/services', function(req,res){
-    let start=parseInt(_.get(req, "query.start", 0));
-    let limit=parseInt(_.get(req, "query.limit", 5));
-    let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
+  app.get('/services', function (req, res) {
+    let start = parseInt(_.get(req, "query.start", 0));
+    let limit = parseInt(_.get(req, "query.limit", 5));
+    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
     //Send the select to the database
     serviceDb.select(
-        function(result) {
-          res.send(JSON.stringify(result));
-        },start,limit,orderBy);
+      function (result) {
+        res.send(JSON.stringify(result));
+      }, start, limit, orderBy);
   });
 
-  app.get("/service/:id",function(req,res){
+  app.get("/service/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    serviceDb.selectById(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    serviceDb.selectById(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
 
-  app.get("/service-by-responsible/:id",function(req,res){
+  app.get("/service-by-responsible/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    serviceDb.selectByResponsible(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    serviceDb.selectByResponsible(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
 
-  app.get("/services-by-location/:id",function(req,res){
+  app.get("/services-by-location/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    serviceDb.selectByLocation(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    serviceDb.selectByLocation(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
 
   return serviceModule;

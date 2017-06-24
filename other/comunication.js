@@ -3,15 +3,15 @@
 const comDb = require("./database/comunicationDb.js");
 const utilities = require("./utilities.js");
 
-module.exports = function(app,_){
-  var comunicationDb  ={
+module.exports = function (app, _) {
+  var comunicationDb = {
 
-    initCom:function(){
+    initCom: function () {
       comDb.init();
     }
   };
 
-  app.post("/reservation", function(req, res) {
+  app.post("/reservation", function (req, res) {
     let toappend = {
       name: req.body.name,
       mail: req.body.mail,
@@ -21,19 +21,19 @@ module.exports = function(app,_){
       service: req.body.service,
       time: utilities.getDateTime()
     };
-    comDb.insertReservation(toappend,function(){
+    comDb.insertReservation(toappend, function () {
       res.send(200);
     });
   });
 
-  app.post("/contact", function(req, res) {
+  app.post("/contact", function (req, res) {
     let toappend = {
       name: req.body.name,
       mail: req.body.mail,
       note: req.body.note,
       time: utilities.getDateTime()
     };
-    comDb.insertContact(toappend,function(){
+    comDb.insertContact(toappend, function () {
       res.send(200);
     });
   });

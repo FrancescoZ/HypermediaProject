@@ -1,8 +1,8 @@
-const database=require("./database.js");
+const database = require("./database.js");
 
-module.exports ={
-  init:function(){
-    database.init(function(dbConnection,initData,_){
+module.exports = {
+  init: function () {
+    database.init(function (dbConnection, initData, _) {
       let areaList = require(initData + "whoweare.json");
 
       //Areas
@@ -26,15 +26,15 @@ module.exports ={
               );
               console.log("Who we are loaded");
             });
-          } else {
-            console.log("Who we are already loaded");
-          }
+        } else {
+          console.log("Who we are already loaded");
+        }
       });
     });
   },
   ///////////////////////////////////////// SELECT ///////////////////////////
-  select:function(retFunction){
+  select: function (retFunction) {
     //Check the parameter
-    database.select("whoweare",retFunction,{});
+    database.select("whoweare", retFunction, {});
   }
 }

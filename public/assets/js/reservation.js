@@ -25,8 +25,8 @@ init()
 // CLICK EVENTS ==========================>
 
 function clickSubmit() {
-  let headers = new Headers();
-  headers.set("Content-Type", "application/json");
+  let headers = new Headers()
+  headers.set("Content-Type", "application/json")
 
   let formdata = new FormData(document.getElementById("reservation"))
   formdata.set('service', params['id'])
@@ -43,7 +43,7 @@ function clickSubmit() {
         $('#banner').addClass("alert-success")
         $('#submit-btn').hide()
       } else {
-        $('#banner').html(`<strong>Warning!</strong> An error as occured, please retry`)
+        $('#banner').html(`<strong>Warning!</strong> An error as occurred, please retry`)
         $('#banner').addClass("alert-danger")
         $('#submit-btn').hide()
       }

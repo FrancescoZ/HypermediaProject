@@ -2,9 +2,9 @@
 const locationDb = require("./database/locationDb.js");
 const utilities = require("./utilities.js");
 
-module.exports = function(app,_){
+module.exports = function (app, _) {
   var locationsModule = {
-    initLocations: function(){
+    initLocations: function () {
       locationDb.init();
     }
   };
@@ -19,38 +19,38 @@ module.exports = function(app,_){
    * @param {integer} [orderBy] [order criteria: 0-none 1- celebrity, 2- alphabetic order]
    * @return {JSON}           [news from the database]
    */
-  app.get('/locations', function(req,res){
-    let start=parseInt(_.get(req, "query.start", 0));
-    let limit=parseInt(_.get(req, "query.limit", 5));
-    let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
+  app.get('/locations', function (req, res) {
+    let start = parseInt(_.get(req, "query.start", 0));
+    let limit = parseInt(_.get(req, "query.limit", 5));
+    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
     locationDb.select(
-        function(result) {
-          res.send(JSON.stringify(result));
-        },start,limit,orderBy);
+      function (result) {
+        res.send(JSON.stringify(result));
+      }, start, limit, orderBy);
   });
 
-  app.get("/location/:id",function(req,res){
+  app.get("/location/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    locationDb.selectById(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    locationDb.selectById(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
-  
-  app.get("/locations-by-area/:id",function(req,res){
+
+  app.get("/locations-by-area/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    locationDb.selectByArea(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    locationDb.selectByArea(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
-  
-  app.get("/locations-by-service/:id",function(req,res){
+
+  app.get("/locations-by-service/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    locationDb.selectByService(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    locationDb.selectByService(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
 
   return locationsModule;

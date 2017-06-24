@@ -6,7 +6,7 @@
     "price": "<b>Complete check plus one cycle of chemotherapy:</b> 5000 EUR<br><b>Further cycles of Chemotherapy:</b> 3000 EUR",
     "promotion": "",
     "area": 1,
-    "doc_resp":1
+    "doc_resp": 1
   },
 
   {
@@ -16,7 +16,7 @@
     "price": "<b>Echo with Color Doppler:</b> 1500 EUR<br><b>Three-Dimensional Echocardiography:</b> 2000 EUR<br><b>Fetal Echocardiography:</b> 1200 EUR",
     "promotion": "",
     "area": 2,
-    "doc_resp":2
+    "doc_resp": 2
   },
 
   {
@@ -26,7 +26,7 @@
     "price": "<b>Exercise EKG (stress test):</b> 150 EUR<br><b>Holter monitor:</b> 170 EUR<br><b>Resting 12-lead EKG:</b> 135 EUR<br><b>Signal-averaged electrocardiogram:</b> 217 EUR",
     "promotion": "",
     "area": 2,
-    "doc_resp":3
+    "doc_resp": 3
   },
 
   {
@@ -36,7 +36,7 @@
     "price": "<b>MRS:</b> 4000 EUR",
     "promotion": "",
     "area": 3,
-    "doc_resp":4
+    "doc_resp": 4
   },
 
   {
@@ -46,7 +46,7 @@
     "price": "<b>External Beam Radiation Therapy:</b> 1600 EUR<br><b>Internal Radiation Therapy:</b> 2150 EUR",
     "promotion": "",
     "area": 1,
-    "doc_resp":5
+    "doc_resp": 5
   },
 
   {
@@ -56,6 +56,6 @@
     "price": "<b>Ultrasound Sclerotherapy:</b> 400 EUR<br><b>Liquid Sclerotherapy:</b> 250 EUR<br><b>Foam Sclerotherapy:</b> 330 EUR",
     "promotion": "",
     "area": 4,
-    "doc_resp":6
+    "doc_resp": 6
   }
 ]

@@ -1,11 +1,11 @@
-const database=require("./database.js");
+const database = require("./database.js");
 
 module.exports = {
-  init:function(){
-    database.init(function(dbConnection,initData,_){
+  init: function () {
+    database.init(function (dbConnection, initData, _) {
       //initial data stored in json
       let newsList = require(initData + "news.json");
-      
+
       //News
       dbConnection.schema.hasTable("news").then(exists => {
         //check the existance
@@ -29,28 +29,28 @@ module.exports = {
               );
               console.log("News loaded");
             });
-          } else {
-            console.log("News are already loaded");
-          }
+        } else {
+          console.log("News are already loaded");
+        }
       });
     });
   },
   ///////////////////////////////////////// SELECT ///////////////////////////
-  select:function(retFunction,start=null,limit=null,order=null){
+  select: function (retFunction, start = null, limit = null, order = null) {
     //Check the parameter
-    let param={
-      start:start,
-      limit:limit,
+    let param = {
+      start: start,
+      limit: limit,
       orderBy: order
     };
-    database.select("news",retFunction,param);
+    database.select("news", retFunction, param);
   },
-  selectById:function(retFunction,id){
+  selectById: function (retFunction, id) {
     //TODO Check the id
-    let param={
-      id:id,
-      idname:"id"
+    let param = {
+      id: id,
+      idname: "id"
     };
-    database.select("news",retFunction,param);
+    database.select("news", retFunction, param);
   }
 }

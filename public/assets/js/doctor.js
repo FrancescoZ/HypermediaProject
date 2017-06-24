@@ -29,26 +29,22 @@ function initDoctor(item, index) {
     $("#office-hours").html(item.office_hours)
     document.getElementById("image").setAttribute("src", "../assets/img/doctors/" + item.image)
 
-    if (params['back'] === undefined) {
-      $('#back-button').hide()
-    } else {
-      $('#back-button').html("&larr; Return to " + params['back'])
-    }
-    
+    setBackBtn(params)
+
     fetchContent(service_query + item.at_service)
     fetchContent(area_query + item.id)
   }
 }
 
 function initService(item, index) {
-  if(item.doc_resp == params['id'])
+  if (item.doc_resp == params['id'])
     $('#operating-service').append(`<b>Service Responsible: </b><a href="#" onClick="clickService(${item.id})">${item.name}</a>`)
   else
     $('#operating-service').append(`<b>Operating Service: </b><a href="#" onClick="clickService(${item.id})">${item.name}</a>`)
 }
 
 function initArea(item, index) {
-    $('#area-resp').append(`<b>Area Responsible: </b><a href="#">${item.name}</a>`)
+  $('#area-resp').append(`<b>Area Responsible: </b><a href="#">${item.name}</a>`)
 }
 
 const back_ref = `&back=doctor`

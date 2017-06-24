@@ -21,7 +21,8 @@ body {
   padding-top: 30px;
 }
 
-.section, .panel-tab {
+.section,
+.panel-tab {
   margin-bottom: 75px;
 }
 
@@ -60,8 +61,9 @@ body {
 }
 
 .elevate {
-  box-shadow: 0 2px 5px #888888;  
+  box-shadow: 0 2px 5px #888888;
 }
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -74,17 +76,46 @@ body {
   z-index: 20;
 }
 
-.navbar-wrapper > .container {
+.navbar-wrapper>.container {
   padding-right: 0;
   padding-left: 0;
 }
+
 .navbar-wrapper .navbar {
   padding-right: 15px;
   padding-left: 15px;
 }
+
 .navbar-wrapper .navbar .container {
   width: auto;
 }
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+.carousel {
+  height: 500px;
+  margin-bottom: 40px;
+}
+
+.carousel-caption {
+  z-index: 10;
+}
+
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+
+.carousel-inner>.item>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -96,6 +127,11 @@ body {
 }
 
 @media (min-width: 768px) {
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
   .navbar-wrapper {
     margin-top: 20px;
   }
@@ -113,5 +149,11 @@ body {
 @media (min-width: 768px) and (max-width: 991px) {
   body {
     padding-top: 150px;
+  }
+}
+
+@media (min-width: 992px) {
+  .location-heading {
+    margin-top: 80px;
   }
 }

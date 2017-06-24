@@ -92,7 +92,7 @@ function getLocationHeading(item) {
 
 function getLocationMap(item) {
   return `<div class="col-md-5">
-            <div class="map" id="map${item.id}"></div>
+            <div class="map" id="map${item.id}" style="height: 300px;"></div>
           </div>`
 }
 

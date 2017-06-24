@@ -1,5 +1,5 @@
 const params = urlParams()
-const doctors_query = '/doctors/' + '?limit=30&orderBy=2' 
+const doctors_query = '/doctors/' + '?limit=30&orderBy=2'
 const locations_query = '/locations/'
 const location_query = '/location/'
 const doc_by_loc_query = '/doctors-by-location/'
@@ -37,13 +37,13 @@ function initDoctors(item, index) {
       </div>`);
 }
 
-function initLocations(item, index){
+function initLocations(item, index) {
   $('#doctorsPanelRight').append(
-      `<a href="#" class="list-group-item" id="location-${item.id}-button" onClick="clickLocationFilter(${item.id})">${item.name}</a>`)
+    `<a href="#" class="list-group-item" id="location-${item.id}-button" onClick="clickLocationFilter(${item.id})">${item.name}</a>`)
   loc_size++
 }
 
-function initLocation(item, index){
+function initLocation(item, index) {
   document.getElementById("sectionHeader").innerHTML = "All Doctors in " + item.name;
   deactivateAllButton();
   $('#location-' + item.id + '-button').addClass("active")

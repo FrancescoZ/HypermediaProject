@@ -69,7 +69,7 @@ function initMap() {
   }
 }
 
-var position
+let position
 init()
 
 // CLICK EVENTS ==========================>

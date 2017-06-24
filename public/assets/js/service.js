@@ -93,8 +93,8 @@ function getLocationImage(item) {
   }
 }
 
-var responsible
-init();
+let responsible
+init()
 
 // CLICK EVENTS ==========================>
 

@@ -1,112 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="author" content="Team 10422848">
-    <link rel="icon" href="../assets/img/logo.ico">
-    <title>Hospidif</title>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+  <meta name="author" content="Team 10422848">
+  <link rel="icon" href="../assets/img/logo.ico">
+  <title>Hospidif</title>
 
-    <!-- Custom styles for this template -->
-    <link href="../assets/css/base.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
 
-    <style>
+  <!-- Custom styles for this template -->
+  <link href="../assets/css/base.css" rel="stylesheet">
+
+  <style>
+    .img-header,
+    .img-header>img {
+      height: 500px;
+      width: 100%;
+    }
+    
+    .img-header {
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 767px) {
       .img-header,
-      .img-header > img {
-        height: 500px;
+      .img-header>img {
+        height: 300px;
         width: 100%;
       }
+    }
 
-      .img-header {        
-        margin-bottom: 30px;
-      }
+  </style>
+</head>
 
-      @media (max-width: 767px) {
-        .img-header,
-        .img-header > img {
-          height: 300px;
-          width: 100%;
-        }
-      }
-    </style>
-  </head>
-
-  <body style="padding-top: 0;">
-    <!-- NAVBAR
+<body style="padding-top: 0;">
+  <!-- NAVBAR
 ================================================== -->
-    <div class="navbar-wrapper">
-      <div class="container">
+  <div class="navbar-wrapper">
+    <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/">Hospidif</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="">Services</a></li>
-                <li><a href="/doctors.html">Doctors</a></li>
-                <li><a href="">Locations</a></li>
-                <li><a href="">Areas</a></li>
-                <li><a href="">News</a></li>
-                <li><a href="">FAQ</a></li>
-                <li class="active"><a href="/about.html">Who we are</a></li>
-                <li><a href="">Guide</a></li>
-              </ul>
-            </div>
+            <a class="navbar-brand" href="/">Hospidif</a>
           </div>
-        </nav>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="">Services</a></li>
+              <li><a href="/doctors.html">Doctors</a></li>
+              <li><a href="">Locations</a></li>
+              <li><a href="">Areas</a></li>
+              <li><a href="">News</a></li>
+              <li><a href="">FAQ</a></li>
+              <li class="active"><a href="/about.html">Who we are</a></li>
+              <li><a href="">Guide</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-      </div>
     </div>
+  </div>
 
-    <!-- ABOUT US
+  <!-- ABOUT US
 ================================================== -->
 
-    <div class="img-header">
-      <img class="center-img" style="object-fit: cover;" src="../assets/img/team.jpg">
+  <div class="img-header">
+    <img class="center-img" style="object-fit: cover;" src="../assets/img/team.jpg">
+  </div>
+
+  <div class="container">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active" id="about-btn"><a class="btn" onclick="clickAbout()">About</a></li>
+      <li role="presentation" id="history-btn"><a class="btn" onclick="clickHistory()">History</a></li>
+      <li role="presentation" id="projects-btn"><a class="btn" onclick="clickProjects()">Projects</a></li>
+      <li role="presentation" class="pull-right" onclick="clickContactUs()"><a class="btn btn-success">Contact us</a></li>
+    </ul>
+
+    <div class="panel-tab">
+      <div id="about-panel"></div>
+      <div id="history-panel"></div>
+      <div id="projects-panel"></div>
     </div>
+  </div>
 
-    <div class="container">      
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active" id="about-btn"><a class="btn" onclick="clickAbout()">About us</a></li>
-        <li role="presentation" id="history-btn"><a class="btn" onclick="clickHistory()">History Timeline</a></li>
-        <li role="presentation" id="projects-btn"><a class="btn" onclick="clickProjects()">Projects</a></li>
-        <li role="presentation" class="pull-right" onclick="clickContactUs()"><a class="btn btn-success">Contact us</a></li>
-      </ul>
-
-      <div class="panel-tab">
-        <div id="about-panel"></div>
-        <div id="history-panel"></div>
-        <div id="projects-panel"></div>
-      </div>
-    </div>
-
-    <!-- FOOTER
+  <!-- FOOTER
 ================================================== -->
 
-    <footer class="container">
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>© 2017 Hospidif, Inc.</p>
-    </footer>
+  <footer class="container">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>© 2017 Hospidif, Inc.</p>
+  </footer>
 
 
-    <!-- JavaScript
+  <!-- JavaScript
 ================================================== -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="../assets/js/bootstrap.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <script src="../assets/js/about.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="../assets/js/bootstrap.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/about.js"></script>
+</body>
+
 </html>

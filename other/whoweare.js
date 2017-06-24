@@ -2,9 +2,9 @@
 const utilities = require("./utilities.js");
 const whoDb = require("./database/whoweareDb.js");
 
-module.exports = function(app,_){
+module.exports = function (app, _) {
   var whoweareModule = {
-    initWhoweare: function (){
+    initWhoweare: function () {
       whoDb.init();
     }
   };
@@ -15,12 +15,12 @@ module.exports = function(app,_){
    * example of usage:  /whoweare?start=0&limit=5&orderby=1
    * @return {JSON}           [news from the database]
    */
-  app.get("/whoweare", function(req, res) {
+  app.get("/whoweare", function (req, res) {
 
     //Send the select to the database
-    whoDb.select(function(result) {
-          res.send(JSON.stringify(result));
-        });
+    whoDb.select(function (result) {
+      res.send(JSON.stringify(result));
+    });
   });
   return whoweareModule;
 }

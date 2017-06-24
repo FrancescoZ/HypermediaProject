@@ -2,9 +2,9 @@
 const utilities = require("./utilities.js");
 const areaDb = require("./database/areaDb.js");
 
-module.exports = function(app,_){
+module.exports = function (app, _) {
   var areaModule = {
-    initAreas: function (){
+    initAreas: function () {
       areaDb.init();
     }
   };
@@ -18,30 +18,30 @@ module.exports = function(app,_){
    * @param {integer} orderBy [order criteria: 0-none 1- celebrity, 2- alphabetic order]
    * @return {JSON}           [news from the database]
    */
-  app.get("/areas", function(req, res) {
-    let start=parseInt(_.get(req, "query.start", 0));
-    let limit=parseInt(_.get(req, "query.limit", 5));
-    let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
+  app.get("/areas", function (req, res) {
+    let start = parseInt(_.get(req, "query.start", 0));
+    let limit = parseInt(_.get(req, "query.limit", 5));
+    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
 
     //Send the select to the database
-    areaDb.select(function(result) {
-          res.send(JSON.stringify(result));
-        },start,limit,orderBy);
+    areaDb.select(function (result) {
+      res.send(JSON.stringify(result));
+    }, start, limit, orderBy);
   });
 
-  app.get("/area/:id",function(req,res){
+  app.get("/area/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    areaDb.selectById(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    areaDb.selectById(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
-  app.get("/area-by-responsible/:id",function(req,res){
+  app.get("/area-by-responsible/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    areaDb.selectByResponsible(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    areaDb.selectByResponsible(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
   return areaModule;
 }

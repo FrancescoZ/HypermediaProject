@@ -3,9 +3,9 @@
 const doctorDb = require("./database/doctorDb.js");
 const utilities = require("./utilities.js");
 
-module.exports = function(app,_){
+module.exports = function (app, _) {
   var doctorsModule = {
-    initDoctors: function(){
+    initDoctors: function () {
       doctorDb.init();
     }
   };
@@ -19,40 +19,40 @@ module.exports = function(app,_){
    * @param {integer} [orderBy] [order criteria: 0-none 1- celebrity, 2- alphabetic order]
    * @return {JSON}           [news from the database]
    */
-  app.get('/doctors', function(req,res){
-    let start=parseInt(_.get(req, "query.start", 0));
-    let limit=parseInt(_.get(req, "query.limit", 5));
-    let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
+  app.get('/doctors', function (req, res) {
+    let start = parseInt(_.get(req, "query.start", 0));
+    let limit = parseInt(_.get(req, "query.limit", 5));
+    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
     //Send the select to the database
     doctorDb.select(
-        function(result) {
-          res.send(JSON.stringify(result));
-        },start,limit,orderBy);
+      function (result) {
+        res.send(JSON.stringify(result));
+      }, start, limit, orderBy);
   });
 
-  app.get("/doctor/:id",function(req,res){
+  app.get("/doctor/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    doctorDb.selectById(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    doctorDb.selectById(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
 
-  app.get("/doctors-by-service/:id",function(req,res){
+  app.get("/doctors-by-service/:id", function (req, res) {
     let id = parseInt(req.params.id);
     //Send the select to the database
-    doctorDb.selectByService(function(result) {
-          res.send(JSON.stringify(result));
-        },id);
+    doctorDb.selectByService(function (result) {
+      res.send(JSON.stringify(result));
+    }, id);
   });
 
-  app.get("/doctors-by-location/:id",function(req,res){
+  app.get("/doctors-by-location/:id", function (req, res) {
     let id = parseInt(req.params.id);
-    let orderBy= utilities.convertOrder(_.get(req, "query.orderBy", 0));
+    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
     //Send the select to the database
-    doctorDb.selectByLocation(function(result) {
-          res.send(JSON.stringify(result));
-        },id,orderBy);
+    doctorDb.selectByLocation(function (result) {
+      res.send(JSON.stringify(result));
+    }, id, orderBy);
   });
   return doctorsModule;
 }

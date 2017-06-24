@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const methodOverride = require('method-override');
 const _ = require("lodash");
 const process = require("process");
-const util = require("./server/utilities.js");
+const util = require("./other/utilities.js");
 
 let serverPort = process.env.PORT || 5000;
 
@@ -26,13 +26,13 @@ app.use(function (err, req, res, next) {
 app.set("port", serverPort);
 
 // /* Register REST entry point */
-const news = require("./server/news.js")(app, _);
-const com = require("./server/comunication.js")(app, _);
-const doctors = require("./server/doctors.js")(app, _);
-const locations = require("./server/locations.js")(app, _);
-const services = require("./server/services.js")(app, _);
-const areas = require("./server/areas.js")(app, _);
-const whowe = require("./server/whoweare.js")(app, _);
+const news = require("./other/news.js")(app, _);
+const com = require("./other/comunication.js")(app, _);
+const doctors = require("./other/doctors.js")(app, _);
+const locations = require("./other/locations.js")(app, _);
+const services = require("./other/services.js")(app, _);
+const areas = require("./other/areas.js")(app, _);
+const whowe = require("./other/whoweare.js")(app, _);
 
 /**
  * Call the different submodule, and crete the connection with the database
