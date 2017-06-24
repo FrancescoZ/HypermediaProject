@@ -15,7 +15,7 @@ module.exports = {
               table.increments('id').primary();
               table.string("title");
               table.text("text");
-              table.integer("tab");
+              table.string("tab");
             })
             .then(() => {
               //fill the table just created
