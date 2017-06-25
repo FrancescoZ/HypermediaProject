@@ -124,6 +124,9 @@ body {
   body {
     padding-top: 70px;
   }
+  .section-header .label {
+    font-size: 50%;
+  }
 }
 
 @media (min-width: 768px) {
