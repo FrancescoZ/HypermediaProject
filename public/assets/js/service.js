@@ -61,7 +61,7 @@ function initResponsible(item, index) {
 
 function initDoctors(item, index) {
   $('#doctors-panel').append(
-    `<div class="col-sm-6 col-md-3 featurette" style="text-align:center;">
+    `<div class="col-sm-6 col-md-3 featurette">
       ${getDoctorImage(item)}
       <h4>${item.name}</h4>
       <p><a class="btn ${item.id == responsible ? 'btn-primary' : 'btn-info'}" onclick="clickDoctor(${item.id})" role="button">View details &raquo;</a></p>
@@ -78,7 +78,7 @@ function getDoctorImage(item) {
 
 function initLocations(item, index) {
   $('#locations-panel').append(
-    `<div class="col-sm-6 col-md-3 featurette" style="text-align:center;">
+    `<div class="col-sm-6 col-md-3 featurette">
         ${getLocationImage(item)}
         <h4>${item.name}</h4>
         <p><a class="btn btn-info" onclick="clickLocation(${item.id})" role="button">View details &raquo;</a></p>

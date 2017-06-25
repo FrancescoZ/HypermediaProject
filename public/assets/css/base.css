@@ -49,6 +49,19 @@ body {
   margin-left: 10px;
 }
 
+.doctor-featurette {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.doctor-featurette h3 {
+  margin-top: 0;
+}
+
+.doctor-featurette button {
+  margin-top: 15px;
+}
+
 .map {
   height: 400px;
   width: 100%;
@@ -65,7 +78,7 @@ body {
 }
 
 
-/* CUSTOMIZE THE NAVBAR
+/* NAVBAR
 -------------------------------------------------- */
 
 .navbar-wrapper {
@@ -91,7 +104,7 @@ body {
 }
 
 
-/* CUSTOMIZE THE CAROUSEL
+/* CAROUSEL
 -------------------------------------------------- */
 
 .carousel {

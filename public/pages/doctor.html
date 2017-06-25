@@ -16,8 +16,6 @@
 
   <!-- Custom styles for this template -->
   <link href="../assets/css/base.css" rel="stylesheet">
-  <link href="../assets/css/doctor.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -68,7 +66,7 @@
           <p id="operating-service"></p>
         </div>
         <div class=col-md-3>
-          <img class="elevate center-block center-img" width="200px" height="200px" style="object-fit: contain;" id="image" alt="doctor img">
+          <img class="elevate center-block center-img" width="200px" height="200px" style="object-fit: cover;" id="image" alt="doctor img">
         </div>
       </div>
     </div>
@@ -76,8 +74,8 @@
       <div class="section-header">
         <h1><span class="label label-default">About the Doctor</span></h1>
       </div>
-      <div class="doctor-panel" id="doctor-about">
-        <div class="panel panel-default contact">
+      <div class="section" id="doctor-about">
+        <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Contacts</h3>
           </div>
@@ -85,7 +83,7 @@
             <p id="contacts"></p>
           </div>
         </div>
-        <div class="panel panel-default contact">
+        <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Biography</h3>
           </div>
@@ -93,7 +91,7 @@
             <p id="biography"></p>
           </div>
         </div>
-        <div class="panel panel-default contact">
+        <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Office hours</h3>
           </div>
@@ -102,12 +100,13 @@
           </div>
         </div>
       </div>
+
     </div>
 
   </div>
 
   <!-- FOOTER -->
-  <footer class="container" style="margin-top: 50px">
+  <footer class="container">
     <p class="pull-right"><a href="#">Back to top</a></p>
     <p>© 2017 Hospidif, Inc.</p>
   </footer>
