@@ -32,6 +32,7 @@ function initNews(item, index) {
       <div class="container">
         <div class="carousel-caption">
           <h1>${item.name}</h1>
+          <p>${item.text === null ? "" : item.text.substr(0, 100) + "..."}</p>
         </div>
       </div>
     </div>`)
