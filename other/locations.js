@@ -2,8 +2,6 @@
 
 //Module with common function used all over the project
 const utilities = require("./utilities.js");
-//Module to make javascript easier
-const _ = require("lodash");
 //Module to interact with the database
 const locationDb = require("./database/locationDb.js");
 
@@ -28,11 +26,15 @@ module.exports = function (app) {
       catch(err){
         this.init=false;
         //Through error if the initialization fails
-        console.log("\x1b[4m\x1b[31m%s\x1b[0m","Location module not initializated for: \n")
-        console.log(err);
+        utilities.consoleError("Locations module not initializated for: \n");
+        utilities.consoleError(err);
       }
     }
   };
+  /*
+  * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
+  * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
+  */
 
   /**
    * Return the specified number of location starting from a defined start order by a specific request, the follower
@@ -44,33 +46,53 @@ module.exports = function (app) {
    * @return {JSON}           [news from the database]
    */
   app.get('/locations', function (req, res) {
-    let start = parseInt(_.get(req, "query.start", 0));
-    let limit = parseInt(_.get(req, "query.limit", 5));
-    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
+    //get parameters from the Url
+    let parameters = utilities.getSelectUrlParameters(req);
     locationDb.select(
       function (result) {
         res.send(JSON.stringify(result));
-      }, start, limit, orderBy);
+      }, parameters.start, parameters.limit, parameters.orderBy);
   });
 
+  /**
+   * Return the location with the specified id indicated in the parameters
+   * example of usage:  /location?id=2
+   * @param  {int} id [the id of the researched location]
+   * @return {JSON}     [the location with the id equal to the id passed]
+   */
   app.get("/location/:id", function (req, res) {
-    let id = parseInt(req.params.id);
+    //Take the id from the parameter and parse it
+    let id = utilities.checkId(req.params.id);
     //Send the select to the database
     locationDb.selectById(function (result) {
       res.send(JSON.stringify(result));
     }, id);
   });
 
+  /**
+   * Return the location that are in area with id indicated in the parameters
+   * example of usage:  /locations-by-area?id=2
+   * @param  {int} id [the id of the specific area]
+   * @return {JSON}     [location that are in area with id passed]
+   */
   app.get("/locations-by-area/:id", function (req, res) {
-    let id = parseInt(req.params.id);
+    //Take the id from the parameter and parse it
+    let id = utilities.checkId(req.params.id);
     //Send the select to the database
     locationDb.selectByArea(function (result) {
       res.send(JSON.stringify(result));
     }, id);
   });
 
+  /**
+   * Return the location that contains service with id indicated in the parameters
+   * example of usage:  /locations-by-service?id=2
+   * @param  {int} id [the id of the specific service]
+   * @return {JSON}     [location that contains service with id passed]
+   */
   app.get("/locations-by-service/:id", function (req, res) {
-    let id = parseInt(req.params.id);
+    //Take the id from the parameter and parse it
+    let id = utilities.checkId(req.params.id);
     //Send the select to the database
     locationDb.selectByService(function (result) {
       res.send(JSON.stringify(result));

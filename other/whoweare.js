@@ -2,8 +2,6 @@
 
 //Module with common function used all over the project
 const utilities = require("./utilities.js");
-//Module to make javascript easier
-const _ = require("lodash");
 //Module to interact with the database
 const whoDb = require("./database/whoweareDb.js");
 
@@ -28,12 +26,15 @@ module.exports = function (app) {
       catch(err){
         this.init=false;
         //Through error if the initialization fails
-        console.log("\x1b[4m\x1b[31m%s\x1b[0m","Whoweare module not initializated for: \n")
-        console.log(err);
+        utilities.consoleError("Who we are module not initializated for: \n");
+        utilities.consoleError(err);
       }
     }
   };
-
+  /*
+  * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
+  * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
+  */
 
   /**
    * Return the infor from the starting poing indicated to the limit, the follower
@@ -42,7 +43,8 @@ module.exports = function (app) {
    * @return {JSON}           [news from the database]
    */
   app.get("/whoweare", function (req, res) {
-
+    //get parameters from the Url
+    let parameters = utilities.getSelectUrlParameters(req);
     //Send the select to the database
     whoDb.select(function (result) {
       res.send(JSON.stringify(result));
