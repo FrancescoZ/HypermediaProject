@@ -2,8 +2,6 @@
 
 //Module with common function used all over the project
 const utilities = require("./utilities.js");
-//Module to make javascript easier
-const _ = require("lodash");
 //Module to interact with the database
 const areaDb = require("./database/areaDb.js");
 
@@ -28,42 +26,60 @@ module.exports = function (app) {
       catch(err){
         this.init=false;
         //Through error if the initialization fails
-        console.log("\x1b[4m\x1b[31m%s\x1b[0m","Area module not initializated for: \n")
-        console.log(err);
+        utilities.consoleError("Area module not initializated for: \n");
+        utilities.consoleError(err);
       }
     }
   };
 
+  /*
+  * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
+  * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
+  */
+
   /**
    * Return the areas from the starting point indicated in the parameter to the limit, the follower
    * parameter are take from the request
-   * example of usage:  /area?start=0&limit=5&orderby=1
+   * example of usage:  /areas?start=0&limit=5&orderby=1
    * @param  {integer} start [starting news number]
    * @param  {interger} limit [max number of news to return]
    * @param {integer} orderBy [order criteria: 0-none 1- celebrity, 2- alphabetic order]
    * @return {JSON}           [news from the database]
    */
   app.get("/areas", function (req, res) {
-    //Take the parameters from the query request
-    let start = parseInt(_.get(req, "query.start", 0));
-    let limit = parseInt(_.get(req, "query.limit", 5));
-    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
-
+    //get parameters from the Url
+    let parameters = utilities.getSelectUrlParameters(req);
     //Send the select to the database
     areaDb.select(function (result) {
+      //Send the answer back to the user
       res.send(JSON.stringify(result));
-    }, start, limit, orderBy);
+    }, parameters.start, parameters.limit, parameters.orderBy);
   });
 
+  /**
+   * Return the area with the specified id indicated in the parameters
+   * example of usage:  /area?id=2
+   * @param  {int} id [the id of the researched area]
+   * @return {JSON}     [the area with the id equal to the id passed]
+   */
   app.get("/area/:id", function (req, res) {
-    let id = parseInt(req.params.id);
+    //Take the id from the parameter and parse it
+    let id = utilities.checkId(req.params.id);
     //Send the select to the database
     areaDb.selectById(function (result) {
       res.send(JSON.stringify(result));
     }, id);
   });
+
+  /**
+   * Return the area with the responsible with id indicated in the parameters
+   * example of usage:  /area-by-responsible?id=2
+   * @param  {int} id [the id of the researched area]
+   * @return {JSON}     [the area with the with the responsible with the id passed]
+   */
   app.get("/area-by-responsible/:id", function (req, res) {
-    let id = parseInt(req.params.id);
+    //Take the id from the parameter and parse it
+    let id = utilities.checkId(req.params.id);
     //Send the select to the database
     areaDb.selectByResponsible(function (result) {
       res.send(JSON.stringify(result));

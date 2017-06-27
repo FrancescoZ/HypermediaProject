@@ -2,8 +2,6 @@
 
 //Module with common function used all over the project
 const utilities = require("./utilities.js");
-//Module to make javascript easier
-const _ = require("lodash");
 //Module to interact with the database
 const serviceDb = require("./database/serviceDb.js");
 
@@ -28,12 +26,15 @@ module.exports = function (app) {
       catch(err){
         this.init=false;
         //Through error if the initialization fails
-        console.log("\x1b[4m\x1b[31m%s\x1b[0m","Services module not initializated for: \n")
-        console.log(err);
+        utilities.consoleError("Services module not initializated for: \n");
+        utilities.consoleError(err);
       }
     }
   };
-
+  /*
+  * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
+  * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
+  */
 
   /**
    * Return the specified number of services starting from a defined start, order by a specific request, the follower
@@ -45,18 +46,18 @@ module.exports = function (app) {
    * @return {JSON}           [news from the database]
    */
   app.get('/services', function (req, res) {
-    let start = parseInt(_.get(req, "query.start", 0));
-    let limit = parseInt(_.get(req, "query.limit", 5));
-    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
+    //get parameters from the Url
+    let parameters = utilities.getSelectUrlParameters(req);
     //Send the select to the database
     serviceDb.select(
       function (result) {
         res.send(JSON.stringify(result));
-      }, start, limit, orderBy);
+      }, parameters.start, parameters.limit, parameters.orderBy);
   });
 
   app.get("/service/:id", function (req, res) {
-    let id = parseInt(req.params.id);
+    //Take the id from the parameter and parse it
+    let id = utilities.checkId(req.params.id);
     //Send the select to the database
     serviceDb.selectById(function (result) {
       res.send(JSON.stringify(result));
@@ -64,7 +65,8 @@ module.exports = function (app) {
   });
 
   app.get("/service-by-responsible/:id", function (req, res) {
-    let id = parseInt(req.params.id);
+    //Take the id from the parameter and parse it
+    let id = utilities.checkId(req.params.id);
     //Send the select to the database
     serviceDb.selectByResponsible(function (result) {
       res.send(JSON.stringify(result));
@@ -72,7 +74,8 @@ module.exports = function (app) {
   });
 
   app.get("/services-by-location/:id", function (req, res) {
-    let id = parseInt(req.params.id);
+    //Take the id from the parameter and parse it
+    let id = utilities.checkId(req.params.id);
     //Send the select to the database
     serviceDb.selectByLocation(function (result) {
       res.send(JSON.stringify(result));

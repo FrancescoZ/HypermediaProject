@@ -95,7 +95,5 @@ module.exports = {
       retFunction(o);
     });
 
-  },
-  delete: function () {},
-  update: function () {}
+  }
 };

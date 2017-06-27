@@ -2,8 +2,6 @@
 
 //Module with common function used all over the project
 const utilities = require("./utilities.js");
-//Module to make javascript easier
-const _ = require("lodash");
 //Module to interact with the database
 const comDb = require("./database/comunicationDb.js");
 
@@ -28,12 +26,26 @@ module.exports = function (app) {
       catch(err){
         this.init=false;
         //Through error if the initialization fails
-        console.log("\x1b[4m\x1b[31m%s\x1b[0m","Communication module not initializated for: \n")
-        console.log(err);
+        utilities.consoleError("Communication module not initializated for: \n");
+        utilities.consoleError(err);
       }
     }
   };
 
+  /*
+  * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
+  * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
+  */
+
+  /**
+   * Send a post request to book a service
+   * @param  {string} name [Name of the client]
+   * @param  {string} mail [mail of the client]
+   * @param {string} phone [phone of the client]
+   * @param {string} note [note about the reservation]
+   * @param {date} date [date of the reservation]
+   * @param {int} service [service to book for]
+   */
   app.post("/reservation", function (req, res) {
     let toappend = {
       name: req.body.name,
@@ -41,7 +53,7 @@ module.exports = function (app) {
       phone: req.body.phone,
       note: req.body.note,
       date: req.body.date,
-      service: req.body.service,
+      service: utilities.checkId(req.body.service),
       time: utilities.getDateTime()
     };
     comDb.insertReservation(toappend, function () {
@@ -49,6 +61,12 @@ module.exports = function (app) {
     });
   });
 
+  /**
+   * Send a POST request of contact from a client to ask specific question
+   * @param  {string} name [Name of the client]
+   * @param  {string} mail [mail of the client]
+   * @param {string} note [The question the client is asking for]
+   */
   app.post("/contact", function (req, res) {
     let toappend = {
       name: req.body.name,
