@@ -1,13 +1,36 @@
-///////////////////////////////////////// RESERVATION & CONTACT /////////////////////////////////////////
+/*********************************************** RESERVATION & CONTACT ************************************************/
 
-const comDb = require("./database/comunicationDb.js");
+//Module with common function used all over the project
 const utilities = require("./utilities.js");
+//Module to make javascript easier
+const _ = require("lodash");
+//Module to interact with the database
+const comDb = require("./database/comunicationDb.js");
 
-module.exports = function (app, _) {
-  var comunicationDb = {
-
-    initCom: function () {
-      comDb.init();
+/**
+ * Module to manage the post request about contact or reservation
+ * @param  {express} app [the express module used in the main script, all the get/post listener will be added here]
+ */
+module.exports = function (app) {
+  var comunication = {
+    //Status of the initialization
+    init:false,
+    /**
+     * Init the database, creating the table and inserting the data taken from the .json
+     * @return none
+     */
+    init: function () {
+      this.init=true;
+      try {
+        //init the database
+        comDb.init();
+      }
+      catch(err){
+        this.init=false;
+        //Through error if the initialization fails
+        console.log("\x1b[4m\x1b[31m%s\x1b[0m","Communication module not initializated for: \n")
+        console.log(err);
+      }
     }
   };
 
@@ -38,5 +61,5 @@ module.exports = function (app, _) {
     });
   });
 
-  return comunicationDb;
+  return comunication;
 }

@@ -1,14 +1,38 @@
-///////////////////////////////////////// LOCATIONS /////////////////////////////////////////
-const locationDb = require("./database/locationDb.js");
-const utilities = require("./utilities.js");
+/***************************************************** LOCATIONS ******************************************************/
 
-module.exports = function (app, _) {
+//Module with common function used all over the project
+const utilities = require("./utilities.js");
+//Module to make javascript easier
+const _ = require("lodash");
+//Module to interact with the database
+const locationDb = require("./database/locationDb.js");
+
+/**
+ * Module to manage the location request, include all the get and post request that are managed for the location
+ * @param  {express} app [the express module used in the main script, all the get/post listener will be added here]
+ */
+module.exports = function (app) {
   var locationsModule = {
-    initLocations: function () {
-      locationDb.init();
+    //Status of the initialization
+    init:false,
+    /**
+     * Init the database, creating the table and inserting the data taken from the .json
+     * @return none
+     */
+    init: function () {
+      this.init=true;
+      try {
+        //init the database
+        locationDb.init();
+      }
+      catch(err){
+        this.init=false;
+        //Through error if the initialization fails
+        console.log("\x1b[4m\x1b[31m%s\x1b[0m","Location module not initializated for: \n")
+        console.log(err);
+      }
     }
   };
-
 
   /**
    * Return the specified number of location starting from a defined start order by a specific request, the follower

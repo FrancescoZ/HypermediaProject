@@ -26,25 +26,25 @@ app.use(function (err, req, res, next) {
 app.set("port", serverPort);
 
 // /* Register REST entry point */
-const news = require("./other/news.js")(app, _);
-const com = require("./other/comunication.js")(app, _);
-const doctors = require("./other/doctors.js")(app, _);
-const locations = require("./other/locations.js")(app, _);
-const services = require("./other/services.js")(app, _);
-const areas = require("./other/areas.js")(app, _);
-const whowe = require("./other/whoweare.js")(app, _);
+const news = require("./other/news.js")(app);
+const com = require("./other/comunication.js")(app);
+const doctors = require("./other/doctors.js")(app);
+const locations = require("./other/locations.js")(app);
+const services = require("./other/services.js")(app);
+const areas = require("./other/areas.js")(app);
+const whowe = require("./other/whoweare.js")(app);
 
 /**
  * Call the different submodule, and crete the connection with the database
  */
 function init() {
-  areas.initAreas();
-  doctors.initDoctors();
-  locations.initLocations();
-  news.initNews();
-  com.initCom();
-  services.initServices();
-  whowe.initWhoweare();
+  areas.init();
+  doctors.init();
+  locations.init();
+  news.init();
+  com.init();
+  services.init();
+  whowe.init();
 };
 
 init();
