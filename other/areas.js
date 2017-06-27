@@ -74,7 +74,7 @@ module.exports = function (app) {
   /**
    * Return the area with the responsible with id indicated in the parameters
    * example of usage:  /area-by-responsible?id=2
-   * @param  {int} id [the id of the researched area]
+   * @param  {int} id [the id of the researched responsible]
    * @return {JSON}     [the area with the with the responsible with the id passed]
    */
   app.get("/area-by-responsible/:id", function (req, res) {

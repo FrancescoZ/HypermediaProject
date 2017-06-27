@@ -1,12 +1,19 @@
+//General Database module
 const database = require("./database.js");
+//Module to make javascript easier
+const _ = require("lodash");
 
 module.exports = {
+  /*
+   * Init db function, create the structure and fill it from the json data
+   */
   init: function () {
     database.init(function (dbConnection, initData, _) {
-      let locationAreaList = require(initData + "locationService.json");
+      l//Initial data
+      et locationAreaList = require(initData + "locationService.json");
       let locationList = require(initData + "location.json");
 
-      //Locations
+      //Create table structure for Locations
       dbConnection.schema.hasTable("location").then(exists => {
         //check the existance
         if (!exists) {
@@ -62,7 +69,15 @@ module.exports = {
 
     });
   },
-  ///////////////////////////////////////// SELECT ///////////////////////////
+
+  /**
+   * Select the locations from the db
+   * equivalent select in SQL: SELECT * from location LIMIT @limit OFFSET @start ORDERBY @orderby
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [start=null] [Parameter @start of the query]
+   * @param  {Int} [limit=null] [Parameter @limit of the query]
+   * @param  {String} [order=null] [Parameter @orderby of the query]
+   */
   select: function (retFunction, start = null, limit = null, order = null) {
     //Check the parameter
     let param = {
@@ -72,6 +87,13 @@ module.exports = {
     };
     database.select("location", retFunction, param);
   },
+
+  /**
+   * Select the location from the db where the id is the id passed
+   * equivalent select in SQL: SELECT * from location WHERE id=@id
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [id=null] [Parameter @id of the query]
+   */
   selectById: function (retFunction, id) {
     //TODO Check the id
     let param = {

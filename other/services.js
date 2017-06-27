@@ -55,6 +55,12 @@ module.exports = function (app) {
       }, parameters.start, parameters.limit, parameters.orderBy);
   });
 
+  /**
+   * Return the service with the specified id indicated in the parameters
+   * example of usage:  /service?id=2
+   * @param  {int} id [the id of the researched service]
+   * @return {JSON}     [the service with the id equal to the id passed]
+   */
   app.get("/service/:id", function (req, res) {
     //Take the id from the parameter and parse it
     let id = utilities.checkId(req.params.id);
@@ -64,6 +70,12 @@ module.exports = function (app) {
     }, id);
   });
 
+  /**
+   * Return the service with the responsible with id indicated in the parameters
+   * example of usage:  /service-by-responsible?id=2
+   * @param  {int} id [the id of the researched responsible]
+   * @return {JSON}     [the service with the with the responsible with the id passed]
+   */
   app.get("/service-by-responsible/:id", function (req, res) {
     //Take the id from the parameter and parse it
     let id = utilities.checkId(req.params.id);
@@ -73,6 +85,12 @@ module.exports = function (app) {
     }, id);
   });
 
+  /**
+   * Return the services that are in location with id indicated in the parameters
+   * example of usage:  /doctors-by-location?id=2
+   * @param  {int} id [the id of the specific location]
+   * @return {JSON}     [services that are in location with id passed]
+   */
   app.get("/services-by-location/:id", function (req, res) {
     //Take the id from the parameter and parse it
     let id = utilities.checkId(req.params.id);

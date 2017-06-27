@@ -1,10 +1,17 @@
+//General Database module
 const database = require("./database.js");
+//Module to make javascript easier
+const _ = require("lodash");
 
 module.exports = {
+  /*
+   * Init db function, create the structure and fill it from the json data
+   */
   init: function () {
     database.init(function (dbConnection, initData, _) {
+      //Initial data
       let doctorList = require(initData + "doc.json");
-      //Doctors
+      //Create table structure for Doctors
       dbConnection.schema.hasTable("doctor").then(exists => {
         //check the existance
         if (!exists) {
@@ -37,7 +44,15 @@ module.exports = {
       });
     });
   },
-  ///////////////////////////////////////// SELECT ///////////////////////////
+
+  /**
+   * Select the doctors from the db
+   * equivalent select in SQL: SELECT * from doctor LIMIT @limit OFFSET @start ORDERBY @orderby
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [start=null] [Parameter @start of the query]
+   * @param  {Int} [limit=null] [Parameter @limit of the query]
+   * @param  {String} [order=null] [Parameter @orderby of the query]
+   */
   select: function (retFunction, start = null, limit = null, order = null) {
     //Check the parameter
     let param = {
@@ -47,12 +62,16 @@ module.exports = {
     };
     database.select("doctor", retFunction, param);
   },
+
+  /**
+   * Select the area from the db where the id is the id passed
+   * equivalent select in SQL: SELECT * from area WHERE id=@id
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [id=null] [Parameter @id of the query]
+   */
   selectById: function (retFunction, id) {
     //TODO Check the id
     let param = {
-      start: null,
-      limit: null,
-      orderBy: null,
       id: id,
       idname: "id"
     };

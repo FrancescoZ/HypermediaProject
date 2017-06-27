@@ -54,6 +54,12 @@ module.exports = function (app) {
       }, parameters.start, parameters.limit, parameters.orderBy);
   });
 
+  /**
+   * Return the location with the specified id indicated in the parameters
+   * example of usage:  /location?id=2
+   * @param  {int} id [the id of the researched location]
+   * @return {JSON}     [the location with the id equal to the id passed]
+   */
   app.get("/location/:id", function (req, res) {
     //Take the id from the parameter and parse it
     let id = utilities.checkId(req.params.id);
@@ -63,6 +69,12 @@ module.exports = function (app) {
     }, id);
   });
 
+  /**
+   * Return the location that are in area with id indicated in the parameters
+   * example of usage:  /locations-by-area?id=2
+   * @param  {int} id [the id of the specific area]
+   * @return {JSON}     [location that are in area with id passed]
+   */
   app.get("/locations-by-area/:id", function (req, res) {
     //Take the id from the parameter and parse it
     let id = utilities.checkId(req.params.id);
@@ -72,6 +84,12 @@ module.exports = function (app) {
     }, id);
   });
 
+  /**
+   * Return the location that contains service with id indicated in the parameters
+   * example of usage:  /locations-by-service?id=2
+   * @param  {int} id [the id of the specific service]
+   * @return {JSON}     [location that contains service with id passed]
+   */
   app.get("/locations-by-service/:id", function (req, res) {
     //Take the id from the parameter and parse it
     let id = utilities.checkId(req.params.id);

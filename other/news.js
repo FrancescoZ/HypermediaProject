@@ -54,7 +54,12 @@ module.exports = function (app) {
     }, parameters.start, parameters.limit, parameters.orderBy);
   });
 
-
+  /**
+   * Return the news with the specified id indicated in the parameters
+   * example of usage:  /area?id=2
+   * @param  {int} id [the id of the researched news]
+   * @return {JSON}     [the news with the id equal to the id passed]
+   */
   app.get("/news/:id", function (req, res) {
     //Take the id from the parameter and parse it
     let id = utilities.checkId(req.params.id);

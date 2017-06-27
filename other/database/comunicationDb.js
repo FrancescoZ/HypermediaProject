@@ -1,11 +1,15 @@
+//General Database module
 const database = require("./database.js");
+//Module to make javascript easier
+const _ = require("lodash");
 
 module.exports = {
+  /*
+   * Init db function, create the structure and fill it from the json data
+   */
   init: function () {
     database.init(function (dbConnection, initData, _) {
-      //initial data stored in json
-
-      //Reservation
+      //Create table structure for Reservation
       dbConnection.schema.hasTable("reservation").then(exists => {
         //check the existance
         if (!exists) {

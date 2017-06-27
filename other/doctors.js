@@ -87,7 +87,7 @@ module.exports = function (app) {
 
   /**
    * Return the doctors who work in location with id indicated in the parameters
-   * example of usage:  /doctors-by-service?id=2
+   * example of usage:  /doctors-by-location?id=2
    * @param  {int} id [the id of the specific location]
    * @return {JSON}     [doctors who work in location with id passed]
    */
