@@ -9,8 +9,8 @@ module.exports = {
    */
   init: function () {
     database.init(function (dbConnection, initData, _) {
-      l//Initial data
-      et locationAreaList = require(initData + "locationService.json");
+      //Initial data
+      let locationAreaList = require(initData + "locationService.json");
       let locationList = require(initData + "location.json");
 
       //Create table structure for Locations
