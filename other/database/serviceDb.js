@@ -46,7 +46,7 @@ module.exports = {
 
   /**
    * Select the services from the db
-   * equivalent select in SQL: SELECT * from service LIMIT @limit OFFSET @start ORDERBY @orderby
+   * equivalent select in SQL: SELECT * FROM service LIMIT @limit OFFSET @start ORDERBY @orderby
    * @param  {function} retFunction  [Callback function]
    * @param  {Int} [start=null] [Parameter @start of the query]
    * @param  {Int} [limit=null] [Parameter @limit of the query]
@@ -64,18 +64,23 @@ module.exports = {
 
   /**
    * Select the service from the db where the id is the id passed
-   * equivalent select in SQL: SELECT * from service WHERE id=@id
+   * equivalent select in SQL: SELECT * FROM service WHERE id=@id
    * @param  {function} retFunction  [Callback function]
-   * @param  {Int} [id=null] [Parameter @id of the query]
+   * @param  {Int} [id] [Parameter @id of the query]
    */
   selectById: function (retFunction, id) {
-    //TODO Check the id
     let param = {
       id: id,
       idname: "id"
     };
     database.select("service", retFunction, param);
   },
+  /**
+   * Select the service that has a specific doctor as responsible
+   * equivalent select in SQL: SELECT * FROM service WHERE doc_resp=@idResp
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idResp] [Parameter @id of the query]
+   */
   selectByResponsible: function (retFunction, idResp) {
     let param = {
       id: idResp,
@@ -83,6 +88,14 @@ module.exports = {
     };
     database.select("service", retFunction, param);
   },
+  /**
+   * Select the services that are in a specific location
+   * equivalent select in SQL:
+   *        SELECT * FROM service WHERE id IN
+   *              (SELECT id_service FROM location_service WHERE id_location=@idLoc)
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idLoc] [Parameter @idLoc of the query]
+   */
   selectByLocation: function (retFunction, idLoc) {
     let locParam = {
       objType: "location_service",
@@ -96,6 +109,4 @@ module.exports = {
     };
     database.select("service", retFunction, serviceParam);
   }
-
-
 }

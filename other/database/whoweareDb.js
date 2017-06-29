@@ -42,14 +42,10 @@ module.exports = {
 
   /**
    * Select the whoweare paragraph from the db
-   * equivalent select in SQL: SELECT * from whoweare
+   * equivalent select in SQL: SELECT * FROM whoweare
    * @param  {function} retFunction  [Callback function]
-   * @param  {Int} [start=null] [Parameter @start of the query]
-   * @param  {Int} [limit=null] [Parameter @limit of the query]
-   * @param  {String} [order=null] [Parameter @orderby of the query]
    */
   select: function (retFunction) {
-    //Check the parameter
     database.select("whoweare", retFunction, {});
   }
 }

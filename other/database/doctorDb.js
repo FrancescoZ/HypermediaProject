@@ -47,14 +47,13 @@ module.exports = {
 
   /**
    * Select the doctors from the db
-   * equivalent select in SQL: SELECT * from doctor LIMIT @limit OFFSET @start ORDERBY @orderby
+   * equivalent select in SQL: SELECT * FROM doctor LIMIT @limit OFFSET @start ORDERBY @orderby
    * @param  {function} retFunction  [Callback function]
    * @param  {Int} [start=null] [Parameter @start of the query]
    * @param  {Int} [limit=null] [Parameter @limit of the query]
    * @param  {String} [order=null] [Parameter @orderby of the query]
    */
   select: function (retFunction, start = null, limit = null, order = null) {
-    //Check the parameter
     let param = {
       start: start,
       limit: limit,
@@ -64,27 +63,42 @@ module.exports = {
   },
 
   /**
-   * Select the area from the db where the id is the id passed
-   * equivalent select in SQL: SELECT * from area WHERE id=@id
+   * Select the doctor from the db where the id is the id passed
+   * equivalent select in SQL: SELECT * FROM doctor WHERE id=@id
    * @param  {function} retFunction  [Callback function]
-   * @param  {Int} [id=null] [Parameter @id of the query]
+   * @param  {Int} [id] [Parameter @id of the query]
    */
   selectById: function (retFunction, id) {
-    //TODO Check the id
     let param = {
       id: id,
       idname: "id"
     };
     database.select("doctor", retFunction, param);
   },
+
+  /**
+   * Select the doctors who work in specific server
+   * equivalent select in SQL: SELECT * FROM doctor WHERE at_service=@idService
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idService] [Parameter @idService of the query]
+   */
   selectByService: function (retFunction, idService) {
-    //TODO Check the id
     let doctorParam = {
       idname: "at_service",
       id: idService
     };
     database.select("doctor", retFunction, doctorParam);
   },
+
+  /**
+   * Select the doctors who work in specific location
+   * equivalent select in SQL:
+   *       SELECT * FROM doctor WHERE at_service IN
+   *            (SELECT id_service FROM location_service WHERE id_location=@idLoc)
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idLoc] [Parameter @idLoc of the query]
+   * @param  {String} [order = null] [Parameter @order of the query]
+   */
   selectByLocation: function (retFunction, idLoc, order = null) {
     let locParam = {
       objType: "location_service",
@@ -99,6 +113,4 @@ module.exports = {
     };
     database.select("doctor", retFunction, docParam);
   }
-
-
 }

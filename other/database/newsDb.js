@@ -44,14 +44,13 @@ module.exports = {
 
   /**
    * Select the news from the db
-   * equivalent select in SQL: SELECT * from news LIMIT @limit OFFSET @start ORDERBY @orderby
+   * equivalent select in SQL: SELECT * FROM news LIMIT @limit OFFSET @start ORDERBY @orderby
    * @param  {function} retFunction  [Callback function]
    * @param  {Int} [start=null] [Parameter @start of the query]
    * @param  {Int} [limit=null] [Parameter @limit of the query]
    * @param  {String} [order=null] [Parameter @orderby of the query]
    */
   select: function (retFunction, start = null, limit = null, order = null) {
-    //Check the parameter
     let param = {
       start: start,
       limit: limit,
@@ -62,12 +61,11 @@ module.exports = {
 
   /**
    * Select the news from the db where the id is the id passed
-   * equivalent select in SQL: SELECT * from news WHERE id=@id
+   * equivalent select in SQL: SELECT * FROM news WHERE id=@id
    * @param  {function} retFunction  [Callback function]
-   * @param  {Int} [id=null] [Parameter @id of the query]
+   * @param  {Int} [id] [Parameter @id of the query]
    */
   selectById: function (retFunction, id) {
-    //TODO Check the id
     let param = {
       id: id,
       idname: "id"

@@ -72,6 +72,12 @@ module.exports = {
     database.select("area", retFunction, param);
   },
 
+  /**
+   * Select the area that has a specific doctor as responsible
+   * equivalent select in SQL: SELECT * FROM area WHERE doc_resp=@idResp
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idResp] [Parameter @idResp of the query]
+   */
   selectByResponsible: function (retFunction, idResp) {
     let param = {
       id: idResp,
