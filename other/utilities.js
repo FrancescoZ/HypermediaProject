@@ -7,7 +7,8 @@ module.exports = {
    * @param  {Int} value [Number to convert]
    * @return {String}       [Converted string]
    */
-  convertOrder: function (value) {
+  convertOrder: function (req) {
+    var value = _.get(req, "query.orderBy", 0)
     //Check if it's an int
     let order = parseInt(value);
     switch (order) {
@@ -57,7 +58,7 @@ module.exports = {
   /**
    * Write into the console with a specific format and color
    * @param  {String} error [Error to write in red into the console]
-  */
+   */
   consoleError: function (error) {
     console.error('\x1b[4m\x1b[31m%s\x1b[0m', err);
   },

@@ -12,19 +12,18 @@ const doctorDb = require("./database/doctorDb.js");
 module.exports = function (app) {
   var doctorsModule = {
     //Status of the initialization
-    init:false,
+    init: false,
     /**
      * Init the database, creating the table and inserting the data taken from the .json
      * @return none
      */
     init: function () {
-      this.init=true;
+      this.init = true;
       try {
         //init the database
         doctorDb.init();
-      }
-      catch(err){
-        this.init=false;
+      } catch (err) {
+        this.init = false;
         //Through error if the initialization fails
         utilities.consoleError("Doctors module not initializated for: \n");
         utilities.consoleError(err);
@@ -32,9 +31,9 @@ module.exports = function (app) {
     }
   };
   /*
-  * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
-  * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
-  */
+   * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
+   * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
+   */
 
   /**
    * Return the specified number of doctors starting from a defined start order by a specific request, the follower
@@ -94,7 +93,7 @@ module.exports = function (app) {
   app.get("/doctors-by-location/:id", function (req, res) {
     //Take the id from the parameter and parse it
     let id = utilities.checkId(req.params.id);
-    let orderBy = utilities.convertOrder(_.get(req, "query.orderBy", 0));
+    let orderBy = utilities.convertOrder(req);
     //Send the select to the database
     doctorDb.selectByLocation(function (result) {
       res.send(JSON.stringify(result));
