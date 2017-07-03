@@ -40,3 +40,7 @@ function formDataAsJSON(formData) {
   }
   return JSON.stringify(data)
 }
+
+function onTop() {
+  $('body').scrollTop(0)
+}
