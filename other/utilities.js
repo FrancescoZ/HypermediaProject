@@ -115,15 +115,15 @@ module.exports = {
   sendMail: function (mail) {
     // create a transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-      host: 'smtp.mail.com',
+      host: 'smtp.gmail.com',
       auth: {
-        user: 'hospidif@qualityservice.com',
+        user: 'hospidif@gmail.com',
         pass: 'Polimi@2017'
       }
     })
 
     let mailOptions = {
-      from: '"Hospidif" <hospidif@qualityservice.com>', // sender address
+      from: '"Hospidif" <hospidif@gmail.com>', // sender address
       to: mail.to, // list of receivers
       subject: mail.subject, // Subject line
       text: mail.text // plain text body
