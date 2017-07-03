@@ -1,5 +1,7 @@
 //Module to make javascript easier
 const _ = require("lodash");
+//Module to send emails
+const nodemailer = require('nodemailer');
 
 module.exports = {
   /**
@@ -106,4 +108,33 @@ module.exports = {
     day = (day < 10 ? "0" : "") + day;
     return year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec;
   },
+  /**
+   * Send an email
+   * @param  {Obj} mail [Mail to send]
+   */
+  sendMail: function (mail) {
+    // create a transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      host: 'smtp.mail.com',
+      auth: {
+        user: 'hospidif@qualityservice.com',
+        pass: 'Polimi@2017'
+      }
+    })
+
+    let mailOptions = {
+      from: '"Hospidif" <hospidif@qualityservice.com>', // sender address
+      to: mail.to, // list of receivers
+      subject: mail.subject, // Subject line
+      text: mail.text // plain text body
+    }
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    })
+  }
 }

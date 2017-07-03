@@ -1,5 +1,4 @@
 /*********************************************** RESERVATION & CONTACT ************************************************/
-
 //Module with common function used all over the project
 const utilities = require("./utilities.js");
 //Module to interact with the database
@@ -12,19 +11,18 @@ const comDb = require("./database/comunicationDb.js");
 module.exports = function (app) {
   var comunication = {
     //Status of the initialization
-    init:false,
+    init: false,
     /**
      * Init the database, creating the table and inserting the data taken from the .json
      * @return none
      */
     init: function () {
-      this.init=true;
+      this.init = true;
       try {
         //init the database
         comDb.init();
-      }
-      catch(err){
-        this.init=false;
+      } catch (err) {
+        this.init = false;
         //Through error if the initialization fails
         utilities.consoleError("Communication module not initializated for: \n");
         utilities.consoleError(err);
@@ -33,9 +31,9 @@ module.exports = function (app) {
   };
 
   /*
-  * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
-  * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
-  */
+   * In the following line we add to the obj app all the get we need, the comment bellow look as a function documentation
+   * because we threat each request as a funciton. So the parameter to explain are the params to insert into the query
+   */
 
   /**
    * Send a post request to book a service
@@ -47,7 +45,7 @@ module.exports = function (app) {
    * @param {int} service [service to book for]
    */
   app.post("/reservation", function (req, res) {
-    let toappend = {
+    let data = {
       name: req.body.name,
       mail: req.body.mail,
       phone: req.body.phone,
@@ -56,7 +54,13 @@ module.exports = function (app) {
       service: utilities.checkId(req.body.service),
       time: utilities.getDateTime()
     };
-    comDb.insertReservation(toappend, function () {
+    let mail = {
+      to: data.mail,
+      subject: `Your reservation has been submitted`,
+      text: `Hi ${data.name}, thank you!\nWe will process your reservation in the following days.\nYou sent us a request of reservation for ${req.body.servicename} in this day: ${data.date}.\nHere there's your request: ${data.note}.\nOur customer service will contact you on this phone ${data.phone}. Bye!`
+    }
+    utilities.sendMail(mail)
+    comDb.insertReservation(data, function () {
       res.send(200);
     });
   });
@@ -68,13 +72,19 @@ module.exports = function (app) {
    * @param {string} note [The question the client is asking for]
    */
   app.post("/contact", function (req, res) {
-    let toappend = {
+    let data = {
       name: req.body.name,
       mail: req.body.mail,
       note: req.body.note,
       time: utilities.getDateTime()
     };
-    comDb.insertContact(toappend, function () {
+    let mail = {
+      to: data.mail,
+      subject: `Your request has been submitted`,
+      text: `Hi ${data.name}, thank you!\nWe will process your request in the following days.\nYou sent us this request: ${data.note}`
+    }
+    utilities.sendMail(mail)
+    comDb.insertContact(data, function () {
       res.send(200);
     });
   });

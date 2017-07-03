@@ -17,8 +17,12 @@ function initContent(query, item, index) {
 function initService(item, index) {
   if (index == 0) {
     $('#title').append(`<b>${item.name}</b>`)
+    service.id = item.id
+    service.name = item.name
   }
 }
+
+let service = {}
 
 init()
 
@@ -29,7 +33,8 @@ function clickSubmit() {
   headers.set("Content-Type", "application/json")
 
   let formdata = new FormData(document.getElementById("reservation"))
-  formdata.set('service', params['id'])
+  formdata.set('service', service.id)
+  formdata.set('servicename', service.name)
   let body = formDataAsJSON(formdata)
 
   fetch("/reservation", {
