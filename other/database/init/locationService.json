@@ -17,6 +17,11 @@
     "id_location": 1,
     "id_service": 4
   },
+  
+  {
+    "id_location": 1,
+    "id_service": 6
+  },
 
   {
     "id_location": 2,
@@ -32,6 +37,16 @@
     "id_location": 2,
     "id_service": 4
   },
+  
+  {
+    "id_location": 2,
+    "id_service": 5
+  },
+  
+  {
+    "id_location": 2,
+    "id_service": 6
+  },
 
   {
     "id_location": 3,
@@ -46,6 +61,11 @@
   {
     "id_location": 3,
     "id_service": 4
+  },
+  
+  {
+    "id_location": 3,
+    "id_service": 6
   }
 
 ]
