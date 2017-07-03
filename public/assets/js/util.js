@@ -42,7 +42,5 @@ function formDataAsJSON(formData) {
 }
 
 function onTop() {
-  $('html, body').animate({
-    scrollTop: 0
-  }, 'fast');
+  $('html, body').scrollTop(0)
 }
