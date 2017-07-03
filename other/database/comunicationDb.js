@@ -18,7 +18,7 @@ module.exports = {
             .createTable("reservation", table => {
               table.increments('id').primary();
               table.string("name");
-              table.date("date");
+              table.string("date");
               table.string("mail");
               table.string("phone");
               table.text("note");
