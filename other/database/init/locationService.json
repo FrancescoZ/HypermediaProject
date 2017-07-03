@@ -1,13 +1,9 @@
 [
   {
     "id_location": 1,
-    "id_service": 1
-  },
-
-  {
-    "id_location": 1,
     "id_service": 2
   },
+  
   {
     "id_location": 1,
     "id_service": 3
@@ -31,11 +27,6 @@
   {
     "id_location": 2,
     "id_service": 2
-  },
-
-  {
-    "id_location": 2,
-    "id_service": 4
   },
   
   {
