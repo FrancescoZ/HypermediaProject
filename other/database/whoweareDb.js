@@ -1,11 +1,18 @@
+//General Database module
 const database = require("./database.js");
+//Module to make javascript easier
+const _ = require("lodash");
 
 module.exports = {
+  /*
+   * Init db function, create the structure and fill it from the json data
+   */
   init: function () {
     database.init(function (dbConnection, initData, _) {
+      //Initial data
       let areaList = require(initData + "whoweare.json");
 
-      //Areas
+      //Create table structure for whoweare
       dbConnection.schema.hasTable("whoweare").then(exists => {
         //check the existance
         if (!exists) {
@@ -32,9 +39,13 @@ module.exports = {
       });
     });
   },
-  ///////////////////////////////////////// SELECT ///////////////////////////
+
+  /**
+   * Select the whoweare paragraph from the db
+   * equivalent select in SQL: SELECT * FROM whoweare
+   * @param  {function} retFunction  [Callback function]
+   */
   select: function (retFunction) {
-    //Check the parameter
     database.select("whoweare", retFunction, {});
   }
 }

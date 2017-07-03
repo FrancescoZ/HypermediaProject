@@ -1,12 +1,19 @@
+//General Database module
 const database = require("./database.js");
+//Module to make javascript easier
+const _ = require("lodash");
 
 module.exports = {
+  /*
+   * Init db function, create the structure and fill it from the json data
+   */
   init: function () {
     database.init(function (dbConnection, initData, _) {
+      //Initial data
       let locationAreaList = require(initData + "locationService.json");
       let locationList = require(initData + "location.json");
 
-      //Locations
+      //Create table structure for Locations
       dbConnection.schema.hasTable("location").then(exists => {
         //check the existance
         if (!exists) {
@@ -62,9 +69,16 @@ module.exports = {
 
     });
   },
-  ///////////////////////////////////////// SELECT ///////////////////////////
+
+  /**
+   * Select the locations from the db
+   * equivalent select in SQL: SELECT * FROM location LIMIT @limit OFFSET @start ORDERBY @orderby
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [start=null] [Parameter @start of the query]
+   * @param  {Int} [limit=null] [Parameter @limit of the query]
+   * @param  {String} [order=null] [Parameter @orderby of the query]
+   */
   select: function (retFunction, start = null, limit = null, order = null) {
-    //Check the parameter
     let param = {
       start: start,
       limit: limit,
@@ -72,16 +86,30 @@ module.exports = {
     };
     database.select("location", retFunction, param);
   },
+
+  /**
+   * Select the location from the db where the id is the id passed
+   * equivalent select in SQL: SELECT * FROM location WHERE id=@id
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [id] [Parameter @id of the query]
+   */
   selectById: function (retFunction, id) {
-    //TODO Check the id
     let param = {
       id: id,
       idname: "id"
     };
     database.select("location", retFunction, param);
   },
+
+  /**
+   * Select the locations that contain a specific area
+   * equivalent select in SQL:
+   *       SELECT * FROM location WHERE id IN (SELECT id_location FROM location_service WHERE id_location IN (
+   *            SELECT id FROM service WHERE area=@IdArea))
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idArea] [Parameter @idArea of the query]
+   */
   selectByArea: function (retFunction, idArea) {
-    //TODO Check the id
     let serviceParam = {
       objType: "service",
       idname: "area",
@@ -100,8 +128,15 @@ module.exports = {
     }
     database.select("location", retFunction, locationParam);
   },
+
+  /**
+   * Select the locations that contain a specific service
+   * equivalent select in SQL:
+   *       SELECT * FROM location WHERE id IN (SELECT id_location FROM location_service WHERE id_service=@idService)
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idService] [Parameter @idService of the query]
+   */
   selectByService: function (retFunction, idService) {
-    //TODO Check the id
     let locParam = {
       objType: "location_service",
       idname: "id_service",

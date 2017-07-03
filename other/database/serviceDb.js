@@ -1,11 +1,18 @@
+//General Database module
 const database = require("./database.js");
+//Module to make javascript easier
+const _ = require("lodash");
 
 module.exports = {
+  /*
+   * Init db function, create the structure and fill it from the json data
+   */
   init: function () {
     database.init(function (dbConnection, initData, _) {
+      //Initial data
       let serviceList = require(initData + "service.json");
 
-      //Services
+      //Create table structure for Services
       dbConnection.schema.hasTable("service").then(exists => {
         //check the existance
         if (!exists) {
@@ -36,7 +43,15 @@ module.exports = {
       });
     });
   },
-  ///////////////////////////////////////// SELECT ///////////////////////////
+
+  /**
+   * Select the services from the db
+   * equivalent select in SQL: SELECT * FROM service LIMIT @limit OFFSET @start ORDERBY @orderby
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [start=null] [Parameter @start of the query]
+   * @param  {Int} [limit=null] [Parameter @limit of the query]
+   * @param  {String} [order=null] [Parameter @orderby of the query]
+   */
   select: function (retFunction, start = null, limit = null, order = null) {
     //Check the parameter
     let param = {
@@ -46,17 +61,26 @@ module.exports = {
     };
     database.select("service", retFunction, param);
   },
+
+  /**
+   * Select the service from the db where the id is the id passed
+   * equivalent select in SQL: SELECT * FROM service WHERE id=@id
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [id] [Parameter @id of the query]
+   */
   selectById: function (retFunction, id) {
-    //TODO Check the id
     let param = {
-      start: null,
-      limit: null,
-      orderBy: null,
       id: id,
       idname: "id"
     };
     database.select("service", retFunction, param);
   },
+  /**
+   * Select the service that has a specific doctor as responsible
+   * equivalent select in SQL: SELECT * FROM service WHERE doc_resp=@idResp
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idResp] [Parameter @id of the query]
+   */
   selectByResponsible: function (retFunction, idResp) {
     let param = {
       id: idResp,
@@ -64,6 +88,14 @@ module.exports = {
     };
     database.select("service", retFunction, param);
   },
+  /**
+   * Select the services that are in a specific location
+   * equivalent select in SQL:
+   *        SELECT * FROM service WHERE id IN
+   *              (SELECT id_service FROM location_service WHERE id_location=@idLoc)
+   * @param  {function} retFunction  [Callback function]
+   * @param  {Int} [idLoc] [Parameter @idLoc of the query]
+   */
   selectByLocation: function (retFunction, idLoc) {
     let locParam = {
       objType: "location_service",
@@ -77,6 +109,4 @@ module.exports = {
     };
     database.select("service", retFunction, serviceParam);
   }
-
-
 }
