@@ -12,7 +12,7 @@ function clickSubmit() {
     })
     .then(response => {
       if (response.ok) {
-        $('#banner').html(`<strong>Well done!</strong> You request has been submitted`)
+        $('#banner').html(`<strong>Well done!</strong> Your request has been submitted`)
         $('#banner').addClass("alert-success")
         $('#submit-btn').hide()
       } else {
