@@ -1,4 +1,5 @@
 /*********************************************** RESERVATION & CONTACT ************************************************/
+
 //Module with common function used all over the project
 const utilities = require("./utilities.js");
 //Module to interact with the database

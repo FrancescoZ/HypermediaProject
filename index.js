@@ -1,12 +1,10 @@
-//TODO Commentare
+/*****************************************************  INDEX  ********************************************************/
 
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const methodOverride = require('method-override');
-const _ = require("lodash");
 const process = require("process");
-const util = require("./other/utilities.js");
 
 let serverPort = process.env.PORT || 5000;
 
@@ -25,7 +23,7 @@ app.use(function (err, req, res, next) {
 
 app.set("port", serverPort);
 
-// /* Register REST entry point */
+/* Register REST entry point */
 const news = require("./other/news.js")(app);
 const com = require("./other/comunication.js")(app);
 const doctors = require("./other/doctors.js")(app);
@@ -34,9 +32,7 @@ const services = require("./other/services.js")(app);
 const areas = require("./other/areas.js")(app);
 const whowe = require("./other/whoweare.js")(app);
 
-/**
- * Call the different submodule, and crete the connection with the database
- */
+/* Call the different submodule, and crete the connection with the database */
 function init() {
   areas.init();
   doctors.init();

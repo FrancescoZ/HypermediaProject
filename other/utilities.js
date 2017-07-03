@@ -1,3 +1,5 @@
+/***************************************************  UTILITIES  ******************************************************/
+
 //Module to make javascript easier
 const _ = require("lodash");
 //Module to send emails
